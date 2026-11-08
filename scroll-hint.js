@@ -102,7 +102,7 @@
         frame.classList.remove("can-l", "can-r");
         return;
       }
-      railInner.style.width = box.scrollWidth + "px";
+      railInner.style.width = (max + rail.clientWidth) + "px"; // same scroll range as the table
       var x = box.scrollLeft;
       frame.classList.toggle("can-l", x > 2);
       frame.classList.toggle("can-r", x < max - 2);
@@ -123,24 +123,27 @@
       }
     }
 
-    // Keep the box and the sticky rail in step without the two fighting each other
-    // (an echo from one would otherwise cancel a smooth scroll on the other).
-    var railSet = -1, boxSet = -1;
+    // Keep the table and the sticky rail in step. Whichever one the user is
+    // actually touching leads; the other just follows, so they never fight.
+    var driver = "box";
+    function setDriver(d) { return function () { driver = d; }; }
+    ["pointerdown", "wheel", "touchstart", "keydown"].forEach(function (ev) {
+      rail.addEventListener(ev, setDriver("rail"), { passive: true });
+      box.addEventListener(ev, setDriver("box"), { passive: true });
+    });
+
     box.addEventListener("scroll", function () {
-      var x = box.scrollLeft;
-      if (Math.abs(x - boxSet) > 1) { railSet = x; rail.scrollLeft = x; }
-      boxSet = -1;
+      if (driver === "box" && rail.scrollLeft !== box.scrollLeft) rail.scrollLeft = box.scrollLeft;
       update();
     }, { passive: true });
 
     rail.addEventListener("scroll", function () {
-      var x = rail.scrollLeft;
-      if (Math.abs(x - railSet) > 1) { boxSet = x; box.scrollLeft = x; }
-      railSet = -1;
+      if (driver === "rail" && box.scrollLeft !== rail.scrollLeft) box.scrollLeft = rail.scrollLeft;
     }, { passive: true });
 
     [btnL, btnR].forEach(function (b) {
       b.addEventListener("click", function () {
+        driver = "box";
         box.scrollBy({ left: Number(b.dataset.d) * box.clientWidth * 0.75, behavior: "smooth" });
       });
     });
