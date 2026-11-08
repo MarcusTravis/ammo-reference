@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wildcat Cartridge Chart</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: field-card reference — short header, filter chips, one wide sortable table with inline MPBR bars */
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8; --brass:#c9a24a; --brass-edge:#8a6a22; --copper:#b8693d; --grid:#c5c9b8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; --brass:#c9a24a; --brass-edge:#e2c27a; --copper:#c9794a; --grid:#3e4535; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; --brass:#c9a24a; --brass-edge:#e2c27a; --copper:#c9794a; --grid:#3e4535; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1280px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.chip{font:600 13px var(--body);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible,.th-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.table-box{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:1400px;font-variant-numeric:tabular-nums}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--bg);position:sticky;top:0;white-space:nowrap}
+.th-btn{all:unset;cursor:pointer;display:inline-flex;gap:4px;align-items:center}
+.th-btn::after{content:"↕";opacity:.4;font-size:11px}
+.th-btn[data-dir="asc"]::after{content:"↑";opacity:1;color:var(--accent)}
+.th-btn[data-dir="desc"]::after{content:"↓";opacity:1;color:var(--accent)}
+.cart{font-family:var(--display);font-weight:700;font-size:22px;line-height:1.05;letter-spacing:.01em;white-space:nowrap}
+.year{display:block;font-size:12px;color:var(--muted);font-family:var(--body);font-weight:500;margin-top:3px}
+.purpose{max-width:38ch;min-width:300px}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.tag{font-size:11px;font-weight:600;padding:2px 7px;border-radius:4px;background:var(--bar-bg);color:var(--olive)}
+.num{font-weight:700;font-size:16px;white-space:nowrap}
+.sub{display:block;font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
+.mpbr{min-width:200px}
+.size{margin-top:8px}
+.size svg{display:block;width:140px;height:auto}
+.size .g{stroke:var(--grid);stroke-width:1;fill:none}
+.size .case{fill:var(--brass);stroke:var(--brass-edge);stroke-width:.8}
+.size .bul{fill:var(--copper);stroke:var(--brass-edge);stroke-width:.8}
+.size .lbl{font:600 9px var(--body);fill:var(--muted)}
+.pbr{display:grid;grid-template-columns:auto auto;gap:2px 12px;margin:8px 0 0;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);font-size:12px;width:max-content}
+.pbr dt{color:var(--muted);text-align:right}
+.pbr dd{margin:0;font-weight:600;text-align:right}
+.bar{height:8px;border-radius:4px;background:var(--bar-bg);margin-top:6px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--olive);border-radius:4px}
+tr.feature td{background:var(--accent-soft)}
+tr.feature .bar span{background:var(--accent)}
+tr.feature .cart{color:var(--accent)}
+.flag{display:inline-block;font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px;margin-top:5px}
+
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+.notes section{min-width:0}
+.notes h2{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.02em;margin:0 0 6px}
+.notes p,.notes li{color:var(--muted);font-size:14px;margin:0}
+.notes ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.count{font-size:13px;color:var(--muted);margin:0 0 10px}
+</style>
+</head>
+<body>
+<a href="index.html" style="display:inline-block;margin:16px 0 0 max(16px,env(safe-area-inset-left,0px));font:600 13px system-ui,sans-serif;color:var(--accent);text-decoration:none">← All charts</a>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Field reference · handloads &amp; custom chambers</span>
+    <h1>Wildcat Cartridge Chart</h1>
+    <p class="lede">Popular wildcats: non-standardized cartridges made by reshaping an existing parent case. What each was built for, a typical handload, speed, energy, practical range, point-blank range and twist. Tap a column header to sort.</p>
+  </header>
+
+  <div class="chips" role="group" aria-label="Filter by use">
+    <button class="chip" id="f-all" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" id="f-varmint" data-f="varmint" aria-pressed="false">Varmint</button>
+    <button class="chip" id="f-hunting" data-f="hunting" aria-pressed="false">Hunting</button>
+    <button class="chip" id="f-target" data-f="target" aria-pressed="false">Target &amp; match</button>
+    <button class="chip" id="f-ackley" data-f="ackley" aria-pressed="false">Ackley Improved</button>
+  </div>
+  <p class="count" id="count"></p>
+
+  <div class="table-box">
+    <table>
+      <thead><tr>
+        <th><button class="th-btn" data-k="name">Cartridge</button></th>
+        <th>Made for</th>
+        <th><button class="th-btn" data-k="grain">Typical load</button></th>
+        <th><button class="th-btn" data-k="fps">Muzzle fps</button></th>
+        <th><button class="th-btn" data-k="energy">Muzzle energy</button></th>
+        <th><button class="th-btn" data-k="range">Practical range</button></th>
+        <th><button class="th-btn" data-k="mpbr">MPBR</button></th>
+        <th><button class="th-btn" data-k="twistN">Twist rate</button></th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="notes">
+    <section>
+      <h2>What makes it a wildcat</h2>
+      <p>A wildcat is a cartridge that isn't standardized by SAAMI or C.I.P. There's usually no factory ammo, so you form brass from the parent case listed under each name, handload it, and have a gunsmith chamber the rifle with a matching reamer. Dimensions and load data can vary from one gunsmith or source to the next.</p>
+    </section>
+    <section>
+      <h2>Ackley Improved</h2>
+      <p>P.O. Ackley's method blows out a parent case with less body taper and a sharp 40° shoulder. You get more powder space, roughly 100–150 fps more, and brass that stretches less. Most Ackley chambers can safely fire the parent's factory ammo, which fire-forms the new brass as you shoot.</p>
+    </section>
+    <section>
+      <h2>How the numbers are figured</h2>
+      <ul>
+        <li>MPBR uses a 4" zone for varmint rounds and a 6" zone for the rest, a scope 1.5" over the bore, sea-level air and a G1 drag model.</li>
+        <li>Velocities and BCs are typical published handload figures as I know them, not looked up. Your load, barrel and brass will differ.</li>
+        <li>Size outlines are simplified sketches from typical chamber dimensions, on a 1" grid.</li>
+        <li>Always start with published load data and work up carefully; wildcats have no factory pressure standard.</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<script>
+const DATA=[
+ {"name": ".17 Ackley Hornet", "yr": "From .22 Hornet", "tags": ["varmint", "ackley"], "purpose": "P.O. Ackley's improved .22 Hornet necked to .17. Very low noise and recoil for prairie dogs, ground squirrels and foxes on small farms.", "grain": 20, "load": "20 gr V-Max", "fps": 3650, "range": 250, "rangeTxt": "250 yd varmint", "mpbr": 265, "near": 36, "far": 231, "minp": 0, "s100": 1.7, "zone": 4},
+ {"name": ".20 Practical", "yr": "From .223 Remington", "tags": ["varmint"], "purpose": ".223 brass necked down to .20 cal. Flat, fast and easy on barrels; a favorite prairie dog and coyote round. Forming brass is a single neck-sizing pass.", "grain": 39, "load": "39 gr Sierra BlitzKing", "fps": 3500, "range": 375, "rangeTxt": "350–400 yd varmint", "mpbr": 277, "near": 36, "far": 239, "minp": 0, "s100": 1.68, "zone": 4},
+ {"name": ".22 BR", "yr": "From 6mm BR Norma", "tags": ["varmint"], "purpose": "6mm BR necked to .22. Benchrest-grade accuracy with .22-250 speed from a small, efficient case. Long-range varmints.", "grain": 55, "load": "55 gr ballistic tip", "fps": 3700, "range": 400, "rangeTxt": "400 yd varmint", "mpbr": 284, "near": 38, "far": 246, "minp": 0, "s100": 1.62, "zone": 4},
+ {"name": ".22-250 Ackley Improved", "yr": "From .22-250 Remington", "tags": ["varmint", "ackley"], "purpose": "Blown-out .22-250 with a sharp 40° shoulder for about 100 fps more and longer brass life. Fires factory .22-250 ammo in a pinch.", "grain": 55, "load": "55 gr V-Max", "fps": 3800, "range": 425, "rangeTxt": "400–450 yd varmint", "mpbr": 292, "near": 39, "far": 252, "minp": 0, "s100": 1.58, "zone": 4},
+ {"name": "6mm Dasher", "yr": "From 6mm BR Norma", "tags": ["target", "varmint"], "purpose": "Fire-formed 6mm BR with a 40° shoulder. Built for benchrest, F-Class and PRS matches out to 1,000 yd: tiny groups, mild recoil. Good varmint round too.", "grain": 105, "load": "105 gr Berger Hybrid", "fps": 2950, "range": 1000, "rangeTxt": "Target to 1,000 yd · 400 yd deer", "mpbr": 296, "near": 27, "far": 252, "minp": 0, "s100": 2.6, "zone": 6},
+ {"name": "6mm-284", "yr": "From .284 Winchester", "tags": ["target", "varmint", "hunting"], "purpose": ".284 Win necked to 6mm. Very fast with heavy 6mm bullets for long-range target and varmint work. Known as a barrel burner.", "grain": 105, "load": "105 gr Berger VLD", "fps": 3200, "range": 1000, "rangeTxt": "Target 1,000+ yd · 400 yd deer", "mpbr": 319, "near": 29, "far": 272, "minp": 0, "s100": 2.43, "zone": 6},
+ {"name": ".257 Roberts Ackley Improved", "yr": "From .257 Roberts", "tags": ["hunting", "ackley"], "purpose": "Classic Ackley conversion that brings the mild .257 Roberts close to .25-06 speed. Deer and pronghorn rifle with light recoil.", "grain": 117, "load": "117 gr soft point", "fps": 2950, "range": 350, "rangeTxt": "350 yd", "mpbr": 286, "near": 27, "far": 245, "minp": 0, "s100": 2.63, "zone": 6},
+ {"name": ".257 Blackbird", "yr": "From Blaser-type magnum case", "tags": ["hunting"], "purpose": "Also called the .250-7 Blaser. Built to match .257 Weatherby speed without belted brass, using heavy high-BC .25 bullets for long-range deer, pronghorn and elk.", "grain": 131, "load": "131 gr Blackjack ACE", "fps": 3400, "range": 600, "rangeTxt": "500–600 yd", "mpbr": 295, "near": 37, "far": 252, "minp": 0, "s100": 1.65, "zone": 4},
+ {"name": ".260 Ackley Improved", "yr": "From .260 Remington", "tags": ["hunting", "target", "ackley"], "purpose": "Improved .260 Rem in a short action. About 100 fps over the parent with heavy 6.5 bullets: deer, sheep and long-range steel.", "grain": 140, "load": "140 gr Berger Hunting VLD", "fps": 2850, "range": 475, "rangeTxt": "450–500 yd", "mpbr": 288, "near": 26, "far": 245, "minp": 0, "s100": 2.65, "zone": 6},
+ {"name": "6.5 SAUM", "yr": "From 7mm Remington SAUM", "tags": ["target", "hunting"], "purpose": "Short Action Ultra Mag necked to 6.5. Popular in PRS and long-range hunting: magnum-class speed from a short action.", "grain": 140, "load": "140 gr ELD Match", "fps": 2950, "range": 500, "rangeTxt": "Target 1,000 yd · 500 yd deer", "mpbr": 297, "near": 27, "far": 253, "minp": 0, "s100": 2.59, "zone": 6},
+ {"name": ".284 Shehane", "yr": "From .284 Winchester", "tags": ["target", "hunting"], "purpose": "Slightly improved, longer-throated .284 Win. A top F-Class Open cartridge for 1,000 yd with heavy 7mm bullets; hits elk hard too.", "grain": 180, "load": "180 gr Berger Hybrid", "fps": 2850, "range": 1000, "rangeTxt": "F-Class to 1,000 yd · 500 yd elk", "mpbr": 290, "near": 26, "far": 247, "minp": 0, "s100": 2.64, "zone": 6},
+ {"name": ".30 BR", "yr": "From 6mm BR Norma", "tags": ["target", "hunting"], "purpose": "6mm BR necked up to .30. The dominant benchrest-for-score round at 100–200 yd. Also a handy short-range hog and deer load.", "grain": 118, "load": "118 gr flat base", "fps": 2950, "range": 200, "rangeTxt": "100–200 yd score · 200 yd deer/hog", "mpbr": 282, "near": 26, "far": 241, "minp": 0, "s100": 2.64, "zone": 6},
+ {"name": ".30-30 Ackley Improved", "yr": "From .30-30 Winchester", "tags": ["hunting", "ackley"], "purpose": "Straighter, sharper-shouldered .30-30 for lever guns. About 100 fps more and longer brass life; fires factory .30-30 ammo too.", "grain": 150, "load": "150 gr flat nose", "fps": 2500, "range": 200, "rangeTxt": "200 yd", "mpbr": 222, "near": 22, "far": 191, "minp": 0, "s100": 2.95, "zone": 6},
+ {"name": ".30-06 Ackley Improved", "yr": "From .30-06 Springfield", "tags": ["hunting", "ackley"], "purpose": "Ackley's improved .30-06: steeper 40° shoulder, more powder space, about 100–150 fps gain. Elk, moose and anything the '06 does, a bit farther.", "grain": 180, "load": "180 gr soft point", "fps": 2850, "range": 450, "rangeTxt": "450 yd", "mpbr": 283, "near": 26, "far": 241, "minp": 0, "s100": 2.67, "zone": 6}
+];
+DATA.forEach(d=>{d.zone=d.zone||6;d.minp=d.minp||0;});
+DATA.forEach(d=>d.energy=Math.round(d.grain*d.fps*d.fps/450400));
+const TWIST={".17 Ackley Hornet": ["1:9", ""], ".20 Practical": ["1:9", "1:8 for 40+ gr"], ".22 BR": ["1:12", "1:8 for 70+ gr"], ".22-250 Ackley Improved": ["1:14", "1:8 for 70+ gr"], "6mm Dasher": ["1:8", ""], "6mm-284": ["1:8", ""], ".257 Roberts Ackley Improved": ["1:10", ""], ".257 Blackbird": ["1:7", "for 131+ gr bullets"], ".260 Ackley Improved": ["1:8", ""], "6.5 SAUM": ["1:8", ""], ".284 Shehane": ["1:9", ""], ".30 BR": ["1:17", ""], ".30-30 Ackley Improved": ["1:12", ""], ".30-06 Ackley Improved": ["1:10", ""]};
+DATA.forEach(d=>{const t=TWIST[d.name]||["",""];d.twist=t[0];d.twistNote=t[1];d.twistN=parseFloat(t[0].split(':')[1])||0;});
+
+// [rimType, rimDia, baseDia, shoulderDia, neckDia, bulletDia, caseLen, shoulderX, neckX, COAL, nose] in inches
+const DIM={".17 Ackley Hornet": ["rimmed", 0.35, 0.298, 0.294, 0.199, 0.172, 1.35, 1.17, 1.2, 1.75, "spitzer"], ".20 Practical": ["rimless", 0.378, 0.377, 0.354, 0.232, 0.204, 1.76, 1.438, 1.564, 2.26, "spitzer"], ".22 BR": ["rimless", 0.473, 0.4703, 0.46, 0.2547, 0.224, 1.52, 1.24, 1.33, 2.15, "spitzer"], ".22-250 Ackley Improved": ["rimless", 0.473, 0.4728, 0.462, 0.2546, 0.224, 1.912, 1.56, 1.67, 2.35, "spitzer"], "6mm Dasher": ["rimless", 0.473, 0.4703, 0.4655, 0.2687, 0.243, 1.54, 1.33, 1.4, 2.35, "spitzer"], "6mm-284": ["rebated", 0.473, 0.5, 0.4748, 0.274, 0.243, 2.17, 1.78, 1.9, 2.8, "spitzer"], ".257 Roberts Ackley Improved": ["rimless", 0.473, 0.4703, 0.465, 0.29, 0.257, 2.233, 1.72, 1.9, 2.775, "spitzer"], ".257 Blackbird": ["rimless", 0.535, 0.532, 0.51, 0.286, 0.257, 2.5, 2.0, 2.13, 3.34, "spitzer"], ".260 Ackley Improved": ["rimless", 0.473, 0.4709, 0.4655, 0.296, 0.264, 2.035, 1.6, 1.77, 2.8, "spitzer"], "6.5 SAUM": ["rebated", 0.534, 0.55, 0.538, 0.296, 0.264, 2.035, 1.6, 1.72, 2.85, "spitzer"], ".284 Shehane": ["rebated", 0.473, 0.5, 0.4925, 0.3146, 0.284, 2.17, 1.78, 1.9, 3.0, "spitzer"], ".30 BR": ["rimless", 0.473, 0.4703, 0.46, 0.33, 0.308, 1.52, 1.24, 1.33, 2.15, "spitzer"], ".30-30 Ackley Improved": ["rimmed", 0.506, 0.422, 0.418, 0.33, 0.308, 2.039, 1.53, 1.65, 2.55, "flat"], ".30-06 Ackley Improved": ["rimless", 0.473, 0.4709, 0.464, 0.3397, 0.308, 2.494, 2.06, 2.17, 3.34, "spitzer"]};
+function drawRound(name){
+  const d=DIM[name]; if(!d) return "";
+  const [rt,rim,base,sh,nk,bd,cl,shx,nkx,coal,nose]=d;
+  const S=34,W=4*S,H=S,cy=H/2,P=1;
+  const X=x=>(P+x*S).toFixed(1), Y=r=>(cy-r*S).toFixed(1), Yb=r=>(cy+r*S).toFixed(1);
+  let pts=[];
+  if(rt==="rimmed"){pts=[[0,rim/2],[.06,rim/2],[.06,base/2]];}
+  else if(rt==="belted"){pts=[[0,rim/2],[.05,rim/2],[.06,rim/2*.82],[.10,rim/2*.82],[.13,rim/2],[.22,rim/2],[.22,base/2]];}
+  else if(rt==="rebated"){pts=[[0,rim/2],[.05,rim/2],[.07,rim/2*.85],[.11,rim/2*.85],[.15,base/2]];}
+  else {pts=[[0,rim/2],[.05,rim/2],[.06,rim/2*.82],[.10,rim/2*.82],[.14,base/2]];}
+  pts.push([shx,sh/2]);
+  if(nkx>shx) pts.push([nkx,nk/2]);
+  pts.push([cl,nk/2]);
+  const up=pts.map(p=>X(p[0])+","+Y(p[1]));
+  const dn=[...pts].reverse().map(p=>X(p[0])+","+Yb(p[1]));
+  const casePath="M"+X(0)+","+Yb(pts[0][1])+" L"+up.join(" L")+" L"+dn.join(" L")+"Z";
+  const L=coal-cl, r=bd/2;
+  const cyl= nose==="spitzer"?.12:nose==="round"?.3:.4;
+  const x1=cl+L*cyl, tip=nose==="flat"?r*.45:nose==="round"?r*.2:r*.06;
+  const cx=x1+(coal-x1)*(nose==="spitzer"?.55:.8);
+  const bul=`M${X(cl-.05)},${Y(r)} L${X(x1)},${Y(r)} Q${X(cx)},${Y(r)} ${X(coal)},${Y(tip)} L${X(coal)},${Yb(tip)} Q${X(cx)},${Yb(r)} ${X(x1)},${Yb(r)} L${X(cl-.05)},${Yb(r)}Z`;
+  let g=`<rect class="g" x="${P}" y="${P/2}" width="${W}" height="${H}"/>`;
+  for(let i=1;i<4;i++) g+=`<line class="g" x1="${X(i)}" y1="${P/2}" x2="${X(i)}" y2="${H+P/2}"/>`;
+  return `<svg viewBox="0 0 ${W+2} ${H+12}" role="img" aria-label="${name} outline, ${coal}&quot; long"><g transform="translate(0,0)">${g}<path class="bul" d="${bul}"/><path class="case" d="${casePath}"/></g><text class="lbl" x="${P}" y="${H+11}">${coal.toFixed(2)}&quot; overall</text></svg>`;
+}
+const LABEL={varmint:"Varmint",hunting:"Hunting",target:"Target/match",ackley:"Ackley Improved"};
+const MAX=350;
+let filter="all",sortKey=null,sortDir="asc";
+const fmt=n=>n.toLocaleString("en-US");
+function render(){
+  let rows=DATA.filter(d=>filter==="all"||d.tags.includes(filter));
+  if(sortKey){rows=[...rows].sort((a,b)=>{const x=a[sortKey],y=b[sortKey];const c=typeof x==="string"?x.localeCompare(y):x-y;return sortDir==="asc"?c:-c});}
+  document.getElementById("rows").innerHTML=rows.map(d=>`
+   <tr class="${d.feature?"feature":""}">
+    <td><span class="cart">${d.name}</span><span class="year">${/^\d/.test(d.yr)?"Introduced "+d.yr:d.yr}</span><div class="size">${drawRound(d.name)}</div></td>
+    <td class="purpose">${d.purpose}<div class="tags">${d.tags.map(t=>`<span class="tag">${LABEL[t]}</span>`).join("")}</div></td>
+    <td><span class="num">${d.grain} gr</span><span class="sub">${d.load.replace(/^\d+ gr /,"")}</span>${d.sub2?`<span class="sub">Alt: ${d.sub2}</span>`:""}</td>
+    <td><span class="num">${fmt(d.fps)}</span><span class="sub">ft/s</span></td>
+    <td><span class="num">${fmt(d.energy)}</span><span class="sub">ft-lbs</span>${d.name===".350 Legend"?'<span class="sub">Alt 180 gr: 1,763</span>':""}</td>
+    <td><span class="num">${d.rangeTxt}</span></td>
+    <td class="mpbr"><span class="num">${d.mpbr} yd</span><span class="sub">${d.zone}" vital zone</span><div class="bar" aria-hidden="true"><span style="width:${Math.round(d.mpbr/MAX*100)}%"></span></div>
+     <dl class="pbr">
+      <dt>Near zero</dt><dd>${d.near} yd</dd>
+      <dt>Far zero</dt><dd>${d.far} yd</dd>
+      <dt>Min PBR</dt><dd>${d.minp} yd</dd>
+      <dt>Max PBR</dt><dd>${d.mpbr} yd</dd>
+      <dt>Sight-in @100</dt><dd>${Math.abs(d.s100).toFixed(2)}" ${d.s100<0?"low":"high"}</dd>
+     </dl>${d.alt?`<span class="num" style="display:block;margin-top:10px">${d.alt.mpbr} yd</span><span class="sub">${d.alt.zone}" vital zone</span><dl class="pbr"><dt>Near zero</dt><dd>${d.alt.near} yd</dd><dt>Far zero</dt><dd>${d.alt.far} yd</dd><dt>Min PBR</dt><dd>${d.alt.minp} yd</dd><dt>Max PBR</dt><dd>${d.alt.mpbr} yd</dd><dt>Sight-in @100</dt><dd>${d.alt.s100.toFixed(2)}" high</dd></dl>`:""}${d.pbrNote?`<span class="sub" style="margin-top:4px">${d.pbrNote}</span>`:""}${d.name===".350 Legend"?'<span class="sub" style="margin-top:4px">180 gr: zero 19/169 · max 197 · 2.99" high</span>':""}</td>
+    <td><span class="num">${d.twist}</span>${d.twistNote?`<span class="sub">${d.twistNote}</span>`:""}</td>
+   </tr>`).join("");
+  document.getElementById("count").textContent=`Showing ${rows.length} of ${DATA.length} cartridges`;
+}
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+  filter=b.dataset.f;document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));render();}));
+document.querySelectorAll(".th-btn").forEach(b=>b.addEventListener("click",()=>{
+  const k=b.dataset.k;sortDir=(sortKey===k&&sortDir==="asc")?"desc":"asc";sortKey=k;
+  document.querySelectorAll(".th-btn").forEach(x=>x.removeAttribute("data-dir"));b.dataset.dir=sortDir;render();}));
+render();
+</script>
+
+</body>
+</html>

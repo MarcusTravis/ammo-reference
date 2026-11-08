@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ammo Reference Library</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8; --brass:#c9a24a; --brass-edge:#8a6a22; --copper:#b8693d; --grid:#c5c9b8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; --brass:#c9a24a; --brass-edge:#e2c27a; --copper:#c9794a; --grid:#3e4535; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; --brass:#c9a24a; --brass-edge:#e2c27a; --copper:#c9794a; --grid:#3e4535; color-scheme:dark}
+
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1100px;margin:0 auto;padding-block:32px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(36px,6vw,58px);line-height:1;margin:6px 0 8px;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:62ch;margin:0 0 28px}
+.grp{margin-top:28px}
+.grp h2{font-family:var(--display);font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.03em;margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:inherit;text-decoration:none;transition:border-color .15s,transform .15s;min-width:0}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cnt{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.nm{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.05}
+.ds{color:var(--muted);font-size:14px;flex:1}
+.go{font-weight:600;font-size:13px;color:var(--accent);margin-top:4px}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <span class="eyebrow">Field reference library</span>
+  <h1>Ammo Reference Library</h1>
+  <p class="lede">All 14 cartridge, caliber, rifle and scope charts in one place. </p>
+  <section class="grp"><h2>Rifles</h2><div class="grid"><a class="card" href="hunting.html"><span class="cnt">33 rounds</span><span class="nm">Hunting Rifle Cartridges</span><span class="ds">Common hunting rounds from .22 LR to .375 H&H, with point-blank tables, twist and outlines.</span><span class="go">Open chart →</span></a><a class="card" href="precision.html"><span class="cnt">13 rounds</span><span class="nm">Precision Rifle</span><span class="ds">Drop, wind and speed at 500–1,000 yd, supersonic range and barrel life for match and ELR rounds.</span><span class="go">Open chart →</span></a><a class="card" href="big-bore.html"><span class="cnt">13 rounds</span><span class="nm">Big Bore</span><span class="ds">Dangerous-game rounds for Africa, Alaska and big bears, bolt and double rifles.</span><span class="go">Open chart →</span></a><a class="card" href="wildcats.html"><span class="cnt">14 rounds</span><span class="nm">Wildcats</span><span class="ds">Non-standard handload rounds with their parent cases, from .17 Ackley Hornet to .30-06 AI.</span><span class="go">Open chart →</span></a><a class="card" href="military-surplus.html"><span class="cnt">18 rounds</span><span class="nm">Military Surplus</span><span class="ds">Service cartridges from 1873 to today, the rifles that fired them and their hunting use.</span><span class="go">Open chart →</span></a><a class="card" href="ar-calibers.html"><span class="cnt">20 calibers</span><span class="nm">AR Caliber Guide</span><span class="ds">AR-15 and AR-10 calibers and which barrel, bolt and magazine changes each needs.</span><span class="go">Open chart →</span></a><a class="card" href="rimfire.html"><span class="cnt">7 rounds</span><span class="nm">Rimfire</span><span class="ds">.22 Short to .17 WSM for small game, pests and varmints.</span><span class="go">Open chart →</span></a></div></section><section class="grp"><h2>Rifles &amp; optics</h2><div class="grid"><a class="card" href="rifle-models.html"><span class="cnt">23 rifles</span><span class="nm">Popular Rifle Models</span><span class="ds">Price ranges, popularity and accuracy ratings, weight, trigger and pros and cons for the most popular factory rifles.</span><span class="go">Open chart →</span></a><a class="card" href="scopes.html"><span class="cnt">25 scopes</span><span class="nm">Popular Rifle Scopes</span><span class="ds">Price, popularity, glass and tracking ratings, focal plane, turrets and warranty for hunting, long-range and AR scopes.</span><span class="go">Open chart →</span></a><a class="card" href="thermal-scopes.html"><span class="cnt">20 thermals</span><span class="nm">Thermal Scopes</span><span class="ds">Price, popularity, image and durability ratings, sensor, range and battery for hog and predator thermals.</span><span class="go">Open chart →</span></a></div></section><section class="grp"><h2>Handguns &amp; shotguns</h2><div class="grid"><a class="card" href="handguns.html"><span class="cnt">17 rounds</span><span class="nm">Handgun Cartridges</span><span class="ds">Pistol and revolver rounds with iron-sight point-blank range and barrel lengths.</span><span class="go">Open chart →</span></a><a class="card" href="shotshells.html"><span class="cnt">17 loads</span><span class="nm">Shotshells &amp; Slugs</span><span class="ds">Every gauge from .410 to 10 ga, slugs, buckshot, turkey and snake shot, with chokes.</span><span class="go">Open chart →</span></a></div></section><section class="grp"><h2>Black powder &amp; air</h2><div class="grid"><a class="card" href="muzzleloaders.html"><span class="cnt">12 setups</span><span class="nm">Muzzleloaders</span><span class="ds">Traditional and inline calibers with powder charges, projectiles and ranges.</span><span class="go">Open chart →</span></a><a class="card" href="airguns.html"><span class="cnt">9 calibers</span><span class="nm">Airguns</span><span class="ds">BBs to big-bore slugs for plinking, pests, small game and deer.</span><span class="go">Open chart →</span></a></div></section>
+</div>
+
+</body>
+</html>
