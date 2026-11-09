@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Revolvers: Shooting Down</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: field-card reference — short header, filter chips, a grid of tip cards */
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.chip{font:600 13px var(--body);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-size:13px;color:var(--muted);margin:0 0 12px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.tip{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.tip.pro{border-color:var(--accent);box-shadow:inset 4px 0 0 var(--accent)}
+.top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.flag{font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px}
+.tip h2{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.1;margin:0;letter-spacing:.01em}
+.tip p{margin:0;color:var(--fg);font-size:14.5px}
+.ex{margin-top:auto;padding:8px 10px;border-radius:6px;background:var(--bar-bg);font-size:13px;color:var(--muted)}
+.ex b{color:var(--fg);font-weight:600}
+
+a.tip{color:inherit;text-decoration:none;transition:transform .15s,border-color .15s}
+a.tip:hover{border-color:var(--accent);transform:translateY(-2px)}
+a.tip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.more{font-weight:700;font-size:14px;color:var(--accent);padding-top:2px}
+a.tip:hover .more{text-decoration:underline}
+@media (prefers-reduced-motion:reduce){a.tip{transition:none}a.tip:hover{transform:none}}
+.note{margin-top:28px;color:var(--muted);font-size:13.5px;max-width:80ch}
+
+.rvs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.rv{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.lbl,.lbl2{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.lbl2{margin-top:6px}
+.rv h2{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.05;margin:0;color:var(--accent)}
+.rds{display:flex;flex-wrap:wrap;gap:6px}
+.ok{font-size:14px;font-weight:700;padding:4px 10px;border-radius:5px;background:color-mix(in srgb,var(--olive) 22%,var(--surface));color:var(--fg);border:1px solid color-mix(in srgb,var(--olive) 55%,transparent)}
+.rv p{margin:6px 0 0;font-size:14px;color:var(--muted)}
+.pro{display:flex;gap:14px;align-items:flex-start;margin:0 0 22px;padding:14px 16px;border:1px solid var(--accent);border-left-width:6px;border-radius:10px;background:var(--surface);font-size:15px}
+.pro b{display:block;font-family:var(--display);font-size:21px;font-weight:700;color:var(--accent);margin-bottom:2px}
+.pro .ic{font-size:26px;line-height:1;color:var(--accent)}
+.danger{--danger:#c92a2a;margin-top:32px;padding:22px 24px;border:2px solid var(--danger);border-left-width:10px;border-radius:12px;background:color-mix(in srgb,var(--danger) 12%,var(--surface))}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .danger{--danger:#ff5c5c}}
+:root[data-theme="dark"] .danger{--danger:#ff5c5c}
+.danger h2{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,36px);line-height:1.05;text-transform:uppercase;letter-spacing:.02em;margin:0 0 14px;color:var(--danger)}
+.danger h2 span{font-size:40px}
+.danger ul{margin:0;padding-left:22px;display:grid;gap:12px}
+.danger li{font-size:16px;line-height:1.45;color:var(--fg)}
+.danger li::marker{color:var(--danger)}
+.danger li b{display:block;font-size:17.5px;color:var(--danger)}
+.danger .must{margin:16px 0 0;font-size:19px;font-weight:800;color:var(--danger)}
+</style>
+</head>
+<body>
+<a href="tips.html" style="display:inline-block;margin:16px 0 0 max(16px,env(safe-area-inset-left,0px));font:600 13px system-ui,sans-serif;color:var(--accent);text-decoration:none">← All tips</a>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Tips · will it fit?</span>
+    <h1>Revolvers: Shooting Down</h1>
+    <p class="lede">Many magnum revolvers can safely fire their shorter, milder parent rounds, which makes cheaper, softer practice ammo. Find the caliber stamped on your revolver's barrel to see what else it can shoot. It never works the other way.</p>
+  </header>
+  <div class="pro"><span class="ic" aria-hidden="true">★</span><div><b>Pro tip: clean before you go back up</b>Shooting a lot of the shorter rounds leaves a ring of carbon and lead in the front of each chamber. Scrub it out before loading magnums again, or the longer cases can stick, chamber hard or build extra pressure.</div></div>
+  <p class="count">8 revolver calibers, most common first</p>
+  <div class="rvs">
+    <article class="rv"><span class="lbl">Revolver stamped</span><h2>.357 Magnum</h2><span class="lbl2">Can also fire</span><div class="rds"><span class="ok">✔ .38 Special</span><span class="ok">✔ .38 Special +P</span></div><p>The classic. .38 Special is cheaper, softer and quieter, so it's the go-to practice and plinking round.</p></article>
+    <article class="rv"><span class="lbl">Revolver stamped</span><h2>.44 Magnum</h2><span class="lbl2">Can also fire</span><div class="rds"><span class="ok">✔ .44 Special</span><span class="ok">✔ .44 Russian</span></div><p>.44 Special turns a hard-kicking .44 Mag into a pleasant range gun.</p></article>
+    <article class="rv"><span class="lbl">Revolver stamped</span><h2>.327 Federal Magnum</h2><span class="lbl2">Can also fire</span><div class="rds"><span class="ok">✔ .32 H&amp;R Magnum</span><span class="ok">✔ .32 S&amp;W Long</span><span class="ok">✔ .32 S&amp;W</span></div><p>One revolver, four .32 rounds, from a hot magnum down to a mild short round.</p></article>
+    <article class="rv"><span class="lbl">Revolver stamped</span><h2>.32 H&amp;R Magnum</h2><span class="lbl2">Can also fire</span><div class="rds"><span class="ok">✔ .32 S&amp;W Long</span><span class="ok">✔ .32 S&amp;W</span></div><p>Light-recoil .32s for small hands, small game and practice.</p></article>
+    <article class="rv"><span class="lbl">Revolver stamped</span><h2>.41 Remington Magnum</h2><span class="lbl2">Can also fire</span><div class="rds"><span class="ok">✔ .41 Special</span></div><p>.41 Special exists but is hard to find. Mostly a handloader's option.</p></article>
+    <article class="rv"><span class="lbl">Revolver stamped</span><h2>.454 Casull</h2><span class="lbl2">Can also fire</span><div class="rds"><span class="ok">✔ .45 Colt</span></div><p>.45 Colt gives you a big-bore range round without the .454's punishing recoil.</p></article>
+    <article class="rv"><span class="lbl">Revolver stamped</span><h2>.460 S&amp;W Magnum</h2><span class="lbl2">Can also fire</span><div class="rds"><span class="ok">✔ .454 Casull</span><span class="ok">✔ .45 Colt</span></div><p>Shoots all three, from mild .45 Colt up to the full .460.</p></article>
+    <article class="rv"><span class="lbl">Revolver stamped</span><h2>.500 S&amp;W Magnum</h2><span class="lbl2">Can also fire</span><div class="rds"><span class="ok">✔ .500 S&amp;W Special</span></div><p>The shorter Special is far easier to shoot for practice.</p></article>
+  </div>
+  <div class="danger" role="alert">
+    <h2><span aria-hidden="true">⚠</span>Never do these</h2>
+    <ul>
+      <li><b>Never fire a longer, stronger round in a gun stamped for the shorter one</b>A .357 Magnum in a .38 Special revolver, or a .44 Magnum in a .44 Special, can blow the cylinder apart. The longer case is there on purpose to stop it fitting.</li>
+      <li><b>.454 Casull or .460 in a .45 Colt revolver</b>Their longer cases are meant to keep them out, so never force one. They run at several times the pressure of .45 Colt.</li>
+      <li><b>.38 Special +P in an old or light .38</b>Only shoot +P if the revolver&#x27;s maker says it&#x27;s rated for it.</li>
+      <li><b>.22 LR in a .22 Magnum (WMR) cylinder</b>The thinner .22 LR case can split or bulge. Convertible revolvers ship with a separate .22 LR cylinder: swap cylinders, don&#x27;t mix.</li>
+      <li><b>Rimless pistol rounds in a revolver without the matching cylinder</b>9mm in a .357, or .45 ACP in a .45 Colt, only works with the maker&#x27;s dedicated cylinder (and often moon clips). Without it, don&#x27;t.</li>
+    </ul>
+    <p class="must">Check your revolver's manual. If the maker doesn't list a round, don't shoot it.</p>
+  </div>
+  <p class="note">This applies to revolvers. Lever-action rifles chambered in .357 or .44 Magnum often fire the Special too, but feeding varies by rifle, so check the manual. General guidance, not load data.</p>
+</div>
+</body>
+</html>
