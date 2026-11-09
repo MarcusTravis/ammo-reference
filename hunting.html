@@ -85,7 +85,7 @@ tr.feature .cart{color:var(--accent)}
   <header>
     <span class="eyebrow">Field reference · factory loads</span>
     <h1>Hunting Rifle Cartridge Chart</h1>
-    <p class="lede">What each common cartridge was built to hunt, typical muzzle velocity, a realistic ethical range for an average hunter, and maximum point-blank range on a deer-size target. Tap a column header to sort.</p>
+    <p class="lede">What each common cartridge was built to hunt, typical muzzle velocity, a realistic ethical range for an average hunter, and maximum point-blank range on a deer-size target. Speed, energy and BC are typical figures for the listed load; real numbers vary by brand, lot and barrel length. Tap a column header to sort.</p>
   </header>
 
   <div class="chips" role="group" aria-label="Filter by game">
@@ -105,11 +105,12 @@ tr.feature .cart{color:var(--accent)}
         <th><button class="th-btn" data-k="name">Cartridge</button></th>
         <th>Made to hunt</th>
         <th><button class="th-btn" data-k="grain">Typical load</button></th>
-        <th><button class="th-btn" data-k="fps">Muzzle fps</button></th>
-        <th><button class="th-btn" data-k="energy">Muzzle energy</button></th>
+        <th><button class="th-btn" data-k="fps">Typical muzzle fps</button></th>
+        <th><button class="th-btn" data-k="energy">Typical muzzle energy</button></th>
+        <th><button class="th-btn" data-k="bc">Typical BC (G1)</button></th>
+        <th><button class="th-btn" data-k="twistN">Twist rate for typical load</button></th>
         <th><button class="th-btn" data-k="range">Effective ethical range</button></th>
         <th><button class="th-btn" data-k="mpbr">MPBR</button></th>
-        <th><button class="th-btn" data-k="twistN">Twist rate</button></th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -176,6 +177,8 @@ const DATA=[
 DATA.forEach(d=>{d.zone=d.zone||6;d.minp=d.minp||0;});
 DATA.forEach(d=>d.energy=Math.round(d.grain*d.fps*d.fps/450400));
 const TWIST={'.22 Long Rifle': ['1:16', ''], '.22 LR Subsonic': ['1:16', ''], '.223 Remington': ['1:9', '1:7 for 70+ gr'], '.22-250 Remington': ['1:14', '1:8 for 70+ gr'], '22 ARC': ['1:7', ''], '.243 Winchester': ['1:10', '1:8 for 105+ gr'], '6mm Creedmoor': ['1:7.5', ''], '6mm ARC': ['1:7.5', ''], '6mm GT': ['1:7.5', ''], '6mm Remington': ['1:9', ''], '.25-06 Remington': ['1:10', '1:8 for 115+ gr'], '.25 Creedmoor': ['1:7.5', ''], '.25 PRC': ['1:7.5', ''], '.257 Blackbird': ['1:7', 'for 131+ gr bullets'], '6.5 Creedmoor': ['1:8', ''], '6.5 Creedmoor +Peak': ['1:8', '1:7.5 ideal for 153 gr'], '6.5 PRC': ['1:8', ''], '.270 Winchester': ['1:10', '1:8 for 150+ gr'], '7mm-08 Remington': ['1:9.5', ''], '7mm Remington Mag': ['1:9.5', '1:8 for 175+ gr'], '7mm PRC': ['1:8', ''], '.308 Winchester': ['1:10', ''], '.30-06 Springfield': ['1:10', ''], '.300 Winchester Mag': ['1:10', '1:9 for 200+ gr'], '.300 PRC': ['1:8.5', '1:8 for 225+ gr'], '.338 Winchester Mag': ['1:10', ''], '.375 H&H Magnum': ['1:12', ''], '.30-30 Winchester': ['1:12', ''], '.300 Blackout': ['1:8', ''], '.300 Blackout Subsonic': ['1:7', '1:8 works for most'], '.350 Legend': ['1:16', ''], '.450 Bushmaster': ['1:24', ''], '.45-70 Government': ['1:20', '1:18 to 1:22']};
+const BC={".22 Long Rifle":[0.12,1],".22 LR Subsonic":[0.11,1],".223 Remington":[0.24,1],".22-250 Remington":[0.255,0],"22 ARC":[0.545,0],".243 Winchester":[0.38,1],"6mm Creedmoor":[0.512,0],"6mm ARC":[0.512,0],"6mm GT":[0.557,0],"6mm Remington":[0.38,1],".25-06 Remington":[0.390,0],".25 Creedmoor":[0.633,0],".25 PRC":[0.64,1],".257 Blackbird":[0.66,1],"6.5 Creedmoor":[0.623,0],"6.5 Creedmoor +Peak":[0.70,1],"6.5 PRC":[0.623,0],".270 Winchester":[0.40,1],"7mm-08 Remington":[0.39,1],"7mm Remington Mag":[0.40,1],"7mm PRC":[0.689,0],".308 Winchester":[0.33,1],".30-06 Springfield":[0.40,1],".300 Winchester Mag":[0.40,1],".300 PRC":[0.663,0],".338 Winchester Mag":[0.40,1],".375 H&H Magnum":[0.30,1],".30-30 Winchester":[0.19,1],".300 Blackout":[0.30,1],".300 Blackout Subsonic":[0.60,1],".350 Legend":[0.223,0],".450 Bushmaster":[0.210,0],".45-70 Government":[0.20,1]};
+DATA.forEach(d=>{const b=BC[d.name]||[0,1];d.bc=b[0];d.bcApprox=!!b[1];});
 DATA.forEach(d=>{const t=TWIST[d.name]||["",""];d.twist=t[0];d.twistNote=t[1];d.twistN=parseFloat(t[0].split(':')[1])||0;});
 
 // [rimType, rimDia, baseDia, shoulderDia, neckDia, bulletDia, caseLen, shoulderX, neckX, COAL, nose] in inches
@@ -253,6 +256,8 @@ function render(){
     <td><span class="num">${d.grain} gr</span><span class="sub">${d.load.replace(/^\d+ gr /,"")}</span>${d.sub2?`<span class="sub">Alt: ${d.sub2}</span>`:""}</td>
     <td><span class="num">${fmt(d.fps)}</span><span class="sub">ft/s</span></td>
     <td><span class="num">${fmt(d.energy)}</span><span class="sub">ft-lbs</span>${d.name===".350 Legend"?'<span class="sub">Alt 180 gr: 1,763</span>':""}</td>
+    <td><span class="num">${d.bcApprox?"\u2248 "+d.bc.toFixed(2):d.bc.toFixed(3)}</span><span class="sub">${d.bcApprox?"typical, varies by brand":"maker's published G1"}</span></td>
+    <td><span class="num">${d.twist}</span>${d.twistNote?`<span class="sub">${d.twistNote}</span>`:""}</td>
     <td><span class="num">${d.rangeTxt}</span></td>
     <td class="mpbr"><span class="num">${d.mpbr} yd</span><span class="sub">${d.zone}" vital zone</span><div class="bar" aria-hidden="true"><span style="width:${Math.round(d.mpbr/MAX*100)}%"></span></div>
      <dl class="pbr">
@@ -262,7 +267,6 @@ function render(){
       <dt>Max PBR</dt><dd>${d.mpbr} yd</dd>
       <dt>Sight-in @100</dt><dd>${Math.abs(d.s100).toFixed(2)}" ${d.s100<0?"low":"high"}</dd>
      </dl>${d.alt?`<span class="num" style="display:block;margin-top:10px">${d.alt.mpbr} yd</span><span class="sub">${d.alt.zone}" vital zone</span><dl class="pbr"><dt>Near zero</dt><dd>${d.alt.near} yd</dd><dt>Far zero</dt><dd>${d.alt.far} yd</dd><dt>Min PBR</dt><dd>${d.alt.minp} yd</dd><dt>Max PBR</dt><dd>${d.alt.mpbr} yd</dd><dt>Sight-in @100</dt><dd>${d.alt.s100.toFixed(2)}" high</dd></dl>`:""}${d.pbrNote?`<span class="sub" style="margin-top:4px">${d.pbrNote}</span>`:""}${d.name===".350 Legend"?'<span class="sub" style="margin-top:4px">180 gr: zero 19/169 · max 197 · 2.99" high</span>':""}</td>
-    <td><span class="num">${d.twist}</span>${d.twistNote?`<span class="sub">${d.twistNote}</span>`:""}</td>
    </tr>`).join("");
   document.getElementById("count").textContent=`Showing ${rows.length} of ${DATA.length} cartridges`;
 }
