@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Same Bullet, Different Name</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: field-card reference — short header, filter chips, a grid of tip cards */
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.chip{font:600 13px var(--body);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-size:13px;color:var(--muted);margin:0 0 12px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.tip{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.tip.pro{border-color:var(--accent);box-shadow:inset 4px 0 0 var(--accent)}
+.top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.flag{font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px}
+.tip h2{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.1;margin:0;letter-spacing:.01em}
+.tip p{margin:0;color:var(--fg);font-size:14.5px}
+.ex{margin-top:auto;padding:8px 10px;border-radius:6px;background:var(--bar-bg);font-size:13px;color:var(--muted)}
+.ex b{color:var(--fg);font-weight:600}
+
+.note{margin-top:28px;color:var(--muted);font-size:13.5px;max-width:80ch}
+
+.groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.grp-card{display:flex;flex-direction:column;gap:10px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.dia{display:flex;align-items:baseline;gap:10px}
+.dia .in{font-family:var(--display);font-weight:800;font-size:34px;line-height:1;color:var(--accent)}
+.dia .mm{font-size:13px;font-weight:600;color:var(--muted)}
+.rds{display:flex;flex-wrap:wrap;gap:6px}
+.rd{font-size:13.5px;font-weight:600;padding:3px 9px;border-radius:5px;background:var(--bar-bg);color:var(--fg)}
+.gotcha{margin:0;padding-left:18px;font-size:13.5px;color:var(--muted);display:grid;gap:2px}
+.gotcha li::marker{color:var(--accent)}
+</style>
+</head>
+<body>
+<a href="tips.html" style="display:inline-block;margin:16px 0 0 max(16px,env(safe-area-inset-left,0px));font:600 13px system-ui,sans-serif;color:var(--accent);text-decoration:none">← All tips</a>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Tips · reading the name</span>
+    <h1>Same Bullet, Different Name</h1>
+    <p class="lede">Cartridge names don't reliably tell you the bullet size. Here are common rounds grouped by the bullet they actually shoot, with the names that trip people up called out.</p>
+  </header>
+  <p class="count">18 bullet diameters, smallest first</p>
+  <div class="groups">
+    <article class="grp-card"><div class="dia"><span class="in">.172"</span><span class="mm">4.4 mm</span></div><div class="rds"><span class="rd">.17 HMR</span><span class="rd">.17 WSM</span><span class="rd">.17 Hornet</span><span class="rd">.17 Rem</span></div></article>
+    <article class="grp-card"><div class="dia"><span class="in">.224"</span><span class="mm">5.7 mm</span></div><div class="rds"><span class="rd">.223 Rem</span><span class="rd">5.56 NATO</span><span class="rd">.22-250</span><span class="rd">.220 Swift</span><span class="rd">.22 Hornet</span><span class="rd">.224 Valkyrie</span><span class="rd">.222 Rem</span></div><ul class="gotcha"><li>.22 LR uses a slightly different .222–.223&quot; heeled bullet</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.243"</span><span class="mm">6 mm</span></div><div class="rds"><span class="rd">.243 Win</span><span class="rd">6mm Creedmoor</span><span class="rd">6mm ARC</span><span class="rd">6mm Rem</span><span class="rd">.240 Weatherby</span></div></article>
+    <article class="grp-card"><div class="dia"><span class="in">.257"</span><span class="mm">6.5 mm</span></div><div class="rds"><span class="rd">.25-06</span><span class="rd">.257 Roberts</span><span class="rd">.257 Weatherby</span><span class="rd">.25 Creedmoor</span><span class="rd">.25 PRC</span></div><ul class="gotcha"><li>Named &quot;.25&quot; but the bullet is .257&quot;</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.264"</span><span class="mm">6.7 mm</span></div><div class="rds"><span class="rd">6.5 Creedmoor</span><span class="rd">6.5 PRC</span><span class="rd">6.5×55 Swede</span><span class="rd">.260 Rem</span><span class="rd">.264 Win Mag</span><span class="rd">6.5 Grendel</span></div><ul class="gotcha"><li>Every &quot;6.5&quot; round shoots a .264&quot; bullet</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.277"</span><span class="mm">7.0 mm</span></div><div class="rds"><span class="rd">.270 Win</span><span class="rd">.270 WSM</span><span class="rd">6.8 SPC</span><span class="rd">6.8 Western</span><span class="rd">.277 Fury</span></div><ul class="gotcha"><li>&quot;.270&quot; is really .277&quot;</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.284"</span><span class="mm">7.2 mm</span></div><div class="rds"><span class="rd">7mm-08</span><span class="rd">7mm Rem Mag</span><span class="rd">7mm PRC</span><span class="rd">7mm WSM</span><span class="rd">.280 Rem</span><span class="rd">7×57 Mauser</span><span class="rd">.280 Ackley</span></div><ul class="gotcha"><li>Every &quot;7mm&quot; and the .280 shoot a .284&quot; bullet</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.308"</span><span class="mm">7.8 mm</span></div><div class="rds"><span class="rd">.308 Win</span><span class="rd">7.62 NATO</span><span class="rd">.30-06</span><span class="rd">.300 Win Mag</span><span class="rd">.300 WSM</span><span class="rd">.300 PRC</span><span class="rd">.30-30</span><span class="rd">.300 BLK</span><span class="rd">.300 Weatherby</span></div><ul class="gotcha"><li>Nearly every American &quot;.30&quot; and &quot;.300&quot; round</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.311"</span><span class="mm">7.9 mm</span></div><div class="rds"><span class="rd">7.62×39</span><span class="rd">.303 British</span><span class="rd">7.62×54R</span></div><ul class="gotcha"><li>Russian and British &quot;.30s&quot; are .311–.312&quot;, not .308&quot;</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.338"</span><span class="mm">8.6 mm</span></div><div class="rds"><span class="rd">.338 Lapua</span><span class="rd">.338 Win Mag</span><span class="rd">.338 Federal</span><span class="rd">.33 Nosler</span></div></article>
+    <article class="grp-card"><div class="dia"><span class="in">.355"</span><span class="mm">9.0 mm</span></div><div class="rds"><span class="rd">9mm Luger</span><span class="rd">.380 ACP</span><span class="rd">.357 SIG</span><span class="rd">.350 Legend</span></div><ul class="gotcha"><li>.357 SIG and .350 Legend both use 9mm-size .355&quot; bullets</li><li>9mm Makarov is NOT here: it&#x27;s .363–.365&quot;</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.357"</span><span class="mm">9.1 mm</span></div><div class="rds"><span class="rd">.38 Special</span><span class="rd">.357 Magnum</span></div><ul class="gotcha"><li>&quot;.38&quot; Special is really .357&quot;</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.358"</span><span class="mm">9.1 mm</span></div><div class="rds"><span class="rd">.35 Whelen</span><span class="rd">.35 Rem</span><span class="rd">.358 Win</span></div><ul class="gotcha"><li>Rifle .35s use .358&quot;, not the .355&quot; of the .350 Legend</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.375"</span><span class="mm">9.5 mm</span></div><div class="rds"><span class="rd">.375 H&amp;H</span><span class="rd">.375 Ruger</span><span class="rd">.376 Steyr</span></div></article>
+    <article class="grp-card"><div class="dia"><span class="in">.400"</span><span class="mm">10.2 mm</span></div><div class="rds"><span class="rd">10mm Auto</span><span class="rd">.40 S&amp;W</span></div></article>
+    <article class="grp-card"><div class="dia"><span class="in">.429–.430"</span><span class="mm">10.9 mm</span></div><div class="rds"><span class="rd">.44 Magnum</span><span class="rd">.44 Special</span></div><ul class="gotcha"><li>&quot;.44&quot; is really .429–.430&quot;</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.451–.452"</span><span class="mm">11.5 mm</span></div><div class="rds"><span class="rd">.45 ACP</span><span class="rd">.45 Colt</span><span class="rd">.454 Casull</span><span class="rd">.460 S&amp;W</span><span class="rd">.450 Bushmaster</span></div><ul class="gotcha"><li>.450 Bushmaster shoots a .452&quot; bullet, not the .458&quot; of the .45-70</li></ul></article>
+    <article class="grp-card"><div class="dia"><span class="in">.458"</span><span class="mm">11.6 mm</span></div><div class="rds"><span class="rd">.45-70 Gov&#x27;t</span><span class="rd">.458 Win Mag</span><span class="rd">.458 SOCOM</span><span class="rd">.450 Marlin</span></div></article>
+  </div>
+  <p class="note">Bullet diameter is the actual measured size of the bullet. Rounds that share a diameter are NOT interchangeable as loaded ammo: only shoot what's stamped on your barrel. Same-size bullets can still differ in weight, length and construction, so check your twist rate and the load data when handloading.</p>
+</div>
+</body>
+</html>
