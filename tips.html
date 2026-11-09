@@ -38,7 +38,12 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);lin
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
 .tip{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
-.tip.pro{border-color:var(--accent);box-shadow:inset 4px 0 0 var(--accent)}
+.tip.should{--tier:var(--accent)}
+.tip.must{--tier:#c92a2a;border-width:2px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tip.must{--tier:#ff5c5c}}
+:root[data-theme="dark"] .tip.must{--tier:#ff5c5c}
+.tip.must,.tip.should{border-color:var(--tier);box-shadow:inset 5px 0 0 var(--tier)}
+.tip.must .flag{background:#d62828}
 .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
 .flag{font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px}
@@ -48,7 +53,7 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);lin
 .ex b{color:var(--fg);font-weight:600}
 
 a.tip{color:inherit;text-decoration:none;transition:transform .15s,border-color .15s}
-a.tip:hover{border-color:var(--accent);transform:translateY(-2px)}
+a.tip:hover{border-color:var(--tier,var(--accent));transform:translateY(-2px)}
 a.tip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .more{font-weight:700;font-size:14px;color:var(--accent);padding-top:2px}
 a.tip:hover .more{text-decoration:underline}
@@ -76,7 +81,7 @@ a.tip:hover .more{text-decoration:underline}
   <header>
     <span class="eyebrow">Field reference · know-how</span>
     <h1>Cartridge Tips &amp; Tricks</h1>
-    <p class="lede">The stuff long-time shooters picked up over years at the range and the gun counter, and that beginners usually learn the hard way. Orange cards are the big ones.</p>
+    <p class="lede">The stuff long-time shooters picked up over years at the range and the gun counter, and that beginners usually learn the hard way. <b style="color:#d62828">Red cards are must-knows</b> that prevent accidents or wasted hunts. <b style="color:var(--accent)">Orange cards</b> are worth learning early.</p>
   </header>
 
   <div class="chips" role="group" aria-label="Filter tips">
@@ -98,15 +103,6 @@ a.tip:hover .more{text-decoration:underline}
 <script>
 const CATS={names:"Reading the name",design:"Cartridge design",swap:"Will it fit?",ballistics:"Ballistics",buying:"Buying & using ammo",shotgun:"Shotgun"};
 const TIPS=[
-  {c:"ballistics",t:"Past 300 yards, BC beats speed",
-   b:"Ballistic coefficient (BC) is how well a bullet cuts through air. A sleek, heavy bullet that starts slower can pass a light, fast one downrange, with less drop and wind drift.",
-   x:"That's why <b>6.5 CM</b> with a high-BC bullet keeps up with faster rounds at long range"},
-  {c:"swap",href:"revolvers.html",more:"See what each revolver can shoot",t:"Revolvers can shoot down, never up",
-   b:"Many magnum revolvers safely fire their shorter, milder parent round, which makes cheap, soft practice ammo. It never works the other way.",
-   x:"<b>.357 Mag</b> revolver fires .38 Special · <b>.44 Mag</b> fires .44 Special · not the reverse"},
-  {c:"design",t:"Short action vs long action",
-   b:".308-length rounds fit a short action, which is lighter, stiffer and has a shorter bolt throw. .30-06-length rounds need a long action. Many modern designs were built to get long-action results from a short action.",
-   x:"<b>Short:</b> .243, 6.5 CM, 7mm-08, .308 · <b>Long:</b> .25-06, .270, .30-06, most belted magnums"},
   {c:"design",pro:1,href:"modern-answers.html",more:"See all 11 classic-to-modern pairs",t:"Newer rounds are shorter and fatter",
    b:"Modern answers to old classics usually use a shorter, wider case that holds the bullet farther out. Less of the bullet sits down inside the case, which leaves room for powder and lets long, sleek, high-BC bullets fit in a short action. They often match the old round's performance with less powder and recoil.",
    x:"<b>6.5 Creedmoor</b> vs .270 Win and .30-06 · <b>.300 WSM</b> vs .300 Win Mag · <b>6.5 PRC</b> vs 7mm Rem Mag"},
@@ -122,13 +118,13 @@ const TIPS=[
   {c:"names",t:"+P means more pressure",
    b:"Handgun ammo marked +P or +P+ is loaded hotter than the standard. Only shoot it in a gun the maker says is rated for it, and expect more recoil and wear.",
    x:"Check the barrel stamp or manual for <b>\"+P\"</b> before buying it"},
-  {c:"swap",pro:1,t:"The barrel stamp is the only answer",
+  {c:"swap",pro:2,t:"The barrel stamp is the only answer",
    b:"Match the box to exactly what's stamped on the barrel, not what the store clerk or the gun's nickname says. Close isn't good enough: a wrong round that chambers can still blow up a gun.",
    x:"Barrel says <b>.270 Win</b>? Then not .270 WSM, not 7mm, not \"basically the same\""},
-  {c:"swap",t:".223 and 5.56 only go one way",
+  {c:"swap",pro:2,t:".223 and 5.56 only go one way",
    b:"A rifle chambered in 5.56 NATO safely fires .223 Remington. A rifle marked .223 only should not be fed 5.56, which runs at higher pressure. A .223 Wylde chamber takes both.",
    x:"<b>5.56 barrel:</b> both OK · <b>.223 barrel:</b> .223 only · <b>.223 Wylde:</b> both OK"},
-  {c:"swap",t:"Look-alikes that will hurt you",
+  {c:"swap",pro:2,t:"Look-alikes that will hurt you",
    b:"Some wrong rounds slip into a chamber they don't belong in and fire. Never keep mixed loose ammo in one bag, and read the headstamp (the letters on the case bottom) when in doubt.",
    x:"<b>.22 LR in a .22 Mag</b> can split the case · <b>.380 in a 9mm</b> can chamber and fire · <b>.300 BLK in a 5.56 AR</b> can chamber and blow up the gun"},
   {c:"design",t:"Know the cartridge family",
@@ -140,7 +136,7 @@ const TIPS=[
   {c:"design",t:"Rims and tube magazines",
    b:"Rimmed rounds suit lever guns, revolvers and single shots. In a tube magazine each bullet nose rests on the primer ahead of it, so use flat-nose or soft-tip bullets, never pointed spitzers.",
    x:"<b>.30-30, .45-70, .357</b> in a tube: flat or soft-tip only (like Hornady FTX)"},
-  {c:"ballistics",pro:1,t:"Every load hits a different spot",
+  {c:"ballistics",pro:2,t:"Every load hits a different spot",
    b:"Change the brand, bullet weight or even the product line and your point of impact can move inches at 100 yards. Re-check your zero any time you switch ammo, and before every season.",
    x:"Same rifle, same scope: <b>150 gr</b> and <b>180 gr</b> loads rarely hit the same hole"},
   {c:"ballistics",t:"Twist rate follows bullet length",
@@ -158,7 +154,7 @@ const TIPS=[
   {c:"ballistics",t:"Heat changes your load",
    b:"Ammo that sits in a hot truck or in the sun shoots faster and builds more pressure than ammo at room temperature. Keep it shaded at the range and stored cool and dry at home.",
    x:"Don't leave a box on the <b>dashboard</b> before a shoot"},
-  {c:"buying",pro:1,t:"Match the bullet to the animal",
+  {c:"buying",pro:2,t:"Match the bullet to the animal",
    b:"Thin-jacket varmint bullets blow up on the surface of big animals, and full metal jacket (FMJ) bullets punch through without opening. For deer and up, use a hunting bullet built to expand and hold together. Many states require expanding bullets for big game.",
    x:"<b>Varmint:</b> V-Max, ballistic tip · <b>Deer:</b> soft point, bonded · <b>Elk/bear:</b> bonded or mono copper"},
   {c:"design",pro:1,t:"Spot the belt on a magnum",
@@ -169,6 +165,15 @@ const TIPS=[
    b:"Every cartridge needs a hard stop in the chamber so the primer gets hit right and the case is held snug when it fires. Depending on the round, it stops on the rim, the shoulder, the belt or the case mouth (orange in the drawings).",
    img:'<div class="hsg"><div><svg viewBox="0 0 300 92" role="img" aria-label="Rimmed case: the rim stops against the back of the barrel"><rect x="24" y="8" width="268" height="76" rx="3" class="st"/><polygon points="24,30.2 140,31.2 152,37.2 182,37.2 190,39 292,39 292,51 190,51 182,52.8 152,52.8 140,58.8 24,59.8" class="cv"/><rect x="4" y="12" width="12" height="68" rx="2" class="bf"/><polygon points="16,27 24,27 24,31 140,32 152,38 178,38 178,52 152,52 140,58 24,59 24,63 16,63" class="br"/><polygon points="178,38.5 196,38.5 212,42 220,44.5 220,45.5 212,48 196,51.5 178,51.5" class="cu"/><line x1="24" y1="27" x2="24" y2="31" class="hl"/><line x1="24" y1="63" x2="24" y2="59" class="hl"/></svg><span>Rim</span></div><div><svg viewBox="0 0 300 92" role="img" aria-label="Rimless bottleneck case: the shoulder stops against the slope of the chamber"><rect x="20" y="8" width="272" height="76" rx="3" class="st"/><polygon points="20,29.8 140,30.8 156,37.4 184,37.4 192,39 292,39 292,51 192,51 184,52.6 156,52.6 140,59.2 20,60.2" class="cv"/><rect x="4" y="12" width="12" height="68" rx="2" class="bf"/><polygon points="16,31 19,31 19,34 22,34 22,30.5 140,31.5 156,38 180,38 180,52 156,52 140,58.5 22,59.5 22,56 19,56 19,59 16,59" class="br"/><polygon points="180,38.5 198,38.5 216,42 226,44.5 226,45.5 216,48 198,51.5 180,51.5" class="cu"/><line x1="140" y1="31.5" x2="156" y2="38" class="hl"/><line x1="140" y1="58.5" x2="156" y2="52" class="hl"/></svg><span>Shoulder</span></div><div><svg viewBox="0 0 300 92" role="img" aria-label="Belted case: the front edge of the belt stops against a step in the chamber"><rect x="20" y="8" width="272" height="76" rx="3" class="st"/><polygon points="20,27 32,27 32,30.2 140,30.8 152,37.2 182,37.2 190,39 292,39 292,51 190,51 182,52.8 152,52.8 140,59.2 32,59.8 32,63 20,63" class="cv"/><rect x="4" y="12" width="12" height="68" rx="2" class="bf"/><polygon points="16,31 19,31 19,34 22,34 22,27.5 32,27.5 32,31 140,31.5 152,38 178,38 178,52 152,52 140,58.5 32,59 32,62.5 22,62.5 22,56 19,56 19,59 16,59" class="br"/><polygon points="178,38.5 196,38.5 214,42 224,44.5 224,45.5 214,48 196,51.5 178,51.5" class="cu"/><line x1="32" y1="27.5" x2="32" y2="30.2" class="hl"/><line x1="32" y1="62.5" x2="32" y2="59.8" class="hl"/></svg><span>Belt</span></div><div><svg viewBox="0 0 300 92" role="img" aria-label="Straight-wall pistol case: the case mouth stops against a step at the front of the chamber"><rect x="20" y="8" width="272" height="76" rx="3" class="st"/><polygon points="20,34.2 90,34.2 90,36.4 100,36.4 106,37.4 292,37.4 292,52.6 106,52.6 100,53.6 90,53.6 90,55.8 20,55.8" class="cv"/><rect x="4" y="12" width="12" height="68" rx="2" class="bf"/><polygon points="16,35 19,35 19,37 22,37 22,34.8 90,35 90,55 22,55.2 22,53 19,53 19,55 16,55" class="br"/><polygon points="90,36.6 108,36.6 122,40 128,43 128,47 122,50 108,53.4 90,53.4" class="cu"/><line x1="90" y1="34.2" x2="90" y2="36.4" class="hl"/><line x1="90" y1="55.8" x2="90" y2="53.6" class="hl"/></svg><span>Case mouth</span></div></div>',
    x:"<b>Bolt won't close easily?</b> Never force it. That's a wrong-ammo or headspace problem for a gunsmith."},
+  {c:"ballistics",pro:1,t:"Past 300 yards, BC beats speed",
+   b:"Ballistic coefficient (BC) is how well a bullet cuts through air. A sleek, heavy bullet that starts slower can pass a light, fast one downrange, with less drop and wind drift.",
+   x:"That's why <b>6.5 CM</b> with a high-BC bullet keeps up with faster rounds at long range"},
+  {c:"swap",pro:1,href:"revolvers.html",more:"See what each revolver can shoot",t:"Revolvers can shoot down, never up",
+   b:"Many magnum revolvers safely fire their shorter, milder parent round, which makes cheap, soft practice ammo. It never works the other way.",
+   x:"<b>.357 Mag</b> revolver fires .38 Special · <b>.44 Mag</b> fires .44 Special · not the reverse"},
+  {c:"design",pro:1,t:"Short action vs long action",
+   b:".308-length rounds fit a short action, which is lighter, stiffer and has a shorter bolt throw. .30-06-length rounds need a long action. Many modern designs were built to get long-action results from a short action.",
+   x:"<b>Short:</b> .243, 6.5 CM, 7mm-08, .308 · <b>Long:</b> .25-06, .270, .30-06, most belted magnums"},
   {c:"buying",t:"Found a load your rifle loves? Stock up",
    b:"Every rifle has favorite ammo. Once you find one that groups well, buy several boxes from the same lot number (printed on the box) so the next box shoots the same.",
    x:"Test <b>3–4 loads</b> at 100 yd, then buy a case of the winner"},
@@ -202,8 +207,8 @@ const esc=s=>s.replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m]));
 function render(){
   const rows=TIPS.filter(t=>filter==="all"||t.c===filter).sort((a,b)=>(b.pro||0)-(a.pro||0));
   document.getElementById("tips").innerHTML=rows.map(t=>
-    (t.href?`<a class="tip link${t.pro?" pro":""}" href="${t.href}">`:`<article class="tip${t.pro?" pro":""}">`)+
-    `<div class="top"><span class="cat">${CATS[t.c]}</span>${t.pro?'<span class="flag">Must know</span>':""}</div>`+
+    (t.href?`<a class="tip link${t.pro===2?" must":t.pro===1?" should":""}" href="${t.href}">`:`<article class="tip${t.pro===2?" must":t.pro===1?" should":""}">`)+
+    `<div class="top"><span class="cat">${CATS[t.c]}</span>${t.pro?`<span class="flag">${t.pro===2?"Must know":"Should know"}</span>`:""}</div>`+
     `<h2>${esc(t.t)}</h2><p>${esc(t.b)}</p>${t.img?`<figure class="viz">${t.img}</figure>`:""}<div class="ex">${t.x}</div>`+
     (t.href?`<span class="more">${esc(t.more)} →</span></a>`:`</article>`)).join("");
   document.getElementById("count").textContent=`Showing ${rows.length} of ${TIPS.length} tips`;
