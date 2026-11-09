@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Modern Answers to Classic Cartridges</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: field-card reference — short header, filter chips, a grid of tip cards */
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.chip{font:600 13px var(--body);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-size:13px;color:var(--muted);margin:0 0 12px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.tip{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.tip.pro{border-color:var(--accent);box-shadow:inset 4px 0 0 var(--accent)}
+.top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.flag{font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px}
+.tip h2{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.1;margin:0;letter-spacing:.01em}
+.tip p{margin:0;color:var(--fg);font-size:14.5px}
+.ex{margin-top:auto;padding:8px 10px;border-radius:6px;background:var(--bar-bg);font-size:13px;color:var(--muted)}
+.ex b{color:var(--fg);font-weight:600}
+
+.note{margin-top:28px;color:var(--muted);font-size:13.5px;max-width:80ch}
+
+.pairs{display:grid;gap:14px}
+.pair{display:grid;grid-template-columns:1fr auto 1fr;gap:10px 16px;align-items:stretch;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.side{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border-radius:8px;background:var(--bg);min-width:0}
+.side.new{background:var(--accent-soft);border:1px solid var(--accent)}
+.lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.side.new .lbl{color:var(--accent)}
+.side h2{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.05;margin:0}
+.side dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:6px 0 0;font-size:13.5px}
+.side dt{color:var(--muted)}
+.side dd{margin:0;font-weight:600}
+.arrow{align-self:center;font-size:26px;color:var(--accent);font-weight:700}
+.why{grid-column:1/-1;margin:0;font-size:14.5px}
+.explain{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:0 0 22px}
+.explain div{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:14px}
+.explain b{display:block;font-family:var(--display);font-size:19px;font-weight:700;margin-bottom:2px}
+@media (max-width:640px){.pair{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}}
+</style>
+</head>
+<body>
+<a href="tips.html" style="display:inline-block;margin:16px 0 0 max(16px,env(safe-area-inset-left,0px));font:600 13px system-ui,sans-serif;color:var(--accent);text-decoration:none">← All tips</a>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Tips · cartridge design</span>
+    <h1>Modern Answers to the Classics</h1>
+    <p class="lede">Newer cartridges are usually shorter and fatter, with less of the bullet sitting inside the case. Here's each old classic next to the newer round built to replace or outdo it.</p>
+  </header>
+  <div class="explain">
+    <div><b>Shorter case</b>Fits a shorter, lighter action and a shorter powder column, which tends to burn more consistently.</div>
+    <div><b>Less bullet inside</b>Long, sleek bullets sit farther out of the case instead of eating the powder space, so they fit standard magazines.</div>
+    <div><b>Wider or straighter body</b>WSMs and PRCs use fatter heads. Creedmoors keep the .308 head size but use less body taper and a sharper shoulder.</div>
+    <div><b>No belt</b>Newer magnums headspace on the shoulder instead of the old belt, which is easier on brass.</div>
+  </div>
+  <p class="count">11 classic → modern pairs, oldest classic first</p>
+  <div class="pairs">
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>.30-06 Springfield</h2><dl><dt>Introduced</dt><dd>1906</dd><dt>Case length</dt><dd>2.494"</dd><dt>Action</dt><dd>Long action</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>.308 Winchester</h2><dl><dt>Introduced</dt><dd>1952</dd><dt>Case length</dt><dd>2.015"</dd><dt>Action</dt><dd>Short action</dd></dl></div>
+      <p class="why">The original modern answer. Roughly 100 fps behind the .30-06 with most loads, from a shorter, lighter, stiffer action. It became the parent of a whole family of short-action rounds.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>.270 Winchester</h2><dl><dt>Introduced</dt><dd>1925</dd><dt>Case length</dt><dd>2.540"</dd><dt>Action</dt><dd>Long action</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>6.5 Creedmoor</h2><dl><dt>Introduced</dt><dd>2007</dd><dt>Case length</dt><dd>1.920"</dd><dt>Action</dt><dd>Short action</dd></dl></div>
+      <p class="why">Slower at the muzzle, but its long, high-BC bullets hold speed and fight wind better past about 400 yards, with noticeably less recoil.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>.270 Winchester</h2><dl><dt>Introduced</dt><dd>1925</dd><dt>Case length</dt><dd>2.540"</dd><dt>Action</dt><dd>Long action</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>.270 WSM</h2><dl><dt>Introduced</dt><dd>2002</dd><dt>Case length</dt><dd>2.100"</dd><dt>Action</dt><dd>Short action · fat .535&quot; head</dd></dl></div>
+      <p class="why">A short, fat Winchester Short Magnum case that matches or beats .270 Win speed from a short action.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>.243 Winchester</h2><dl><dt>Introduced</dt><dd>1955</dd><dt>Case length</dt><dd>2.045"</dd><dt>Action</dt><dd>Short action</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>6mm Creedmoor</h2><dl><dt>Introduced</dt><dd>2017</dd><dt>Case length</dt><dd>1.920"</dd><dt>Action</dt><dd>Short action</dd></dl></div>
+      <p class="why">Same bullet size, but built around long, heavy-for-caliber 6mm bullets that the .243&#x27;s case and twist weren&#x27;t designed for.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>.243 Winchester</h2><dl><dt>Introduced</dt><dd>1955</dd><dt>Case length</dt><dd>2.045"</dd><dt>Action</dt><dd>Short action</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>6mm ARC</h2><dl><dt>Introduced</dt><dd>2020</dd><dt>Case length</dt><dd>1.490"</dd><dt>Action</dt><dd>AR-15 size</dd></dl></div>
+      <p class="why">Puts .243-class long-range bullets in an AR-15 magazine by using a very short, fat case.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>.264 Winchester Magnum</h2><dl><dt>Introduced</dt><dd>1959</dd><dt>Case length</dt><dd>2.500"</dd><dt>Action</dt><dd>Long action · belted</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>6.5 PRC</h2><dl><dt>Introduced</dt><dd>2018</dd><dt>Case length</dt><dd>2.030"</dd><dt>Action</dt><dd>Short action · beltless</dd></dl></div>
+      <p class="why">Magnum 6.5 speed from a short action, with no belt and a case built for long, high-BC bullets.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>7mm Remington Magnum</h2><dl><dt>Introduced</dt><dd>1962</dd><dt>Case length</dt><dd>2.500"</dd><dt>Action</dt><dd>Long action · belted</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>7mm PRC</h2><dl><dt>Introduced</dt><dd>2022</dd><dt>Case length</dt><dd>2.280"</dd><dt>Action</dt><dd>Long action · beltless</dd></dl></div>
+      <p class="why">Same bullet size and similar speed, but beltless and built to seat today&#x27;s very long 7mm bullets without eating powder space.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>7mm Remington Magnum</h2><dl><dt>Introduced</dt><dd>1962</dd><dt>Case length</dt><dd>2.500"</dd><dt>Action</dt><dd>Long action · belted</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>7mm WSM</h2><dl><dt>Introduced</dt><dd>2002</dd><dt>Case length</dt><dd>2.100"</dd><dt>Action</dt><dd>Short action · fat .535&quot; head</dd></dl></div>
+      <p class="why">Near-7mm Mag speed from a short, fat case in a short action.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>.300 Winchester Magnum</h2><dl><dt>Introduced</dt><dd>1963</dd><dt>Case length</dt><dd>2.620"</dd><dt>Action</dt><dd>Long action · belted</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>.300 WSM</h2><dl><dt>Introduced</dt><dd>2001</dd><dt>Case length</dt><dd>2.100"</dd><dt>Action</dt><dd>Short action · fat .535&quot; head</dd></dl></div>
+      <p class="why">Close to .300 Win Mag speed with lighter bullets, from a short action. The original short-and-fat magnum.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>.300 Winchester Magnum</h2><dl><dt>Introduced</dt><dd>1963</dd><dt>Case length</dt><dd>2.620"</dd><dt>Action</dt><dd>Long action · belted</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>.300 PRC</h2><dl><dt>Introduced</dt><dd>2018</dd><dt>Case length</dt><dd>2.580"</dd><dt>Action</dt><dd>Magnum action · beltless</dd></dl></div>
+      <p class="why">Built for very heavy, long .30-cal bullets (around 225 gr) seated long, for extreme-range shooting.</p>
+    </article>
+    <article class="pair">
+      <div class="side old"><span class="lbl">The classic</span><h2>.375 H&amp;H Magnum</h2><dl><dt>Introduced</dt><dd>1912</dd><dt>Case length</dt><dd>2.850"</dd><dt>Action</dt><dd>Magnum-length action · belted</dd></dl></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="side new"><span class="lbl">Modern answer</span><h2>.375 Ruger</h2><dl><dt>Introduced</dt><dd>2007</dd><dt>Case length</dt><dd>2.580"</dd><dt>Action</dt><dd>Standard long action · beltless</dd></dl></div>
+      <p class="why">Matches or beats the .375 H&amp;H from a shorter case that fits a standard .30-06-length action, with no belt.</p>
+    </article>
+  </div>
+  <p class="note">Case lengths are SAAMI maximums; years are when each round was introduced commercially. Performance comparisons are typical factory-load behavior, and your rifle and ammo will vary.</p>
+</div>
+</body>
+</html>
