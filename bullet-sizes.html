@@ -58,6 +58,15 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);lin
 .rd{font-size:13.5px;font-weight:600;padding:3px 9px;border-radius:5px;background:var(--bar-bg);color:var(--fg)}
 .gotcha{margin:0;padding-left:18px;font-size:13.5px;color:var(--muted);display:grid;gap:2px}
 .gotcha li::marker{color:var(--accent)}
+.danger{--danger:#c92a2a;display:flex;gap:18px;align-items:flex-start;margin-top:32px;padding:22px 24px;border:2px solid var(--danger);border-left-width:10px;border-radius:12px;background:color-mix(in srgb,var(--danger) 12%,var(--surface))}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .danger{--danger:#ff5c5c}}
+:root[data-theme="dark"] .danger{--danger:#ff5c5c}
+.danger-icon{flex:none;font-size:46px;line-height:1;color:var(--danger)}
+.danger h2{font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,36px);line-height:1.05;text-transform:uppercase;letter-spacing:.02em;margin:0 0 10px;color:var(--danger)}
+.danger p{margin:0 0 8px;font-size:18px;line-height:1.5;color:var(--fg)}
+.danger strong{color:var(--danger)}
+.danger .must{font-size:20px;font-weight:800;color:var(--danger)}
+.danger .sub{font-size:14px;color:var(--muted);margin:12px 0 0}
 </style>
 </head>
 <body>
@@ -90,7 +99,15 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);lin
     <article class="grp-card"><div class="dia"><span class="in">.451–.452"</span><span class="mm">11.5 mm</span></div><div class="rds"><span class="rd">.45 ACP</span><span class="rd">.45 Colt</span><span class="rd">.454 Casull</span><span class="rd">.460 S&amp;W</span><span class="rd">.450 Bushmaster</span></div><ul class="gotcha"><li>.450 Bushmaster shoots a .452&quot; bullet, not the .458&quot; of the .45-70</li></ul></article>
     <article class="grp-card"><div class="dia"><span class="in">.458"</span><span class="mm">11.6 mm</span></div><div class="rds"><span class="rd">.45-70 Gov&#x27;t</span><span class="rd">.458 Win Mag</span><span class="rd">.458 SOCOM</span><span class="rd">.450 Marlin</span></div></article>
   </div>
-  <p class="note">Bullet diameter is the actual measured size of the bullet. Rounds that share a diameter are NOT interchangeable as loaded ammo: only shoot what's stamped on your barrel. Same-size bullets can still differ in weight, length and construction, so check your twist rate and the load data when handloading.</p>
+  <div class="danger" role="alert">
+    <span class="danger-icon" aria-hidden="true">⚠</span>
+    <div>
+      <h2>Same bullet does NOT mean same ammo</h2>
+      <p>Rounds that share a bullet diameter are <strong>not interchangeable</strong>. Firing the wrong cartridge can <strong>destroy your gun and seriously injure or kill you</strong> or anyone near you.</p>
+      <p class="must">Only shoot the exact cartridge stamped on your barrel.</p>
+      <p class="sub">Bullet diameter is the measured size of the bullet itself. Same-size bullets can still differ in weight, length and construction, so check your twist rate and published load data when handloading.</p>
+    </div>
+  </div>
 </div>
 </body>
 </html>
