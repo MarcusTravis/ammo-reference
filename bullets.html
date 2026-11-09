@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Match the Bullet to the Animal</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: field-card reference — short header, filter chips, a grid of tip cards */
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.chip{font:600 13px var(--body);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-size:13px;color:var(--muted);margin:0 0 12px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.tip{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.tip.should{--tier:var(--accent)}
+.tip.must{--tier:#c92a2a;border-width:2px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tip.must{--tier:#ff5c5c}}
+:root[data-theme="dark"] .tip.must{--tier:#ff5c5c}
+.tip.must,.tip.should{border-color:var(--tier);box-shadow:inset 5px 0 0 var(--tier)}
+.tip.must .flag{background:#d62828}
+.top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.flag{font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px}
+.tip h2{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.1;margin:0;letter-spacing:.01em}
+.tip p{margin:0;color:var(--fg);font-size:14.5px}
+.ex{margin-top:auto;padding:8px 10px;border-radius:6px;background:var(--bar-bg);font-size:13px;color:var(--muted)}
+.ex b{color:var(--fg);font-weight:600}
+
+a.tip{color:inherit;text-decoration:none;transition:transform .15s,border-color .15s}
+a.tip:hover{border-color:var(--tier,var(--accent));transform:translateY(-2px)}
+a.tip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.more{font-weight:700;font-size:14px;color:var(--accent);padding-top:2px}
+a.tip:hover .more{text-decoration:underline}
+@media (prefers-reduced-motion:reduce){a.tip{transition:none}a.tip:hover{transform:none}}
+.viz{margin:2px 0 0;padding:10px 12px 6px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.viz svg{display:block;width:100%;height:auto;max-width:380px}
+.viz .br{fill:#c9a24a;stroke:#8a6a22;stroke-width:1}
+.viz .cu{fill:#b8693d;stroke:#8a6a22;stroke-width:1}
+.viz .belt{fill:color-mix(in srgb,var(--accent) 55%,#c9a24a);stroke:var(--accent);stroke-width:2.5}
+.viz .ar{stroke:var(--accent);stroke-width:2;fill:none}
+.viz .cl{font:800 12px var(--body);letter-spacing:.08em;fill:var(--accent)}
+.viz .nm{font:700 13px var(--body);fill:var(--fg)}
+.viz .sb{font:500 11px var(--body);fill:var(--muted)}
+.hsg{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px}
+.hsg span{display:block;text-align:center;font:700 11px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.viz .st{fill:#7b8070}.viz .cv{fill:var(--bg)}.viz .bf{fill:#565b4d}
+.viz .hl{stroke:var(--accent);stroke-width:5;stroke-linecap:round}
+.note{margin-top:28px;color:var(--muted);font-size:13.5px;max-width:80ch}
+
+.gms{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:14px}
+.gm{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.lbl,.lbl2{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.lbl2{margin-top:2px}
+.gm h2{font-family:var(--display);font-weight:800;font-size:32px;line-height:1.05;margin:0;color:var(--accent)}
+.who{font-weight:700;font-size:14px;margin-top:-4px}
+.goal{margin:0;font-size:14.5px}
+.goal b{color:var(--fg)}
+.rds{display:flex;flex-wrap:wrap;gap:6px}
+.ok{font-size:13.5px;font-weight:700;padding:4px 10px;border-radius:5px;background:color-mix(in srgb,var(--olive) 22%,var(--surface));border:1px solid color-mix(in srgb,var(--olive) 55%,transparent)}
+.eg{flex-basis:100%;font-size:13px;color:var(--muted)}
+.eg b{color:var(--fg)}
+.tp{margin:0;font-size:14px;color:var(--muted)}
+.avoid{margin-top:auto;padding:10px 12px;border-radius:8px;border:1px solid color-mix(in srgb,#d62828 55%,transparent);background:color-mix(in srgb,#d62828 10%,var(--surface));font-size:14px}
+.avoid b{color:#d62828}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .avoid b{color:#ff6b6b}}
+:root[data-theme="dark"] .avoid b{color:#ff6b6b}
+.avoid ul{margin:4px 0 0;padding-left:18px;display:grid;gap:2px}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:0 0 24px}
+.how div{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:14px}
+.how b{display:block;font-family:var(--display);font-size:19px;font-weight:700;margin-bottom:2px}
+.pro{display:flex;gap:14px;align-items:flex-start;margin-top:24px;padding:14px 16px;border:1px solid var(--accent);border-left-width:6px;border-radius:10px;background:var(--surface);font-size:15px}
+.pro b{display:block;font-family:var(--display);font-size:21px;font-weight:700;color:var(--accent);margin-bottom:2px}
+.pro .ic{font-size:26px;line-height:1;color:var(--accent)}
+.pro a{color:var(--accent);font-weight:700}
+</style>
+</head>
+<body>
+<a href="tips.html" style="display:inline-block;margin:16px 0 0 max(16px,env(safe-area-inset-left,0px));font:600 13px system-ui,sans-serif;color:var(--accent);text-decoration:none">← All tips</a>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Tips · buying &amp; using ammo</span>
+    <h1>Match the Bullet to the Animal</h1>
+    <p class="lede">The right cartridge with the wrong bullet still makes a bad shot. A bullet built for prairie dogs can fail on an elk, and one built for elk can zip through a coyote without opening. Pick the group you're hunting to see what to buy and what to skip.</p>
+  </header>
+  <div class="how">
+    <div><b>Fast-opening</b>Thin jacket, opens or fragments right away. Great on small, thin-skinned animals, too fragile for big ones.</div>
+    <div><b>Controlled expansion</b>Opens up but holds together. The all-around choice for deer and hogs.</div>
+    <div><b>Deep-penetrating</b>Bonded, partition or solid copper. Keeps its weight to break bone and reach the vitals on big game.</div>
+  </div>
+  <div class="gms">
+    <article class="gm"><span class="lbl">Hunting</span><h2>Small game</h2><span class="who">Squirrels, rabbits, grouse</span>
+      <p class="goal"><b>What you need:</b> Kill cleanly without ruining the meat. Small animals don't need expansion, and a bullet that blows up wastes most of what you'd eat.</p>
+      <span class="lbl2">Use</span><div class="rds"><span class="ok">✔ .22 LR solid (round nose)</span><span class="ok">✔ .22 LR hollow point</span><span class="ok">✔ Shotgun #4–#6 shot</span><span class="eg"><b>Examples:</b> CCI Mini-Mag, Federal Game-Shok</span></div>
+      <p class="tp">Solids are the meat-saver for head shots. Hollow points open more for body shots on rabbits.</p>
+      <div class="avoid"><b>✖ Avoid</b><ul><li>Centerfire varmint bullets (they destroy the meat)</li><li>.17 HMR on body shots if you plan to eat it</li></ul></div>
+    </article>
+    <article class="gm"><span class="lbl">Hunting</span><h2>Varmint &amp; predator</h2><span class="who">Prairie dogs, groundhogs, coyotes, foxes</span>
+      <p class="goal"><b>What you need:</b> Open fast and dump all the energy inside a small animal, with little risk of ricochet or over-penetration.</p>
+      <span class="lbl2">Use</span><div class="rds"><span class="ok">✔ Polymer-tipped varmint bullets</span><span class="ok">✔ Thin-jacket hollow points</span><span class="eg"><b>Examples:</b> Hornady V-Max, Nosler Ballistic Tip Varmint, Sierra BlitzKing</span></div>
+      <p class="tp">Selling the fur? Fur hunters often switch to FMJ or slower-opening bullets for smaller exit holes.</p>
+      <div class="avoid"><b>✖ Avoid</b><ul><li>Using these same bullets on deer or hogs (they can blow up on the surface)</li></ul></div>
+    </article>
+    <article class="gm"><span class="lbl">Hunting</span><h2>Deer &amp; hog</h2><span class="who">Whitetail, mule deer, pronghorn, feral hogs</span>
+      <p class="goal"><b>What you need:</b> Controlled expansion: open up to about twice their size, hold together, and go deep enough to reach the vitals from any reasonable angle.</p>
+      <span class="lbl2">Use</span><div class="rds"><span class="ok">✔ Cup-and-core soft points</span><span class="ok">✔ Polymer-tipped hunting bullets</span><span class="ok">✔ Bonded bullets</span><span class="eg"><b>Examples:</b> Remington Core-Lokt, Winchester Power-Point, Hornady SST / ELD-X, Federal Fusion, Nosler AccuBond</span></div>
+      <p class="tp">Big boars have a tough shoulder shield of gristle. For mature hogs, a bonded or copper bullet is the safer pick.</p>
+      <div class="avoid"><b>✖ Avoid</b><ul><li>FMJ (doesn't expand, and illegal for big game in many states)</li><li>Varmint bullets</li></ul></div>
+    </article>
+    <article class="gm"><span class="lbl">Hunting</span><h2>Elk, bear &amp; up</h2><span class="who">Elk, moose, black and brown bear, big hogs</span>
+      <p class="goal"><b>What you need:</b> Penetration first. The bullet has to break heavy bone and still reach the vitals, so it needs to keep most of its weight.</p>
+      <span class="lbl2">Use</span><div class="rds"><span class="ok">✔ Bonded bullets</span><span class="ok">✔ Partition bullets</span><span class="ok">✔ Monolithic copper</span><span class="eg"><b>Examples:</b> Nosler AccuBond, Nosler Partition, Swift A-Frame, Barnes TSX / TTSX, Hornady CX</span></div>
+      <p class="tp">Go heavier for your caliber. Copper bullets keep nearly all their weight but are longer, so check your twist rate.</p>
+      <div class="avoid"><b>✖ Avoid</b><ul><li>Light, fast-opening bullets made for deer</li><li>Varmint bullets of any kind</li></ul></div>
+    </article>
+  </div>
+  <div class="pro"><span class="ic" aria-hidden="true">★</span><div><b>Box labels help</b>Most ammo boxes say what the load is built for: “varmint,” “deer,” “medium game” or “big game.” When in doubt, buy the load labeled for your animal, and check it hits where you aim before the season.<br>Going after Cape buffalo or elephant? That's dangerous-game territory with its own rules: see the <a href="big-bore.html">Big Bore chart</a>.</div></div>
+  <p class="note">Brand names are examples, not endorsements; other makers sell equivalent bullets. Check your state's hunting regulations: many require expanding bullets for big game, and California requires lead-free ammunition for all hunting.</p>
+</div>
+</body>
+</html>
