@@ -53,6 +53,15 @@ a.tip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .more{font-weight:700;font-size:14px;color:var(--accent);padding-top:2px}
 a.tip:hover .more{text-decoration:underline}
 @media (prefers-reduced-motion:reduce){a.tip{transition:none}a.tip:hover{transform:none}}
+.viz{margin:2px 0 0;padding:10px 12px 6px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.viz svg{display:block;width:100%;height:auto;max-width:380px}
+.viz .br{fill:#c9a24a;stroke:#8a6a22;stroke-width:1}
+.viz .cu{fill:#b8693d;stroke:#8a6a22;stroke-width:1}
+.viz .belt{fill:color-mix(in srgb,var(--accent) 55%,#c9a24a);stroke:var(--accent);stroke-width:2.5}
+.viz .ar{stroke:var(--accent);stroke-width:2;fill:none}
+.viz .cl{font:800 12px var(--body);letter-spacing:.08em;fill:var(--accent)}
+.viz .nm{font:700 13px var(--body);fill:var(--fg)}
+.viz .sb{font:500 11px var(--body);fill:var(--muted)}
 .note{margin-top:28px;color:var(--muted);font-size:13.5px;max-width:80ch}
 </style>
 </head>
@@ -148,6 +157,10 @@ const TIPS=[
   {c:"buying",pro:1,t:"Match the bullet to the animal",
    b:"Thin-jacket varmint bullets blow up on the surface of big animals, and full metal jacket (FMJ) bullets punch through without opening. For deer and up, use a hunting bullet built to expand and hold together. Many states require expanding bullets for big game.",
    x:"<b>Varmint:</b> V-Max, ballistic tip · <b>Deer:</b> soft point, bonded · <b>Elk/bear:</b> bonded or mono copper"},
+  {c:"design",pro:1,t:"Spot the belt on a magnum",
+   b:"That raised band just above the base of the case is the belt. It's the quick way to spot a classic magnum. Belted rounds need a magnum-size bolt face and a rifle chambered for that exact round. Newer magnums dropped the belt and headspace on the shoulder instead.",
+   img:'<svg viewBox="0 0 340 128" role="img" aria-label="A belted magnum cartridge with a raised band just above the base, next to a beltless cartridge with a smooth body"><text x="40" y="10" class="cl">← THE BELT</text><path d="M40 6 L30 15" class="ar"/><g transform="translate(0,40)"><rect x="8" y="-16" width="8" height="32" rx="1" class="br"/><rect x="16" y="-13" width="4" height="26" class="br"/><rect x="20" y="-20" width="12" height="40" rx="2" class="belt"/><path d="M32 -15.5 L150 -14.5 L166 -8 L186 -8 L186 8 L166 8 L150 14.5 L32 15.5 Z" class="br"/><path d="M186 -8 L214 -8 Q238 -5 250 0 Q238 5 214 8 L186 8 Z" class="cu"/><text x="262" y="-2" class="nm">Belted</text><text x="262" y="12" class="sb">7mm Rem Mag</text></g><g transform="translate(0,98)"><rect x="8" y="-16" width="8" height="32" rx="1" class="br"/><rect x="16" y="-13" width="4" height="26" class="br"/><path d="M20 -16 L150 -15 L166 -8 L186 -8 L186 8 L166 8 L150 15 L20 16 Z" class="br"/><path d="M186 -8 L214 -8 Q238 -5 250 0 Q238 5 214 8 L186 8 Z" class="cu"/><text x="262" y="-2" class="nm">Beltless</text><text x="262" y="12" class="sb">7mm PRC</text></g><text x="8" y="126" class="sb">base</text></svg>',
+   x:"<b>Belted:</b> 7mm Rem Mag, .300 Win Mag, .338 Win Mag, .375 H&H \u00b7 <b>Beltless:</b> PRCs, WSMs, Creedmoors"},
   {c:"buying",t:"Found a load your rifle loves? Stock up",
    b:"Every rifle has favorite ammo. Once you find one that groups well, buy several boxes from the same lot number (printed on the box) so the next box shoots the same.",
    x:"Test <b>3–4 loads</b> at 100 yd, then buy a case of the winner"},
@@ -183,7 +196,7 @@ function render(){
   document.getElementById("tips").innerHTML=rows.map(t=>
     (t.href?`<a class="tip link${t.pro?" pro":""}" href="${t.href}">`:`<article class="tip${t.pro?" pro":""}">`)+
     `<div class="top"><span class="cat">${CATS[t.c]}</span>${t.pro?'<span class="flag">Must know</span>':""}</div>`+
-    `<h2>${esc(t.t)}</h2><p>${esc(t.b)}</p><div class="ex">${t.x}</div>`+
+    `<h2>${esc(t.t)}</h2><p>${esc(t.b)}</p>${t.img?`<figure class="viz">${t.img}</figure>`:""}<div class="ex">${t.x}</div>`+
     (t.href?`<span class="more">${esc(t.more)} →</span></a>`:`</article>`)).join("");
   document.getElementById("count").textContent=`Showing ${rows.length} of ${TIPS.length} tips`;
 }
