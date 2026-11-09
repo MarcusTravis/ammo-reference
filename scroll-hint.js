@@ -3,7 +3,9 @@
    - a hint bar above the table with ◀ ▶ buttons and a "column x–y of n" readout
    - fade shadows on whichever edge has more columns hidden
    - a scrollbar that sticks to the bottom of the window while the table is on screen
-   Everything hides itself automatically when the whole table already fits. */
+   Everything hides itself automatically when the whole table already fits.
+   Also: on pages with an MPBR column, adds a "for comparison only" warning
+   near the top of the page and under the MPBR column header. */
 (function () {
   var css = `
 .sh-hint{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 8px;padding:8px 10px 8px 12px;
@@ -35,10 +37,41 @@
 .sh-rail::-webkit-scrollbar{height:16px}
 .sh-rail::-webkit-scrollbar-track{background:var(--bar-bg,var(--bg));border-radius:8px}
 .sh-rail::-webkit-scrollbar-thumb{background:var(--accent);border-radius:8px;border:3px solid var(--bar-bg,var(--bg))}
+.sh-warn{display:flex;gap:12px;align-items:flex-start;margin:14px 0 4px;padding:12px 14px;max-width:80ch;
+  border:1px solid var(--accent);border-left-width:5px;border-radius:8px;background:var(--surface);color:var(--fg);font:500 14px/1.45 var(--body,system-ui)}
+.sh-warn-icon{flex:none;font-size:20px;line-height:1.1;color:var(--accent)}
+.sh-warn strong{color:var(--accent)}
+.sh-thwarn{display:block;margin-top:4px;font:700 10.5px var(--body,system-ui);letter-spacing:.04em;text-transform:none;color:var(--accent);cursor:help}
 `;
   var style = document.createElement("style");
   style.textContent = css;
   document.head.appendChild(style);
+
+  // MPBR warning: only on pages whose table has an MPBR column.
+  var mpbrTh = [].slice.call(document.querySelectorAll("thead th")).filter(function (th) {
+    return /MPBR/i.test(th.textContent);
+  });
+  if (mpbrTh.length) {
+    var tip = "MPBR figures are for comparing cartridges only. They come from a standard ballistic model, " +
+      "not your rifle, ammo, sight height, zero, altitude or weather. Confirm your own drops at the range before you hunt.";
+    var warn = document.createElement("div");
+    warn.className = "sh-warn";
+    warn.setAttribute("role", "note");
+    warn.innerHTML =
+      '<span class="sh-warn-icon" aria-hidden="true">⚠</span>' +
+      "<div><strong>MPBR numbers are for comparison only.</strong> Use them to compare cartridges against each other, " +
+      "not as real-world holds. They come from a standard ballistic model, and your rifle, ammo, scope height, zero, " +
+      "altitude and weather will almost certainly be different. Confirm your own zero and drops at the range before you hunt.</div>";
+    var header = document.querySelector(".wrap header") || document.querySelector("header");
+    if (header) header.parentNode.insertBefore(warn, header.nextSibling);
+    mpbrTh.forEach(function (th) {
+      var tag = document.createElement("span");
+      tag.className = "sh-thwarn";
+      tag.title = tip;
+      tag.textContent = "⚠ Comparison only";
+      th.appendChild(tag);
+    });
+  }
 
   var touch = window.matchMedia && window.matchMedia("(hover: none)").matches;
 
