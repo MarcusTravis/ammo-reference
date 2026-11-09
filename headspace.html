@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>What Is Headspace?</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: field-card reference — short header, filter chips, a grid of tip cards */
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.chip{font:600 13px var(--body);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-size:13px;color:var(--muted);margin:0 0 12px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.tip{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.tip.pro{border-color:var(--accent);box-shadow:inset 4px 0 0 var(--accent)}
+.top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.flag{font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px}
+.tip h2{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.1;margin:0;letter-spacing:.01em}
+.tip p{margin:0;color:var(--fg);font-size:14.5px}
+.ex{margin-top:auto;padding:8px 10px;border-radius:6px;background:var(--bar-bg);font-size:13px;color:var(--muted)}
+.ex b{color:var(--fg);font-weight:600}
+
+a.tip{color:inherit;text-decoration:none;transition:transform .15s,border-color .15s}
+a.tip:hover{border-color:var(--accent);transform:translateY(-2px)}
+a.tip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.more{font-weight:700;font-size:14px;color:var(--accent);padding-top:2px}
+a.tip:hover .more{text-decoration:underline}
+@media (prefers-reduced-motion:reduce){a.tip{transition:none}a.tip:hover{transform:none}}
+.viz{margin:2px 0 0;padding:10px 12px 6px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.viz svg{display:block;width:100%;height:auto;max-width:380px}
+.viz .br{fill:#c9a24a;stroke:#8a6a22;stroke-width:1}
+.viz .cu{fill:#b8693d;stroke:#8a6a22;stroke-width:1}
+.viz .belt{fill:color-mix(in srgb,var(--accent) 55%,#c9a24a);stroke:var(--accent);stroke-width:2.5}
+.viz .ar{stroke:var(--accent);stroke-width:2;fill:none}
+.viz .cl{font:800 12px var(--body);letter-spacing:.08em;fill:var(--accent)}
+.viz .nm{font:700 13px var(--body);fill:var(--fg)}
+.viz .sb{font:500 11px var(--body);fill:var(--muted)}
+.note{margin-top:28px;color:var(--muted);font-size:13.5px;max-width:80ch}
+
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:0 0 26px}
+.why div{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:14px}
+.why b{display:block;font-family:var(--display);font-size:19px;font-weight:700;margin-bottom:2px}
+.sec{font-family:var(--display);font-weight:700;font-size:26px;text-transform:uppercase;letter-spacing:.02em;margin:8px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.hss{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.hs{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.hs h2{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.05;margin:0;color:var(--accent)}
+.who{font-weight:700;font-size:14px}
+.hs p{margin:0;font-size:14.5px}
+.dg{margin:4px 0;padding:8px 10px 4px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.dg svg{display:block;width:100%;height:auto}
+.dg .st{fill:#7b8070}.dg .cv{fill:var(--bg)}.dg .bf{fill:#565b4d}
+.dg .br{fill:#c9a24a;stroke:#8a6a22;stroke-width:1}
+.dg .cu{fill:#b8693d;stroke:#8a6a22;stroke-width:1}
+.dg .hl{stroke:var(--accent);stroke-width:4;stroke-linecap:round}
+.dg .lb{font:600 9px var(--body);fill:var(--muted)}
+.key{display:flex;flex-wrap:wrap;gap:16px;margin:0 0 14px;font-size:13px;color:var(--muted)}
+.key span{display:inline-flex;align-items:center;gap:6px}
+.key i{display:inline-block;width:14px;height:10px;border-radius:2px}
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:26px}
+.story div{padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font-size:14.5px}
+.story h3{font-family:var(--display);font-weight:700;font-size:22px;margin:0 0 6px}
+.story p{margin:0 0 8px}
+.danger{--danger:#c92a2a;margin-top:28px;padding:22px 24px;border:2px solid var(--danger);border-left-width:10px;border-radius:12px;background:color-mix(in srgb,var(--danger) 12%,var(--surface))}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .danger{--danger:#ff5c5c}}
+:root[data-theme="dark"] .danger{--danger:#ff5c5c}
+.danger h2{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,36px);line-height:1.05;text-transform:uppercase;letter-spacing:.02em;margin:0 0 14px;color:var(--danger)}
+.danger h2 span{font-size:40px}
+.danger ul{margin:0;padding-left:22px;display:grid;gap:10px}
+.danger li{font-size:16px;line-height:1.45}
+.danger li::marker{color:var(--danger)}
+.danger li b{color:var(--danger)}
+.danger .must{margin:16px 0 0;font-size:19px;font-weight:800;color:var(--danger)}
+</style>
+</head>
+<body>
+<a href="tips.html" style="display:inline-block;margin:16px 0 0 max(16px,env(safe-area-inset-left,0px));font:600 13px system-ui,sans-serif;color:var(--accent);text-decoration:none">← All tips</a>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Tips · cartridge design</span>
+    <h1>What Is Headspace?</h1>
+    <p class="lede">Headspace is how far forward a cartridge sits in the chamber: the distance from the bolt face to whatever part of the chamber stops the case from sliding any farther. Every cartridge needs a hard stop like that, and different cartridges use different parts of the case for it.</p>
+  </header>
+  <div class="why">
+    <div><b>The primer gets hit right</b>If the case can slide forward, the firing pin can push it away and give a weak strike or a misfire.</div>
+    <div><b>The case is supported</b>When it fires, the brass swells to seal the chamber. It needs to be held snug so it doesn't stretch or crack.</div>
+    <div><b>Every shot is the same</b>The round sits in the same spot every time, which helps consistency and accuracy.</div>
+  </div>
+  <h2 class="sec">Four ways a cartridge stops</h2>
+  <div class="key"><span><i style="background:#7b8070"></i>Barrel (cut-away)</span><span><i style="background:#565b4d"></i>Bolt face</span><span><i style="background:#c9a24a"></i>Case</span><span><i style="background:var(--accent)"></i>Where it stops</span></div>
+  <div class="hss">
+    <article class="hs"><span class="lbl">Stops on</span><h2>The rim</h2><span class="who">Rimmed rounds</span><figure class="dg"><svg viewBox="0 0 300 92" role="img" aria-label="Rimmed case: the rim stops against the back of the barrel"><rect x="24" y="8" width="268" height="76" rx="3" class="st"/><polygon points="24,30.2 140,31.2 152,37.2 182,37.2 190,39 292,39 292,51 190,51 182,52.8 152,52.8 140,58.8 24,59.8" class="cv"/><rect x="4" y="12" width="12" height="68" rx="2" class="bf"/><polygon points="16,27 24,27 24,31 140,32 152,38 178,38 178,52 152,52 140,58 24,59 24,63 16,63" class="br"/><polygon points="178,38.5 196,38.5 212,42 220,44.5 220,45.5 212,48 196,51.5 178,51.5" class="cu"/><line x1="24" y1="27" x2="24" y2="31" class="hl"/><line x1="24" y1="63" x2="24" y2="59" class="hl"/><text x="10" y="90" class="lb" text-anchor="middle">bolt</text></svg></figure><p>The rim catches on the back edge of the barrel. Simple and positive, which is why lever guns and revolvers use it.</p><div class="ex"><b>Examples:</b> .30-30, .45-70, .38 Special, .357 Mag, .22 LR</div></article>
+    <article class="hs"><span class="lbl">Stops on</span><h2>The shoulder</h2><span class="who">Most bottleneck rifle rounds</span><figure class="dg"><svg viewBox="0 0 300 92" role="img" aria-label="Rimless bottleneck case: the shoulder stops against the slope of the chamber"><rect x="20" y="8" width="272" height="76" rx="3" class="st"/><polygon points="20,29.8 140,30.8 156,37.4 184,37.4 192,39 292,39 292,51 192,51 184,52.6 156,52.6 140,59.2 20,60.2" class="cv"/><rect x="4" y="12" width="12" height="68" rx="2" class="bf"/><polygon points="16,31 19,31 19,34 22,34 22,30.5 140,31.5 156,38 180,38 180,52 156,52 140,58.5 22,59.5 22,56 19,56 19,59 16,59" class="br"/><polygon points="180,38.5 198,38.5 216,42 226,44.5 226,45.5 216,48 198,51.5 180,51.5" class="cu"/><line x1="140" y1="31.5" x2="156" y2="38" class="hl"/><line x1="140" y1="58.5" x2="156" y2="52" class="hl"/><text x="10" y="90" class="lb" text-anchor="middle">bolt</text></svg></figure><p>The sloped shoulder of the case seats against the matching slope in the chamber. This is how nearly all modern rifle cartridges do it.</p><div class="ex"><b>Examples:</b> .308, .30-06, 6.5 Creedmoor, .270, the PRCs and WSMs</div></article>
+    <article class="hs"><span class="lbl">Stops on</span><h2>The belt</h2><span class="who">Belted magnums</span><figure class="dg"><svg viewBox="0 0 300 92" role="img" aria-label="Belted case: the front edge of the belt stops against a step in the chamber"><rect x="20" y="8" width="272" height="76" rx="3" class="st"/><polygon points="20,27 32,27 32,30.2 140,30.8 152,37.2 182,37.2 190,39 292,39 292,51 190,51 182,52.8 152,52.8 140,59.2 32,59.8 32,63 20,63" class="cv"/><rect x="4" y="12" width="12" height="68" rx="2" class="bf"/><polygon points="16,31 19,31 19,34 22,34 22,27.5 32,27.5 32,31 140,31.5 152,38 178,38 178,52 152,52 140,58.5 32,59 32,62.5 22,62.5 22,56 19,56 19,59 16,59" class="br"/><polygon points="178,38.5 196,38.5 214,42 224,44.5 224,45.5 214,48 196,51.5 178,51.5" class="cu"/><line x1="32" y1="27.5" x2="32" y2="30.2" class="hl"/><line x1="32" y1="62.5" x2="32" y2="59.8" class="hl"/><text x="10" y="90" class="lb" text-anchor="middle">bolt</text></svg></figure><p>The front edge of the belt butts against a small step cut into the chamber. Only belted magnums work this way.</p><div class="ex"><b>Examples:</b> .375 H&amp;H, 7mm Rem Mag, .300 Win Mag, .338 Win Mag</div></article>
+    <article class="hs"><span class="lbl">Stops on</span><h2>The case mouth</h2><span class="who">Straight-wall pistol rounds</span><figure class="dg"><svg viewBox="0 0 300 92" role="img" aria-label="Straight-wall pistol case: the case mouth stops against a step at the front of the chamber"><rect x="20" y="8" width="272" height="76" rx="3" class="st"/><polygon points="20,34.2 90,34.2 90,36.4 100,36.4 106,37.4 292,37.4 292,52.6 106,52.6 100,53.6 90,53.6 90,55.8 20,55.8" class="cv"/><rect x="4" y="12" width="12" height="68" rx="2" class="bf"/><polygon points="16,35 19,35 19,37 22,37 22,34.8 90,35 90,55 22,55.2 22,53 19,53 19,55 16,55" class="br"/><polygon points="90,36.6 108,36.6 122,40 128,43 128,47 122,50 108,53.4 90,53.4" class="cu"/><line x1="90" y1="34.2" x2="90" y2="36.4" class="hl"/><line x1="90" y1="55.8" x2="90" y2="53.6" class="hl"/><text x="10" y="90" class="lb" text-anchor="middle">bolt</text></svg></figure><p>With no rim or shoulder to use, the front edge of the case stops on a small step at the front of the chamber.</p><div class="ex"><b>Examples:</b> 9mm, .40 S&amp;W, .45 ACP, 10mm</div></article>
+  </div>
+  <div class="story">
+    <div><h3>Why the .375 H&amp;H got a belt</h3><p>Holland &amp; Holland's 1912 magnum has a long, gently sloped shoulder that made a poor, mushy stop. The belt gave it a crisp, positive one.</p><p>Later magnums like the 7mm Rem Mag and .300 Win Mag kept the belt mostly out of tradition and marketing, even though their sharper shoulders didn't need it.</p></div>
+    <div><h3>Why handloaders prefer the shoulder</h3><p>With a belt holding the case, the brass can stretch forward when fired. Each time it's resized it thins just above the belt, until it eventually cracks or separates there.</p><p>Cases that stop on the shoulder stay snug and usually last more reloads. That's why newer magnums like the PRCs and WSMs dropped the belt.</p></div>
+  </div>
+  <div class="danger" role="alert">
+    <h2><span aria-hidden="true">⚠</span>Headspace problems are a gunsmith job</h2>
+    <ul>
+      <li><b>Too much headspace</b> lets the case stretch when it fires. It can crack or separate and send hot gas back toward your face.</li>
+      <li><b>Too little headspace</b> means the bolt won't close on a round, or closes only with force.</li>
+      <li><b>Warning signs:</b> a bright ring around the case just above the base, light dents on primers, misfires, or a bolt that's hard to close.</li>
+    </ul>
+    <p class="must">Never force a bolt closed. Gunsmiths check headspace with go/no-go gauges, especially after a new barrel or on old military surplus rifles.</p>
+  </div>
+  <p class="note">Diagrams are simplified and not to scale. General guidance, not gunsmithing instructions.</p>
+</div>
+</body>
+</html>
