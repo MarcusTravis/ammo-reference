@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cartridge Tips &amp; Tricks</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: field-card reference — short header, filter chips, a grid of tip cards */
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.chip{font:600 13px var(--body);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-size:13px;color:var(--muted);margin:0 0 12px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.tip{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.tip.pro{border-color:var(--accent);box-shadow:inset 4px 0 0 var(--accent)}
+.top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--olive)}
+.flag{font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px}
+.tip h2{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.1;margin:0;letter-spacing:.01em}
+.tip p{margin:0;color:var(--fg);font-size:14.5px}
+.ex{margin-top:auto;padding:8px 10px;border-radius:6px;background:var(--bar-bg);font-size:13px;color:var(--muted)}
+.ex b{color:var(--fg);font-weight:600}
+
+.note{margin-top:28px;color:var(--muted);font-size:13.5px;max-width:80ch}
+</style>
+</head>
+<body>
+<a href="index.html" style="display:inline-block;margin:16px 0 0 max(16px,env(safe-area-inset-left,0px));font:600 13px system-ui,sans-serif;color:var(--accent);text-decoration:none">← All charts</a>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Field reference · know-how</span>
+    <h1>Cartridge Tips &amp; Tricks</h1>
+    <p class="lede">The stuff long-time shooters picked up over years at the range and the gun counter, and that beginners usually learn the hard way. Orange cards are the big ones.</p>
+  </header>
+
+  <div class="chips" role="group" aria-label="Filter tips">
+    <button class="chip" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" data-f="names" aria-pressed="false">Reading the name</button>
+    <button class="chip" data-f="design" aria-pressed="false">Cartridge design</button>
+    <button class="chip" data-f="swap" aria-pressed="false">Will it fit?</button>
+    <button class="chip" data-f="ballistics" aria-pressed="false">Ballistics</button>
+    <button class="chip" data-f="buying" aria-pressed="false">Buying &amp; using ammo</button>
+    <button class="chip" data-f="shotgun" aria-pressed="false">Shotgun</button>
+  </div>
+  <p class="count" id="count"></p>
+
+  <div class="grid" id="tips"></div>
+
+  <p class="note">General guidance, not load data. Always go by the markings on your barrel and the maker's manual, and check your state's hunting rules for caliber and bullet requirements.</p>
+</div>
+
+<script>
+const CATS={names:"Reading the name",design:"Cartridge design",swap:"Will it fit?",ballistics:"Ballistics",buying:"Buying & using ammo",shotgun:"Shotgun"};
+const TIPS=[
+  {c:"design",pro:1,t:"Newer rounds are shorter and fatter",
+   b:"Modern answers to old classics usually use a shorter, wider case that holds the bullet farther out. Less of the bullet sits down inside the case, which leaves room for powder and lets long, sleek, high-BC bullets fit in a short action. They often match the old round's performance with less powder and recoil.",
+   x:"<b>6.5 Creedmoor</b> vs .270 Win and .30-06 · <b>.300 WSM</b> vs .300 Win Mag · <b>6.5 PRC</b> vs 7mm Rem Mag"},
+  {c:"names",pro:1,t:"The number isn't always the bullet size",
+   b:"Cartridge names are partly marketing and history. Two rounds with different numbers can use the same bullet, and a round can be named for a size its bullet isn't.",
+   x:"<b>.38 Special</b> and <b>.357 Magnum</b> both shoot .357\" bullets · <b>.270 Win</b> is .277\" · <b>.44 Magnum</b> is .429\""},
+  {c:"names",t:"Old names hide a recipe",
+   b:"Many old American names are bullet diameter, then either the black-powder charge in grains or the year the military adopted it.",
+   x:"<b>.45-70</b> = .45 cal, 70 gr of black powder · <b>.30-06</b> = .30 cal, adopted 1906 · <b>.30-30</b> = .30 cal, 30 gr of powder"},
+  {c:"names",t:"Metric names are bullet × case length",
+   b:"European and military rounds give the bullet diameter, then the case length, both in millimeters. Two rounds with the same first number can be totally different cartridges.",
+   x:"<b>7.62×39</b> (AK) and <b>7.62×51</b> (.308-class) share a bore size but nothing else · <b>6.5×55</b> Swede"},
+  {c:"names",t:"\"Magnum\" isn't a standard",
+   b:"It just means a bigger case or higher pressure than whatever the round grew out of. A short magnum (WSM, SAUM, PRC) gets magnum-class speed from a fatter case that fits a shorter action.",
+   x:"Same word, very different rounds: <b>.22 WMR</b>, <b>.357 Mag</b>, <b>.300 Win Mag</b>"},
+  {c:"names",t:"+P means more pressure",
+   b:"Handgun ammo marked +P or +P+ is loaded hotter than the standard. Only shoot it in a gun the maker says is rated for it, and expect more recoil and wear.",
+   x:"Check the barrel stamp or manual for <b>\"+P\"</b> before buying it"},
+  {c:"swap",pro:1,t:"The barrel stamp is the only answer",
+   b:"Match the box to exactly what's stamped on the barrel, not what the store clerk or the gun's nickname says. Close isn't good enough: a wrong round that chambers can still blow up a gun.",
+   x:"Barrel says <b>.270 Win</b>? Then not .270 WSM, not 7mm, not \"basically the same\""},
+  {c:"swap",t:".223 and 5.56 only go one way",
+   b:"A rifle chambered in 5.56 NATO safely fires .223 Remington. A rifle marked .223 only should not be fed 5.56, which runs at higher pressure. A .223 Wylde chamber takes both.",
+   x:"<b>5.56 barrel:</b> both OK · <b>.223 barrel:</b> .223 only · <b>.223 Wylde:</b> both OK"},
+  {c:"swap",t:"Revolvers can shoot down, never up",
+   b:"Many magnum revolvers safely fire their shorter, milder parent round, which makes cheap, soft practice ammo. It never works the other way.",
+   x:"<b>.357 Mag</b> revolver fires .38 Special · <b>.44 Mag</b> fires .44 Special · not the reverse"},
+  {c:"swap",t:"Look-alikes that will hurt you",
+   b:"Some wrong rounds slip into a chamber they don't belong in and fire. Never keep mixed loose ammo in one bag, and read the headstamp (the letters on the case bottom) when in doubt.",
+   x:"<b>.22 LR in a .22 Mag</b> can split the case · <b>.380 in a 9mm</b> can chamber and fire · <b>.300 BLK in a 5.56 AR</b> can chamber and blow up the gun"},
+  {c:"design",t:"Know the cartridge family",
+   b:"Lots of rounds are the same parent case necked up or down. Knowing the family tells you the action length, the magazine and often where the brass comes from.",
+   x:"<b>.308 family</b>: .243, 7mm-08, .260, .338 Federal · <b>.30-06 family</b>: .25-06, .270, .280, .35 Whelen"},
+  {c:"design",t:"Short action vs long action",
+   b:".308-length rounds fit a short action, which is lighter, stiffer and has a shorter bolt throw. .30-06-length rounds need a long action. Many modern designs were built to get long-action results from a short action.",
+   x:"<b>Short:</b> .243, 6.5 CM, 7mm-08, .308 · <b>Long:</b> .25-06, .270, .30-06, most belted magnums"},
+  {c:"design",t:"The belt on a magnum is a leftover",
+   b:"Belted magnums descend from the old .375 H&H, where the belt set headspace. Newer magnums skip the belt and headspace on the shoulder, which is usually easier on brass for handloaders.",
+   x:"<b>Belted:</b> 7mm Rem Mag, .300 Win Mag · <b>Beltless:</b> 7mm PRC, .300 PRC, WSMs"},
+  {c:"design",t:"Rims and tube magazines",
+   b:"Rimmed rounds suit lever guns, revolvers and single shots. In a tube magazine each bullet nose rests on the primer ahead of it, so use flat-nose or soft-tip bullets, never pointed spitzers.",
+   x:"<b>.30-30, .45-70, .357</b> in a tube: flat or soft-tip only (like Hornady FTX)"},
+  {c:"ballistics",pro:1,t:"Every load hits a different spot",
+   b:"Change the brand, bullet weight or even the product line and your point of impact can move inches at 100 yards. Re-check your zero any time you switch ammo, and before every season.",
+   x:"Same rifle, same scope: <b>150 gr</b> and <b>180 gr</b> loads rarely hit the same hole"},
+  {c:"ballistics",t:"Past 300 yards, BC beats speed",
+   b:"Ballistic coefficient (BC) is how well a bullet cuts through air. A sleek, heavy bullet that starts slower can pass a light, fast one downrange, with less drop and wind drift.",
+   x:"That's why <b>6.5 CM</b> with a high-BC bullet keeps up with faster rounds at long range"},
+  {c:"ballistics",t:"Twist rate follows bullet length",
+   b:"A barrel's twist has to spin the bullet fast enough to keep it stable, and longer bullets need faster twist (a smaller number). Too slow and bullets tumble, leaving sideways holes in the target.",
+   x:"<b>.223 at 1:12</b> likes 40–55 gr · <b>1:7–1:8</b> handles 75–77 gr"},
+  {c:"ballistics",t:"Copper bullets are longer",
+   b:"Lead-free copper bullets are lighter for their length than lead-core ones. Step down a weight class, and check that your barrel's twist can stabilize the longer bullet.",
+   x:"Used a <b>165 gr</b> lead-core in .308? Try a <b>150 gr</b> copper"},
+  {c:"ballistics",t:"Barrel length costs speed",
+   b:"Box velocities come from long test barrels. Expect roughly 25–40 fps less for every inch your barrel is shorter, which matters most for magnums.",
+   x:"A load rated at <b>2,800 fps</b> from 24\" might do ~2,650 from a <b>18\"</b> barrel"},
+  {c:"ballistics",t:"Energy numbers aren't the whole story",
+   b:"Shot placement and the right bullet for the animal matter more than a bigger ft-lbs number on the box. A well-placed shot from a modest round beats a poor hit from a magnum.",
+   x:"Rule of thumb: about <b>1,000 ft-lbs</b> at impact for deer, <b>1,500</b> for elk"},
+  {c:"ballistics",t:"Heat changes your load",
+   b:"Ammo that sits in a hot truck or in the sun shoots faster and builds more pressure than ammo at room temperature. Keep it shaded at the range and stored cool and dry at home.",
+   x:"Don't leave a box on the <b>dashboard</b> before a shoot"},
+  {c:"buying",pro:1,t:"Match the bullet to the animal",
+   b:"Thin-jacket varmint bullets blow up on the surface of big animals, and full metal jacket (FMJ) bullets punch through without opening. For deer and up, use a hunting bullet built to expand and hold together. Many states require expanding bullets for big game.",
+   x:"<b>Varmint:</b> V-Max, ballistic tip · <b>Deer:</b> soft point, bonded · <b>Elk/bear:</b> bonded or mono copper"},
+  {c:"buying",t:"Found a load your rifle loves? Stock up",
+   b:"Every rifle has favorite ammo. Once you find one that groups well, buy several boxes from the same lot number (printed on the box) so the next box shoots the same.",
+   x:"Test <b>3–4 loads</b> at 100 yd, then buy a case of the winner"},
+  {c:"buying",t:"Popular rounds are cheaper and easier to find",
+   b:"A common round costs less, comes in more loads and stays on shelves during shortages. An oddball round can vanish from stores for years.",
+   x:"<b>.308, 6.5 CM, .30-06, .223</b> stay stocked · niche rounds often don't"},
+  {c:"buying",t:"Check the range rules first",
+   b:"Many indoor ranges ban steel-cased ammo, steel-core bullets or magnums. Read the rules before you show up with a case of cheap surplus.",
+   x:"A <b>magnet</b> test sorts out steel-core bullets"},
+  {c:"buying",t:"Don't dry-fire most rimfires",
+   b:"On many rimfire guns the firing pin hits the edge of the chamber when there's no round in it, which can peen the chamber or break the pin. Use snap caps for practice.",
+   x:"Check the <b>manual</b>: some modern rimfires are fine, many aren't"},
+  {c:"buying",t:"Lighter recoil makes better shooters",
+   b:"New shooters who flinch miss more, no matter how powerful the round. A rifle you can shoot well beats a magnum you dread.",
+   x:"Teaching kids? Start with <b>.22 LR</b>, then <b>.243</b> or <b>6.5 CM</b>"},
+  {c:"shotgun",t:"Rifled slug vs sabot slug",
+   b:"Foster (\"rifled\") slugs are made for smooth bores. Sabot slugs are made for rifled shotgun barrels and lose accuracy in a smooth bore.",
+   x:"<b>Smooth bore:</b> Foster slug · <b>Rifled barrel:</b> sabot slug"},
+  {c:"shotgun",t:"Steel shot needs bigger pellets",
+   b:"Steel is lighter than lead, so go up about two shot sizes to carry the same punch. Check your choke and gun maker before running steel through older guns or tight chokes.",
+   x:"Shoot lead <b>#4</b>? Try steel <b>#2</b>"},
+  {c:"shotgun",t:"Tighter choke isn't always better",
+   b:"A full choke throws a small pattern that's easy to miss with up close. Match the choke to the distance: open for close birds, tight for long turkey and waterfowl shots.",
+   x:"<b>Improved cylinder</b> for quail · <b>Full or turkey</b> choke for gobblers"}
+];
+let filter="all";
+const esc=s=>s.replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m]));
+function render(){
+  const rows=TIPS.filter(t=>filter==="all"||t.c===filter).sort((a,b)=>(b.pro||0)-(a.pro||0));
+  document.getElementById("tips").innerHTML=rows.map(t=>
+    `<article class="tip${t.pro?" pro":""}"><div class="top"><span class="cat">${CATS[t.c]}</span>${t.pro?'<span class="flag">Must know</span>':""}</div>`+
+    `<h2>${esc(t.t)}</h2><p>${esc(t.b)}</p><div class="ex">${t.x}</div></article>`).join("");
+  document.getElementById("count").textContent=`Showing ${rows.length} of ${TIPS.length} tips`;
+}
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.f;document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));render();}));
+render();
+</script>
+</body>
+</html>
