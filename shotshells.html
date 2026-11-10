@@ -87,7 +87,7 @@ tr.feature .cart{color:var(--accent)}
   <header>
     <span class="eyebrow">Field reference · factory loads</span>
     <h1>Shotshell &amp; Slug Chart</h1>
-    <p class="lede">Common shotgun gauges and loads, plus slugs and pistol snake shot: what each is made for, payload and pellet count, speed, effective range and the choke to use. <strong>Slug point-blank figures assume iron or rifle sights about 0.6" over the bore, not a scope or red dot.</strong> Tap a column header to sort.</p>
+    <p class="lede">Common shotgun gauges and loads, plus slugs and pistol snake shot: what each is made for, payload and pellet count, speed, effective range and the choke to use. <strong>Slug point-blank figures assume iron or rifle sights about 0.6" over the bore, not a scope or red dot.</strong> Speed, energy and BC are typical figures for the listed load; real numbers vary by brand, lot and barrel length. BC only applies to slugs and buckshot. Tap a column header to sort.</p>
   </header>
   <div class="chips" role="group" aria-label="Filter">
     <button class="chip" id="f-all" data-f="all" aria-pressed="true">All</button>
@@ -109,6 +109,7 @@ tr.feature .cart{color:var(--accent)}
         <th><button class="th-btn" data-k="pellets">Typical load</button></th>
         <th><button class="th-btn" data-k="fps">Typical muzzle fps</button></th>
         <th><button class="th-btn" data-k="energyN">Typical muzzle energy</button></th>
+        <th><button class="th-btn" data-k="bc">Typical BC (G1)</button></th>
         <th><button class="th-btn" data-k="range">Effective range</button></th>
         <th><button class="th-btn" data-k="mpbrN">Slug MPBR (iron sights)</button></th>
         <th>Choke / barrel</th>
@@ -154,6 +155,8 @@ function drawShell(d){
   const crimp=len>b?`<path class="crimp" d="M${X(len-.04)},${Y(hull/2*.7)} L${X(len-.04)},${Yb(hull/2*.7)}"/>`:"";
   return `<svg viewBox="0 0 ${W+2} ${H+12}" role="img" aria-label="${d.name} outline, about ${len}&quot; unfired">${g}${hullR}${head}${crimp}<text class="lbl" x="${P}" y="${H+11}">${len.toFixed(2)}&quot; unfired</text></svg>`;
 }
+const BC={"20 Gauge Sabot Slug":[0.19,1],"12 Gauge 00 Buckshot":[0.05,1,"each pellet"],"12 Gauge Foster Slug":[0.08,1],"12 Gauge Brenneke":[0.08,1],"12 Gauge Sabot Slug":[0.2,1]};
+DATA.forEach(d=>{const b=BC[d.name];d.bcv=b||null;d.bc=b?b[0]:0;});
 function render(){
   let rows=DATA.filter(d=>filter==="all"||d.tags.includes(filter));
   if(sortKey){rows=[...rows].sort((a,b)=>{const x=a[sortKey],y=b[sortKey];const c=typeof x==="string"?x.localeCompare(y):x-y;return sortDir==="asc"?c:-c});}
@@ -164,6 +167,7 @@ function render(){
     <td><span class="num">${d.payload}</span><span class="sub">${d.pellets===1?"Single projectile":"≈ "+fmt(d.pellets)+" pellets"}</span></td>
     <td><span class="num">${fmt(d.fps)}</span><span class="sub">ft/s</span></td>
     <td>${d.energy?`<span class="num">${fmt(d.energy)}</span><span class="sub">ft-lbs${d.pellets>1?" (all pellets)":""}</span>`:`<span class="num">—</span><span class="sub">Shot load</span>`}</td>
+    <td>${d.bcv?`<span class="num">${d.bcv[1]?"\u2248 "+(d.bcv[0]<0.1?d.bcv[0].toFixed(3):d.bcv[0].toFixed(2)):d.bcv[0].toFixed(3)}</span><span class="sub">${d.bcv[2]||(d.bcv[1]?"typical, varies by brand":"maker's published G1")}</span>`:`<span class="num">—</span><span class="sub">Shot load</span>`}</td>
     <td><span class="num">${d.rangeTxt}</span></td>
     <td class="mpbr">${d.pb?`<span class="num">${d.pb.mpbr} yd</span><span class="sub">6" vital zone</span><div class="bar" aria-hidden="true"><span style="width:${Math.round(d.pb.mpbr/MAX*100)}%"></span></div>
      <dl class="pbr"><dt>Near zero</dt><dd>${d.pb.near} yd</dd><dt>Far zero</dt><dd>${d.pb.far} yd</dd><dt>Min PBR</dt><dd>0 yd</dd><dt>Max PBR</dt><dd>${d.pb.mpbr} yd</dd><dt>Sight-in @50</dt><dd>${d.pb.s50.toFixed(2)}" high</dd></dl>`:`<span class="sub">Shot load: no MPBR</span>`}</td>
