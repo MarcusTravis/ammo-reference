@@ -112,6 +112,7 @@ tr.feature .cart{color:var(--accent)}
         <th><button class="th-btn" data-k="twistN">Twist rate for typical load</button></th>
         <th><button class="th-btn" data-k="range">Effective ethical range</button></th>
         <th><button class="th-btn" data-k="mpbr">MPBR</button></th>
+        <th>Recommended platform</th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -247,6 +248,7 @@ const LABEL={small:"Small game",varmint:"Varmint",deer:"Deer/hog",elk:"Elk/moose
 const MAX=350;
 let filter="all",sortKey=null,sortDir="asc";
 const fmt=n=>n.toLocaleString("en-US");
+const PLAT={".22 Long Rifle":["Any rifle, ultralights included","Very light recoil"],".22 LR Subsonic":["Any rifle, ultralights included","Very light recoil"],".223 Remington":["Any rifle, ultralights included","Very light recoil"],".22-250 Remington":["Any rifle, ultralights included","Very light recoil"],"22 ARC":["AR-15 or any light rifle","Very light recoil"],".243 Winchester":["Light or standard rifle","Light recoil; fine in a 6–7 lb rifle"],"6mm Creedmoor":["Light or standard rifle","Light recoil; fine in a 6–7 lb rifle"],"6mm ARC":["AR-15 or any light rifle","Very light recoil"],"6mm GT":["Light or standard rifle","Light recoil; fine in a 6–7 lb rifle"],"6mm Remington":["Light or standard rifle","Light recoil; fine in a 6–7 lb rifle"],".25-06 Remington":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],".25 Creedmoor":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],".25 PRC":["Standard to heavy rifle, 8 lb+","Stout recoil; use a good pad or brake in a light rifle"],".257 Blackbird":["Standard to heavy rifle, 8 lb+","Stout recoil; use a good pad or brake in a light rifle"],"6.5 Creedmoor":["Light or standard rifle","Light recoil; fine in a 6–7 lb rifle"],"6.5 Creedmoor +Peak":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],"6.5 PRC":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],".270 Winchester":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],"7mm-08 Remington":["Light or standard rifle","Light recoil; fine in a 6–7 lb rifle"],"7mm Remington Mag":["Standard to heavy rifle, 8 lb+","Stout recoil; use a good pad or brake in a light rifle"],"7mm PRC":["Heavy rifle, 8½–9 lb+","Heavy recoil; skip ultralights, consider a brake"],".308 Winchester":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],".30-06 Springfield":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],".300 Winchester Mag":["Heavy rifle, 8½–9 lb+","Heavy recoil; skip ultralights, consider a brake"],".300 PRC":["Heavy rifle, 8½–9 lb+","Heavy recoil; skip ultralights, consider a brake"],".338 Winchester Mag":["Heavy rifle, 9 lb+","Very heavy recoil; not for ultralights or beginners"],".375 H&H Magnum":["Heavy rifle, 9 lb+","Very heavy recoil; not for ultralights or beginners"],".30-30 Winchester":["Lever-action carbine","Light recoil; right at home in a 7-lb lever gun"],".300 Blackout":["AR-15 or short handy rifle","Very light recoil; great with a suppressor"],".300 Blackout Subsonic":["AR-15 or short handy rifle","Almost no recoil; built for a suppressor"],".350 Legend":["AR-15 or light bolt rifle","Light recoil"],".450 Bushmaster":["AR-15 or bolt rifle, 7 lb+","Stout for its size; a good pad helps"],".45-70 Government":["Lever or single-shot, 7½ lb+","Heavy with full-power loads; mild with standard ones"]};
 function render(){
   let rows=DATA.filter(d=>filter==="all"||d.tags.includes(filter));
   if(sortKey){rows=[...rows].sort((a,b)=>{const x=a[sortKey],y=b[sortKey];const c=typeof x==="string"?x.localeCompare(y):x-y;return sortDir==="asc"?c:-c});}
@@ -268,6 +270,7 @@ function render(){
       <dt>Max PBR</dt><dd>${d.mpbr} yd</dd>
       <dt>Sight-in @100</dt><dd>${Math.abs(d.s100).toFixed(2)}" ${d.s100<0?"low":"high"}</dd>
      </dl>${d.alt?`<span class="num" style="display:block;margin-top:10px">${d.alt.mpbr} yd</span><span class="sub">${d.alt.zone}" vital zone</span><dl class="pbr"><dt>Near zero</dt><dd>${d.alt.near} yd</dd><dt>Far zero</dt><dd>${d.alt.far} yd</dd><dt>Min PBR</dt><dd>${d.alt.minp} yd</dd><dt>Max PBR</dt><dd>${d.alt.mpbr} yd</dd><dt>Sight-in @100</dt><dd>${d.alt.s100.toFixed(2)}" high</dd></dl>`:""}${d.pbrNote?`<span class="sub" style="margin-top:4px">${d.pbrNote}</span>`:""}${d.name===".350 Legend"?'<span class="sub" style="margin-top:4px">180 gr: zero 19/169 · max 197 · 2.99" high</span>':""}</td>
+    <td>${PLAT[d.name]?`<span class="num">${PLAT[d.name][0]}</span><span class="sub">${PLAT[d.name][1]}</span>`:""}</td>
    </tr>`).join("");
   document.getElementById("count").textContent=`Showing ${rows.length} of ${DATA.length} cartridges`;
 }
