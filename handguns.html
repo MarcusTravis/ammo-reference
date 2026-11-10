@@ -85,7 +85,7 @@ tr.feature .cart{color:var(--accent)}
   <header>
     <span class="eyebrow">Field reference · factory loads · iron sights</span>
     <h1>Handgun Cartridge Chart</h1>
-    <p class="lede">Common pistol and revolver cartridges: what each was built for, a typical factory load and barrel length, speed, energy, practical range and twist. <strong>All point-blank figures assume open iron sights, not a scope, red dot or other optic.</strong> Tap a column header to sort.</p>
+    <p class="lede">Common pistol and revolver cartridges: what each was built for, a typical factory load and barrel length, speed, energy, practical range and twist. <strong>All point-blank figures assume open iron sights, not a scope, red dot or other optic.</strong> Speed, energy and BC are typical figures for the listed load; real numbers vary by brand, lot and barrel length. Tap a column header to sort.</p>
   </header>
 
   <div class="chips" role="group" aria-label="Filter">
@@ -108,9 +108,10 @@ tr.feature .cart{color:var(--accent)}
         <th><button class="th-btn" data-k="grain">Typical load</button></th>
         <th><button class="th-btn" data-k="fps">Typical muzzle fps</button></th>
         <th><button class="th-btn" data-k="energy">Typical muzzle energy</button></th>
+        <th><button class="th-btn" data-k="bc">Typical BC (G1)</button></th>
+        <th><button class="th-btn" data-k="twistN">Twist rate for typical load</button></th>
         <th><button class="th-btn" data-k="range">Practical range</button></th>
         <th><button class="th-btn" data-k="mpbr">MPBR (iron sights)</button></th>
-        <th><button class="th-btn" data-k="twistN">Twist rate for typical load</button></th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -193,6 +194,8 @@ const LABEL={pistol:"Pistol",revolver:"Revolver",defense:"Self-defense",hunting:
 const MAX=200;
 let filter="all",sortKey=null,sortDir="asc";
 const fmt=n=>n.toLocaleString("en-US");
+const BC={".22 Long Rifle":[0.12,1],".22 WMR":[0.11,1],"5.7x28mm":[0.2,0],".380 ACP":[0.1,1],"9mm Luger":[0.15,1],".38 Special":[0.15,1],".357 Magnum":[0.16,1],".357 SIG":[0.14,1],".40 S&W":[0.16,1],"10mm Auto":[0.16,1],".45 ACP":[0.17,1],".44 Special":[0.16,1],".44 Magnum":[0.17,1],".45 Colt":[0.15,1],".454 Casull":[0.18,1],".460 S&W Magnum":[0.2,1],".500 S&W Magnum":[0.15,1]};
+DATA.forEach(d=>{const b=BC[d.name];d.bcv=b||null;d.bc=b?b[0]:0;});
 function render(){
   let rows=DATA.filter(d=>filter==="all"||d.tags.includes(filter));
   if(sortKey){rows=[...rows].sort((a,b)=>{const x=a[sortKey],y=b[sortKey];const c=typeof x==="string"?x.localeCompare(y):x-y;return sortDir==="asc"?c:-c});}
@@ -203,6 +206,8 @@ function render(){
     <td><span class="num">${d.grain} gr</span><span class="sub">${d.load.replace(/^\d+ gr /,"")}</span><span class="sub">${d.barrel} barrel</span>${d.sub2?`<span class="sub">Alt: ${d.sub2}</span>`:""}</td>
     <td><span class="num">${fmt(d.fps)}</span><span class="sub">ft/s</span></td>
     <td><span class="num">${fmt(d.energy)}</span><span class="sub">ft-lbs</span>${d.name===".350 Legend"?'<span class="sub">Alt 180 gr: 1,763</span>':""}</td>
+    <td>${d.bcv?`<span class="num">${d.bcv[1]?"\u2248 "+(d.bcv[0]<0.1?d.bcv[0].toFixed(3):d.bcv[0].toFixed(2)):d.bcv[0].toFixed(3)}</span><span class="sub">${d.bcv[2]||(d.bcv[1]?"typical, varies by brand":"maker's published G1")}</span>`:`<span class="num">—</span><span class="sub">Shot load</span>`}</td>
+    <td><span class="num">${d.twist}</span>${d.twistNote?`<span class="sub">${d.twistNote}</span>`:""}</td>
     <td><span class="num">${d.rangeTxt}</span></td>
     <td class="mpbr"><span class="num">${d.mpbr} yd</span><span class="sub">${d.zone}" vital zone</span><div class="bar" aria-hidden="true"><span style="width:${Math.round(d.mpbr/MAX*100)}%"></span></div>
      <dl class="pbr">
@@ -212,7 +217,6 @@ function render(){
       <dt>Max PBR</dt><dd>${d.mpbr} yd</dd>
       <dt>Sight-in @25</dt><dd>${Math.abs(d.s25).toFixed(2)}" ${d.s25<0?"low":"high"}</dd>
      </dl>${d.alt?`<span class="num" style="display:block;margin-top:10px">${d.alt.mpbr} yd</span><span class="sub">${d.alt.zone}" vital zone</span><dl class="pbr"><dt>Near zero</dt><dd>${d.alt.near} yd</dd><dt>Far zero</dt><dd>${d.alt.far} yd</dd><dt>Min PBR</dt><dd>${d.alt.minp} yd</dd><dt>Max PBR</dt><dd>${d.alt.mpbr} yd</dd><dt>Sight-in @100</dt><dd>${d.alt.s100.toFixed(2)}" high</dd></dl>`:""}${d.pbrNote?`<span class="sub" style="margin-top:4px">${d.pbrNote}</span>`:""}${d.name===".350 Legend"?'<span class="sub" style="margin-top:4px">180 gr: zero 19/169 · max 197 · 2.99" high</span>':""}</td>
-    <td><span class="num">${d.twist}</span>${d.twistNote?`<span class="sub">${d.twistNote}</span>`:""}</td>
    </tr>`).join("");
   document.getElementById("count").textContent=`Showing ${rows.length} of ${DATA.length} cartridges`;
 }
