@@ -113,6 +113,7 @@ tr.feature .cart{color:var(--accent)}
         <th><button class="th-btn" data-k="twistN">Twist rate for typical load</button></th>
         <th><button class="th-btn" data-k="range">Practical range</button></th>
         <th><button class="th-btn" data-k="mpbr">MPBR (iron sights)</button></th>
+        <th>Recommended platform</th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -197,6 +198,7 @@ let filter="all",sortKey=null,sortDir="asc";
 const fmt=n=>n.toLocaleString("en-US");
 const BC={".22 Long Rifle":[0.12,1],".22 WMR":[0.11,1],"5.7x28mm":[0.2,0],".380 ACP":[0.1,1],"9mm Luger":[0.15,1],".38 Special":[0.15,1],".357 Magnum":[0.16,1],".357 SIG":[0.14,1],".40 S&W":[0.16,1],"10mm Auto":[0.16,1],".45 ACP":[0.17,1],".44 Special":[0.16,1],".44 Magnum":[0.17,1],".45 Colt":[0.15,1],".454 Casull":[0.18,1],".460 S&W Magnum":[0.2,1],".500 S&W Magnum":[0.15,1]};
 DATA.forEach(d=>{const b=BC[d.name];d.bcv=b||null;d.bc=b?b[0]:0;});
+const PLAT={".22 Long Rifle":["Any pistol or revolver","No real recoil; best for learning"],".22 WMR":["Revolver or full-size pistol","Very light recoil, loud blast"],"5.7x28mm":["Full-size pistol or carbine","Very light recoil"],".380 ACP":["Small or mid-size pistol","Snappy in tiny pocket guns"],"9mm Luger":["Compact or full-size pistol","Mild; micro-compacts are snappier"],".38 Special":["Any steel-frame revolver","Mild; stout in ultralight snubbies"],".357 Magnum":["Steel revolver, 4\" barrel+","Harsh in light snubbies; shoot .38s in those"],".357 SIG":["Compact or full-size pistol","Snappy"],".40 S&W":["Compact or full-size pistol","Snappier than 9mm"],"10mm Auto":["Full-size pistol","Stout with full-power loads"],".45 ACP":["Compact or full-size pistol","More push than snap"],".44 Special":["Medium or large revolver","Moderate"],".44 Magnum":["Large-frame revolver, 6\"+","Heavy recoil; practice with .44 Specials"],".45 Colt":["Single-action or large revolver","Moderate with standard loads"],".454 Casull":["Heavy large-frame revolver","Very heavy recoil"],".460 S&W Magnum":["Heavy X-frame revolver with brake","Very heavy recoil"],".500 S&W Magnum":["Heavy X-frame revolver with brake","Brutal recoil; not a beginner gun"]};
 function render(){
   let rows=DATA.filter(d=>filter==="all"||d.tags.includes(filter));
   if(sortKey){rows=[...rows].sort((a,b)=>{const x=a[sortKey],y=b[sortKey];const c=typeof x==="string"?x.localeCompare(y):x-y;return sortDir==="asc"?c:-c});}
@@ -218,6 +220,7 @@ function render(){
       <dt>Max PBR</dt><dd>${d.mpbr} yd</dd>
       <dt>Sight-in @25</dt><dd>${Math.abs(d.s25).toFixed(2)}" ${d.s25<0?"low":"high"}</dd>
      </dl>${d.alt?`<span class="num" style="display:block;margin-top:10px">${d.alt.mpbr} yd</span><span class="sub">${d.alt.zone}" vital zone</span><dl class="pbr"><dt>Near zero</dt><dd>${d.alt.near} yd</dd><dt>Far zero</dt><dd>${d.alt.far} yd</dd><dt>Min PBR</dt><dd>${d.alt.minp} yd</dd><dt>Max PBR</dt><dd>${d.alt.mpbr} yd</dd><dt>Sight-in @100</dt><dd>${d.alt.s100.toFixed(2)}" high</dd></dl>`:""}${d.pbrNote?`<span class="sub" style="margin-top:4px">${d.pbrNote}</span>`:""}${d.name===".350 Legend"?'<span class="sub" style="margin-top:4px">180 gr: zero 19/169 · max 197 · 2.99" high</span>':""}</td>
+    <td>${PLAT[d.name]?`<span class="num">${PLAT[d.name][0]}</span><span class="sub">${PLAT[d.name][1]}</span>`:""}</td>
    </tr>`).join("");
   document.getElementById("count").textContent=`Showing ${rows.length} of ${DATA.length} cartridges`;
 }
