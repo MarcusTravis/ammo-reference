@@ -1,0 +1,65 @@
+/* Clean theme: white, black, gray and red, with Apple-style type.
+   Loaded after each page's own styles, so it overrides colors and type
+   site-wide from this one file. Pages set data-theme="light" on <html>,
+   which switches off their old dark-mode rules. */
+:root:root:root{
+  color-scheme:light;
+  --bg:#f5f5f7; --surface:#ffffff; --fg:#1d1d1f; --muted:#6e6e73; --line:#e3e3e8;
+  --accent:#d70015; --accent-soft:#f2f2f4; --olive:#86868b; --bar-bg:#ececf0; --grid:#d2d2d7;
+  --ink:#1d1d1f; --hov:#1d1d1f;
+  --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Inter,"Segoe UI",Roboto,Arial,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Inter,"Segoe UI",Roboto,Arial,sans-serif;
+}
+body{background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+
+/* Headings: sentence case, tight, bold, no all-caps */
+h1,.grp h2,.notes h2,.tip h2,.danger h2,.nm,.cart,.story h3,.side h2,.sec,.rv h2,.hs h2,.gm h2,.dia .in,.hero .hl2{
+  font-family:var(--display);text-transform:none;letter-spacing:-.02em}
+h1{font-weight:700;font-size:clamp(34px,5.5vw,56px);line-height:1.05}
+.grp h2{font-weight:600;font-size:24px;border-bottom:0;padding-bottom:0;margin-bottom:16px}
+.nm{font-weight:600;font-size:22px;line-height:1.15}
+.cart{font-weight:600}
+.tip h2{font-weight:600;font-size:20px;line-height:1.2}
+.notes h2,.side h2,.rv h2,.hs h2,.gm h2,.story h3{font-weight:600}
+.eyebrow{color:var(--accent);letter-spacing:.06em;font-weight:600}
+.lede{color:var(--muted);font-size:17px;line-height:1.5}
+.cnt{color:var(--muted);letter-spacing:.04em;font-weight:600}
+
+/* Cards: white, rounded, soft shadow, no heavy borders */
+.card,.tip,.table-box,.notes,.story,.side,.rv,.hs,.gm,.dia{border-color:transparent}
+.card,.tip{border-radius:18px;padding:22px 24px;background:var(--surface);
+  box-shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s}
+.card:hover{border-color:transparent;transform:translateY(-3px);box-shadow:0 2px 4px rgba(0,0,0,.05),0 14px 34px rgba(0,0,0,.10)}
+.grid{gap:18px}
+.go{color:var(--accent);font-weight:600}
+.table-box{border-radius:18px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05)}
+th{background:#fafafa}
+
+/* Highlighted home cards: thin red outline, red pill badge, no glow */
+.card.feature{border:1.5px solid var(--accent);background:var(--surface);
+  box-shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05)}
+.card.feature:hover{box-shadow:0 2px 4px rgba(0,0,0,.05),0 14px 34px rgba(0,0,0,.10)}
+.card.feature .cnt{color:var(--muted)}
+.badge{border-radius:999px;padding:4px 11px;letter-spacing:.03em;font-weight:600;font-size:11.5px;text-transform:none;background:var(--accent);color:#fff}
+
+/* Filter chips: pill, black when selected */
+.chip{border-radius:999px;border-color:var(--line);background:var(--surface)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* Tips tiers: red = must know, black = should know */
+.tip.must{--tier:var(--accent)}
+.tip.should{--tier:var(--ink)}
+.tip.must,.tip.should{border-width:1.5px;box-shadow:inset 4px 0 0 var(--tier),0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05)}
+.tip.must .flag{background:var(--accent)}
+.tip.should .flag{background:var(--ink)}
+.flag{border-radius:999px;padding:2px 8px}
+a.tip:hover{border-color:var(--ink);box-shadow:inset 4px 0 0 var(--ink),0 0 0 1px var(--ink),0 14px 34px rgba(0,0,0,.12)}
+a.tip:hover .more{color:var(--ink)}
+
+/* Warning boxes stay red */
+.danger{--danger:var(--accent);border-radius:18px}
+.sh-hint,.sh-warn{border-radius:12px}
+
+/* Drawings: neutral gray steel instead of olive */
+.hero .st,.dg .st,.viz .st{fill:#8e8e93}
+.hero .bf,.dg .bf,.viz .bf{fill:#48484a}
