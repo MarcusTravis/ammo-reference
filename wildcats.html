@@ -110,6 +110,7 @@ tr.feature .cart{color:var(--accent)}
         <th><button class="th-btn" data-k="twistN">Twist rate for typical load</button></th>
         <th><button class="th-btn" data-k="range">Practical range</button></th>
         <th><button class="th-btn" data-k="mpbr">MPBR</button></th>
+        <th>Recommended platform</th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -191,6 +192,7 @@ let filter="all",sortKey=null,sortDir="asc";
 const fmt=n=>n.toLocaleString("en-US");
 const BC={".17 Ackley Hornet":[0.185,0],".20 Practical":[0.287,0],".22 BR":[0.267,0],".22-250 Ackley Improved":[0.255,0],"6mm Dasher":[0.53,1],"6mm-284":[0.53,1],".257 Roberts Ackley Improved":[0.39,1],".257 Blackbird":[0.66,1],".260 Ackley Improved":[0.61,1],"6.5 SAUM":[0.646,0],".284 Shehane":[0.67,1],".30 BR":[0.25,1],".30-30 Ackley Improved":[0.27,1],".30-06 Ackley Improved":[0.45,1]};
 DATA.forEach(d=>{const b=BC[d.name];d.bcv=b||null;d.bc=b?b[0]:0;});
+const PLAT={".17 Ackley Hornet":["Any rifle, ultralights included","Very light recoil"],".20 Practical":["Any rifle, ultralights included","Very light recoil"],".22 BR":["Any rifle, ultralights included","Very light recoil"],".22-250 Ackley Improved":["Any rifle, ultralights included","Very light recoil"],"6mm Dasher":["Benchrest or PRS rifle, 12 lb+","Tiny recoil, so you can spot your own hits"],"6mm-284":["Light or standard rifle","Light recoil; fine in a 6–7 lb rifle"],".257 Roberts Ackley Improved":["Light or standard rifle","Light recoil; fine in a 6–7 lb rifle"],".257 Blackbird":["Standard to heavy rifle, 8 lb+","Stout recoil; use a good pad or brake in a light rifle"],".260 Ackley Improved":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],"6.5 SAUM":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],".284 Shehane":["Standard rifle, 7–8 lb","Moderate recoil; snappy in an ultralight"],".30 BR":["Benchrest rifle or light bolt gun","Light recoil"],".30-30 Ackley Improved":["Lever-action carbine","Light-to-moderate recoil"],".30-06 Ackley Improved":["Standard to heavy rifle, 8 lb+","Stout recoil; use a good pad or brake in a light rifle"]};
 function render(){
   let rows=DATA.filter(d=>filter==="all"||d.tags.includes(filter));
   if(sortKey){rows=[...rows].sort((a,b)=>{const x=a[sortKey],y=b[sortKey];const c=typeof x==="string"?x.localeCompare(y):x-y;return sortDir==="asc"?c:-c});}
@@ -212,6 +214,7 @@ function render(){
       <dt>Max PBR</dt><dd>${d.mpbr} yd</dd>
       <dt>Sight-in @100</dt><dd>${Math.abs(d.s100).toFixed(2)}" ${d.s100<0?"low":"high"}</dd>
      </dl>${d.alt?`<span class="num" style="display:block;margin-top:10px">${d.alt.mpbr} yd</span><span class="sub">${d.alt.zone}" vital zone</span><dl class="pbr"><dt>Near zero</dt><dd>${d.alt.near} yd</dd><dt>Far zero</dt><dd>${d.alt.far} yd</dd><dt>Min PBR</dt><dd>${d.alt.minp} yd</dd><dt>Max PBR</dt><dd>${d.alt.mpbr} yd</dd><dt>Sight-in @100</dt><dd>${d.alt.s100.toFixed(2)}" high</dd></dl>`:""}${d.pbrNote?`<span class="sub" style="margin-top:4px">${d.pbrNote}</span>`:""}${d.name===".350 Legend"?'<span class="sub" style="margin-top:4px">180 gr: zero 19/169 · max 197 · 2.99" high</span>':""}</td>
+    <td>${PLAT[d.name]?`<span class="num">${PLAT[d.name][0]}</span><span class="sub">${PLAT[d.name][1]}</span>`:""}</td>
    </tr>`).join("");
   document.getElementById("count").textContent=`Showing ${rows.length} of ${DATA.length} cartridges`;
 }
