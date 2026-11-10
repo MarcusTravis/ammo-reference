@@ -6,4 +6,4 @@ Many figures (velocities, BCs, prices, specs) are typical values and estimates; 
 
 Live site: https://ammochart.pages.dev
 
-Tips page priorities: red cards are "Must know" (prevent accidents or wasted hunts), orange cards are "Should know" (worth learning early), the rest are general tips.
+Tips page priorities: tips labeled "Must know" in red prevent accidents or wasted hunts, tips labeled "Should know" in orange are worth learning early, and the rest are general tips.
