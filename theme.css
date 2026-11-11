@@ -95,3 +95,8 @@ body *{text-transform:none!important}
 /* Drawings: neutral steel gray */
 .hero .st,.dg .st,.viz .st{fill:#8e8e93}
 .hero .bf,.dg .bf,.viz .bf{fill:#48484a}
+
+/* Ko-fi tip line at the bottom of every page */
+.kofi{max-width:1200px;margin:48px auto 36px;padding:0 24px;text-align:center;color:var(--muted);font-size:14px}
+.kofi a{color:var(--accent);text-decoration:none}
+.kofi a:hover{text-decoration:underline}
