@@ -1,0 +1,4 @@
+# Tell search engines that ammochart.net is the main address.
+# ammochart.pages.dev keeps working; it just points Google to the .net copy.
+/*
+  Link: <https://ammochart.net/:splat>; rel="canonical"
