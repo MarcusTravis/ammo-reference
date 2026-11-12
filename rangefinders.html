@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Laser Rangefinder Chart</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: field-card reference — short header, filter chips, one wide sortable table with inline MPBR bars */
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8; --brass:#c9a24a; --brass-edge:#8a6a22; --copper:#b8693d; --grid:#c5c9b8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; --brass:#c9a24a; --brass-edge:#e2c27a; --copper:#c9794a; --grid:#3e4535; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; --brass:#c9a24a; --brass-edge:#e2c27a; --copper:#c9794a; --grid:#3e4535; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1280px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.chip{font:600 13px var(--body);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible,.th-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.table-box{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:1750px;font-variant-numeric:tabular-nums}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--bg);position:sticky;top:0;white-space:nowrap}
+.th-btn{all:unset;cursor:pointer;display:inline-flex;gap:4px;align-items:center}
+.th-btn::after{content:"↕";opacity:.4;font-size:11px}
+.th-btn[data-dir="asc"]::after{content:"↑";opacity:1;color:var(--accent)}
+.th-btn[data-dir="desc"]::after{content:"↓";opacity:1;color:var(--accent)}
+.cart{font-family:var(--display);font-weight:700;font-size:22px;line-height:1.05;letter-spacing:.01em;white-space:nowrap}
+.year{display:block;font-size:12px;color:var(--muted);font-family:var(--body);font-weight:500;margin-top:3px}
+.purpose{max-width:38ch;min-width:300px}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.tag{font-size:11px;font-weight:600;padding:2px 7px;border-radius:4px;background:var(--bar-bg);color:var(--olive)}
+.num{font-weight:700;font-size:16px;white-space:nowrap}
+.sub{display:block;font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
+.mpbr{min-width:200px}
+.size{margin-top:8px}
+.size svg{display:block;height:auto;max-width:none}
+.size .g{stroke:var(--grid);stroke-width:1;fill:none}
+.size .case{fill:var(--brass);stroke:var(--brass-edge);stroke-width:.8}
+.size .bul{fill:var(--copper);stroke:var(--brass-edge);stroke-width:.8}
+.size .lbl{font:600 9px var(--body);fill:var(--muted)}
+.pbr{display:grid;grid-template-columns:auto auto;gap:2px 12px;margin:8px 0 0;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);font-size:12px;width:max-content}
+.pbr dt{color:var(--muted);text-align:right}
+.pbr dd{margin:0;font-weight:600;text-align:right}
+.bar{height:8px;border-radius:4px;background:var(--bar-bg);margin-top:6px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--olive);border-radius:4px}
+tr.feature td{background:var(--accent-soft)}
+tr.feature .bar span{background:var(--accent)}
+tr.feature .cart{color:var(--accent)}
+.flag{display:inline-block;font:700 10px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:2px 6px;border-radius:3px;margin-top:5px}
+
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+.notes section{min-width:0}
+.notes h2{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.02em;margin:0 0 6px}
+.notes p,.notes li{color:var(--muted);font-size:14px;margin:0}
+.notes ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.count{font-size:13px;color:var(--muted);margin:0 0 10px}
+
+.stars{color:var(--accent);font-size:16px;letter-spacing:1px}
+.stars.off{color:var(--line)}
+.pc{display:grid;gap:6px;font-size:14px}
+.pro{color:var(--olive);font-weight:600}
+.con{color:var(--muted)}
+.lr{display:grid;grid-template-columns:auto auto auto;gap:2px 10px;font-size:12px;margin:0}
+.lr span{text-align:right;white-space:nowrap}
+.lr .hd{color:var(--muted);font-weight:600}
+.chk{font-weight:700}
+.chk.y{color:var(--accent)}
+.chk.n{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<a href="index.html" style="display:inline-block;margin:16px 0 0 max(16px,env(safe-area-inset-left,0px));font:600 13px system-ui,sans-serif;color:var(--accent);text-decoration:none">← All charts</a>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Field reference · laser rangefinders</span>
+    <h1>Laser Rangefinder Chart</h1>
+    <p class="lede">Popular hunting rangefinders: price range, popularity, ranging and display ratings, magnification, reflective and deer range, angle and ballistic features, weight and pros and cons. Tap a column header to sort.</p>
+  </header>
+  <div class="chips" role="group" aria-label="Filter">
+    <button class="chip" id="f-all" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" id="f-ballistic" data-f="ballistic" aria-pressed="false">Ballistic solver</button>
+    <button class="chip" id="f-bow" data-f="bow" aria-pressed="false">Bowhunting</button>
+    <button class="chip" id="f-bino" data-f="bino" aria-pressed="false">Binocular</button>
+    <button class="chip" id="f-budget" data-f="budget" aria-pressed="false">Under $300</button>
+    <button class="chip" id="f-mid" data-f="mid" aria-pressed="false">$300–800</button>
+    <button class="chip" id="f-premium" data-f="premium" aria-pressed="false">$800+</button>
+  </div>
+  <p class="count" id="count"></p>
+  <div class="table-box">
+    <table>
+      <thead><tr>
+        <th><button class="th-btn" data-k="name">Rangefinder</button></th>
+        <th>Known for</th>
+        <th><button class="th-btn" data-k="price">Price range</button></th>
+        <th><button class="th-btn" data-k="pop">Popularity</button></th>
+        <th><button class="th-btn" data-k="rng">Ranging</button></th>
+        <th><button class="th-btn" data-k="glass">Display &amp; glass</button></th>
+        <th>Magnification</th>
+        <th><button class="th-btn" data-k="refl">Max range</button></th>
+        <th>Angle &amp; ballistics</th>
+        <th><button class="th-btn" data-k="wt">Weight</button></th>
+        <th>Pros &amp; cons</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <div class="notes">
+    <section>
+      <h2>Reading rangefinder specs</h2>
+      <ul>
+        <li><strong>Reflective range</strong> is the most a laser can read off a bright sign or rock. <strong>Deer range</strong> is what matters for hunting and is usually a third or less of the reflective number.</li>
+        <li><strong>Angle compensation</strong> (HCD, ARC, angle-modified) gives the "shoot-for" distance on steep uphill or downhill shots. Every bowhunter should use it.</li>
+        <li><strong>Ballistic solvers</strong> (Applied Ballistics, GeoBallistics, Hornady 4DOF) turn the range into a hold or dial number for your load. They only help if you enter your real velocity and BC and check them at the range.</li>
+        <li><strong>Magnification</strong>: 5–6x is fine for bow and woods hunting; 7–8x makes it easier to hold steady on small targets far away.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>How the ratings work</h2>
+      <p>Popularity, ranging and display/glass stars are my own judgment from 2026 tests and guides (Outdoor Life's November 2026 rangefinder test, rifleconfigurator.com's 2026 guide, GunsAmerica, SIG and Bushnell specs). They are a starting point, not lab results.</p>
+    </section>
+    <section>
+      <h2>Sources and limits</h2>
+      <ul>
+        <li>"Tested" figures are from Outdoor Life's 2026 test in Montana; others are the maker's claims, which assume ideal conditions.</li>
+        <li>Prices are US list or street prices seen in 2026 (maker stores, EuroOptic, Lancaster Archery, rifleconfigurator.com). Rangefinders go on sale often.</li>
+        <li>A dash means I don't have a confirmed number for that spec.</li>
+      </ul>
+    </section>
+  </div>
+</div>
+<script>
+const DATA=[{"tags":["premium","ballistic"],"k":{"name":"Xero L60i","price":2500,"pop":4,"rng":5,"glass":4.5,"refl":7500,"deer":3000,"wt":13.6},"c":["<span class=\"cart\">Xero L60i</span><span class=\"year\">Garmin · USA</span>","Outdoor Life's 2026 Editor's Choice: a rangefinder with Garmin topo maps and waypoints built in.<div class=\"tags\"><span class=\"tag\">Ballistic solver</span><span class=\"tag\">$800+</span></div>","<span class=\"num\">$2,500</span><span class=\"sub\">list</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span><span class=\"sub\">Outdoor Life Editor's Choice</span>","<span class=\"stars\" aria-label=\"5 out of 5\">★★★★★</span><span class=\"stars off\"></span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"num\">7x32</span>","<span class=\"num\">7,500 yd</span><span class=\"sub\">deer 3,000 yd · tested 4,300 / 1,800</span>","<span class=\"num\">Applied Ballistics</span><span class=\"sub\">AB plus archery mode, Kestrel link</span>","<span class=\"num\">13.6 oz</span><span class=\"sub\">2× AAA</span>","<div class=\"pc\"><span class=\"pro\">+ Maps, navigation, strong solver</span><span class=\"con\">− Big, heavy, expensive</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["premium","ballistic"],"k":{"name":"KILO8K-ABS Gen II","price":1500,"pop":4,"rng":5,"glass":4.5,"refl":8000,"deer":2000,"wt":7.5},"c":["<span class=\"cart\">KILO8K-ABS Gen II</span><span class=\"year\">SIG Sauer · USA</span>","Long-reach SIG with Applied Ballistics Elite; hit its 8,000-yd claim in Outdoor Life's test.<div class=\"tags\"><span class=\"tag\">Ballistic solver</span><span class=\"tag\">$800+</span></div>","<span class=\"num\">$1,500</span><span class=\"sub\">just under, new</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"5 out of 5\">★★★★★</span><span class=\"stars off\"></span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"num\">7x25</span>","<span class=\"num\">8,000 yd</span><span class=\"sub\">deer 2,000 yd · tested 8,060 / 1,850</span>","<span class=\"num\">AB Elite</span><span class=\"sub\">archery mode, BDX and wind meters</span>","<span class=\"num\">7.5 oz</span><span class=\"sub\">rechargeable</span>","<div class=\"pc\"><span class=\"pro\">+ Very fast, bright OLED, huge range</span><span class=\"con\">− Price</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["premium","ballistic"],"k":{"name":"Rangemaster CRF Max","price":1500,"pop":3.5,"rng":4,"glass":5,"refl":3700,"deer":null,"wt":7},"c":["<span class=\"cart\">Rangemaster CRF Max</span><span class=\"year\">Leica · Germany</span>","Best-in-class solver and glass in a 7-oz body; 10-year optics warranty.<div class=\"tags\"><span class=\"tag\">Ballistic solver</span><span class=\"tag\">$800+</span></div>","<span class=\"num\">$1,500</span><span class=\"sub\">just under, new</span>","<span class=\"stars\" aria-label=\"3.5 out of 5\">★★★½</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"5 out of 5\">★★★★★</span><span class=\"stars off\"></span>","<span class=\"num\">7x</span>","<span class=\"num\">3,700 yd</span><span class=\"sub\">deer range not confirmed · tested deer 915 yd</span>","<span class=\"num\">AB Elite</span><span class=\"sub\">shot-probability calculator</span>","<span class=\"num\">7 oz</span>","<div class=\"pc\"><span class=\"pro\">+ Superb glass, clear display, fast</span><span class=\"con\">− Shorter max range than SIG or Leupold</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["premium","ballistic"],"k":{"name":"RX-5000 TBR/W","price":800,"pop":4,"rng":4.5,"glass":4.5,"refl":5000,"deer":2000,"wt":9.7},"c":["<span class=\"cart\">RX-5000 TBR/W</span><span class=\"year\">Leupold · USA</span>","Metal-bodied 8x Leupold with Hornady 4DOF ballistics and map pins.<div class=\"tags\"><span class=\"tag\">Ballistic solver</span><span class=\"tag\">$800+</span></div>","<span class=\"num\">$800</span><span class=\"sub\">street, new</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"num\">8x30</span>","<span class=\"num\">5,000 yd</span><span class=\"sub\">deer 2,000 yd · tested 4,660 / 1,800</span>","<span class=\"num\">Hornady 4DOF</span><span class=\"sub\">rifle and bow modes, map pins</span>","<span class=\"num\">9.7 oz</span>","<div class=\"pc\"><span class=\"pro\">+ Excellent glass, solid build</span><span class=\"con\">− Heavier; no built-in tripod mount</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["mid","ballistic"],"k":{"name":"Razor HD 4000 GB","price":680,"pop":4.5,"rng":4.5,"glass":4.5,"refl":4000,"deer":2200,"wt":10.1},"c":["<span class=\"cart\">Razor HD 4000 GB</span><span class=\"year\">Vortex · USA</span>","Rifleconfigurator's best all-around rangefinder for 2026, with GeoBallistics and weather sensors.<div class=\"tags\"><span class=\"tag\">Ballistic solver</span><span class=\"tag\">$300–800</span></div>","<span class=\"num\">$680</span><span class=\"sub\">street, new</span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span><span class=\"sub\">2026 best-overall pick</span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"num\">7x25</span>","<span class=\"num\">4,000 yd</span><span class=\"sub\">deer 2,200 yd · tree 2,500</span>","<span class=\"num\">GeoBallistics</span><span class=\"sub\">weather sensors, Kestrel pairing</span>","<span class=\"num\">10.1 oz</span>","<div class=\"pc\"><span class=\"pro\">+ Solver, sensors, VIP warranty</span><span class=\"con\">− Overkill if you hunt inside 300 yd</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["mid"],"k":{"name":"Viper HD 3000","price":340,"pop":4.5,"rng":4,"glass":4,"refl":3000,"deer":null,"wt":null},"c":["<span class=\"cart\">Viper HD 3000</span><span class=\"year\">Vortex · USA</span>","Simple premium hunting rangefinder: good glass, no ballistics to set up.<div class=\"tags\"><span class=\"tag\">$300–800</span></div>","<span class=\"num\">$340–$400</span><span class=\"sub\">street, new</span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span><span class=\"sub\">Very common hunting pick</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"num\">7x25</span>","<span class=\"num\">3,000 yd</span><span class=\"sub\">deer range not confirmed</span>","<span class=\"num\">Angle only</span><span class=\"sub\">HCD angle-compensated range</span>","<span class=\"num\">—</span>","<div class=\"pc\"><span class=\"pro\">+ Strong range, clean display, VIP warranty</span><span class=\"con\">− No solver for the money</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["mid"],"k":{"name":"RF.1","price":550,"pop":3.5,"rng":4.5,"glass":4.5,"refl":4500,"deer":2700,"wt":null},"c":["<span class=\"cart\">RF.1</span><span class=\"year\">Maven · USA</span>","Direct-to-buyer Maven with field and forest modes for tricky backgrounds.<div class=\"tags\"><span class=\"tag\">$300–800</span></div>","<span class=\"num\">$550</span><span class=\"sub\">list</span>","<span class=\"stars\" aria-label=\"3.5 out of 5\">★★★½</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"num\">7x25</span>","<span class=\"num\">4,500 yd</span><span class=\"sub\">deer 2,700 yd · tree 3,000</span>","<span class=\"num\">Angle only</span><span class=\"sub\">line-of-sight and angle modes</span>","<span class=\"num\">—</span>","<div class=\"pc\"><span class=\"pro\">+ Excellent ranging and glass, IPX7</span><span class=\"con\">− No MOA or MIL holds</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["mid","ballistic"],"k":{"name":"KILO3K","price":315,"pop":4.5,"rng":4,"glass":4,"refl":3000,"deer":1500,"wt":5.3},"c":["<span class=\"cart\">KILO3K</span><span class=\"year\">SIG Sauer · USA</span>","Best ballistic rangefinder under $500: Applied Ballistics Ultralight and onboard weather sensors.<div class=\"tags\"><span class=\"tag\">Ballistic solver</span><span class=\"tag\">$300–800</span></div>","<span class=\"num\">$315–$350</span><span class=\"sub\">street, new</span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span><span class=\"sub\">Best buy under $500</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"num\">6x22</span>","<span class=\"num\">3,000 yd</span><span class=\"sub\">deer 1,500 yd · tree 1,800</span>","<span class=\"num\">AB Ultralight</span><span class=\"sub\">BDX app, weather sensors</span>","<span class=\"num\">5.3 oz</span><span class=\"sub\">CR2</span>","<div class=\"pc\"><span class=\"pro\">+ Light, cheap ballistic holds</span><span class=\"con\">− Not full AB Elite</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["budget","ballistic"],"k":{"name":"R5 2000 AB","price":250,"pop":4,"rng":3.5,"glass":3,"refl":2000,"deer":650,"wt":6.4},"c":["<span class=\"cart\">R5 2000 AB</span><span class=\"year\">Bushnell · USA</span>","The cheapest rangefinder with Applied Ballistics, valid to 800 yd.<div class=\"tags\"><span class=\"tag\">Ballistic solver</span><span class=\"tag\">Under $300</span></div>","<span class=\"num\">$250</span><span class=\"sub\">list</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"3.5 out of 5\">★★★½</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"3 out of 5\">★★★</span><span class=\"stars off\">★★</span>","<span class=\"num\">6x25</span>","<span class=\"num\">2,000 yd</span><span class=\"sub\">deer 650 yd · tested 1,700 / 510</span>","<span class=\"num\">AB Ultralite</span><span class=\"sub\">valid to 800 yd, MOA or MIL holds</span>","<span class=\"num\">6.4 oz</span><span class=\"sub\">CR2</span>","<div class=\"pc\"><span class=\"pro\">+ Ballistic holds for $250</span><span class=\"con\">− Black LCD only; solver stops at 800 yd</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["budget","bow"],"k":{"name":"R5 Broadhead 2","price":225,"pop":3.5,"rng":3.5,"glass":3,"refl":2000,"deer":500,"wt":6},"c":["<span class=\"cart\">R5 Broadhead 2</span><span class=\"year\">Bushnell · USA</span>","Bushnell's bowhunting rangefinder with fog/brush mode and an auto-brightness display.<div class=\"tags\"><span class=\"tag\">Bowhunting</span><span class=\"tag\">Under $300</span></div>","<span class=\"num\">$225–$300</span><span class=\"sub\">street, new</span>","<span class=\"stars\" aria-label=\"3.5 out of 5\">★★★½</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"3.5 out of 5\">★★★½</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"3 out of 5\">★★★</span><span class=\"stars off\">★★</span>","<span class=\"num\">6x25</span>","<span class=\"num\">2,000 yd</span><span class=\"sub\">deer 500 yd · tested 1,660 / 475</span>","<span class=\"num\">Angle (ARC bow mode)</span><span class=\"sub\">no ballistic solver</span>","<span class=\"num\">6 oz</span>","<div class=\"pc\"><span class=\"pro\">+ Good fog/brush mode, tripod mount</span><span class=\"con\">− Optics and menus only fine for the price</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["mid","bow"],"k":{"name":"RX-FullDraw 5","price":500,"pop":3.5,"rng":4,"glass":4,"refl":null,"deer":900,"wt":7.5},"c":["<span class=\"cart\">RX-FullDraw 5</span><span class=\"year\">Leupold · USA</span>","Archery-first rangefinder with Flightpath, which checks for branches in the arrow's path.<div class=\"tags\"><span class=\"tag\">Bowhunting</span><span class=\"tag\">$300–800</span></div>","<span class=\"num\">$500</span><span class=\"sub\">list</span>","<span class=\"stars\" aria-label=\"3.5 out of 5\">★★★½</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"num\">6x22</span>","<span class=\"num\">—</span><span class=\"sub\">deer 900 yd · tree 1,100</span>","<span class=\"num\">Archery ballistics</span><span class=\"sub\">Flightpath obstruction check</span>","<span class=\"num\">7.5 oz</span>","<div class=\"pc\"><span class=\"pro\">+ Great in branches and steep ground</span><span class=\"con\">− Not for rifle holds</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["budget","bow"],"k":{"name":"KILO MICRO","price":250,"pop":3.5,"rng":3.5,"glass":3,"refl":1000,"deer":600,"wt":3.4},"c":["<span class=\"cart\">KILO MICRO</span><span class=\"year\">SIG Sauer · USA</span>","The world's smallest laser rangefinder: 3.4 oz, built for bowhunters.<div class=\"tags\"><span class=\"tag\">Bowhunting</span><span class=\"tag\">Under $300</span></div>","<span class=\"num\">$250</span><span class=\"sub\">list</span>","<span class=\"stars\" aria-label=\"3.5 out of 5\">★★★½</span><span class=\"stars off\">★</span><span class=\"sub\">New for 2026</span>","<span class=\"stars\" aria-label=\"3.5 out of 5\">★★★½</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"3 out of 5\">★★★</span><span class=\"stars off\">★★</span>","<span class=\"num\">4x18</span>","<span class=\"num\">1,000 yd</span><span class=\"sub\">deer 600 yd · tree 800</span>","<span class=\"num\">Archery mode</span><span class=\"sub\">angle-modified range for your bow</span>","<span class=\"num\">3.4 oz</span><span class=\"sub\">rechargeable, ~3,000 ranges</span>","<div class=\"pc\"><span class=\"pro\">+ Tiny and light</span><span class=\"con\">− Only 4x; short range for rifle</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["budget"],"k":{"name":"Crossfire HD 1400","price":200,"pop":4.5,"rng":3,"glass":3,"refl":1400,"deer":null,"wt":4.8},"c":["<span class=\"cart\">Crossfire HD 1400</span><span class=\"year\">Vortex · USA</span>","Very light, simple first rangefinder with the VIP warranty.<div class=\"tags\"><span class=\"tag\">Under $300</span></div>","<span class=\"num\">$200–$270</span><span class=\"sub\">street, new</span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span><span class=\"sub\">Top budget seller</span>","<span class=\"stars\" aria-label=\"3 out of 5\">★★★</span><span class=\"stars off\">★★</span>","<span class=\"stars\" aria-label=\"3 out of 5\">★★★</span><span class=\"stars off\">★★</span>","<span class=\"num\">5x21</span>","<span class=\"num\">1,400 yd</span><span class=\"sub\">deer range not confirmed</span>","<span class=\"num\">Angle only</span><span class=\"sub\">HCD angle-compensated range</span>","<span class=\"num\">4.8 oz</span>","<div class=\"pc\"><span class=\"pro\">+ Light, easy, cheap</span><span class=\"con\">− No solver; struggles on far targets</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["budget","bow"],"k":{"name":"Triumph HD 850","price":80,"pop":4,"rng":2.5,"glass":2.5,"refl":850,"deer":350,"wt":4.6},"c":["<span class=\"cart\">Triumph HD 850</span><span class=\"year\">Vortex · USA</span>","Outdoor Life's Great Buy: a sub-$100 bow and deer-woods rangefinder.<div class=\"tags\"><span class=\"tag\">Bowhunting</span><span class=\"tag\">Under $300</span></div>","<span class=\"num\">$80–$100</span><span class=\"sub\">under $100</span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span><span class=\"sub\">Outdoor Life Great Buy</span>","<span class=\"stars\" aria-label=\"2.5 out of 5\">★★½</span><span class=\"stars off\">★★</span>","<span class=\"stars\" aria-label=\"2.5 out of 5\">★★½</span><span class=\"stars off\">★★</span>","<span class=\"num\">5x</span>","<span class=\"num\">850 yd</span><span class=\"sub\">deer 350 yd · tested 680 / 325</span>","<span class=\"num\">Angle only</span><span class=\"sub\">6-yd minimum range</span>","<span class=\"num\">4.6 oz</span>","<div class=\"pc\"><span class=\"pro\">+ Cheap, tiny, ranges close for bows</span><span class=\"con\">− Washed-out display, slow, plasticky</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["mid"],"k":{"name":"Midas 1 Mile","price":300,"pop":3,"rng":3,"glass":3,"refl":1700,"deer":800,"wt":null},"c":["<span class=\"cart\">Midas 1 Mile</span><span class=\"year\">Athlon · USA</span>","Simple, affordable backup with no app or profiles to set up.<div class=\"tags\"><span class=\"tag\">$300–800</span></div>","<span class=\"num\">$300</span><span class=\"sub\">list</span>","<span class=\"stars\" aria-label=\"3 out of 5\">★★★</span><span class=\"stars off\">★★</span>","<span class=\"stars\" aria-label=\"3 out of 5\">★★★</span><span class=\"stars off\">★★</span>","<span class=\"stars\" aria-label=\"3 out of 5\">★★★</span><span class=\"stars off\">★★</span>","<span class=\"num\">6x</span>","<span class=\"num\">1,700 yd</span><span class=\"sub\">deer 800 yd</span>","<span class=\"num\">None</span><span class=\"sub\">straight-line range</span>","<span class=\"num\">—</span>","<div class=\"pc\"><span class=\"pro\">+ Simple and accurate to ±0.5 yd</span><span class=\"con\">− No solver; plainer glass</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["premium","ballistic","bino"],"k":{"name":"Fury HD 5000 AB","price":2300,"pop":3.5,"rng":4.5,"glass":4,"refl":null,"deer":1600,"wt":null},"c":["<span class=\"cart\">Fury HD 5000 AB</span><span class=\"year\">Vortex · USA</span>","10x42 binocular and Applied Ballistics rangefinder in one: one less thing on your chest.<div class=\"tags\"><span class=\"tag\">Ballistic solver</span><span class=\"tag\">Binocular</span><span class=\"tag\">$800+</span></div>","<span class=\"num\">$2,300</span><span class=\"sub\">list</span>","<span class=\"stars\" aria-label=\"3.5 out of 5\">★★★½</span><span class=\"stars off\">★</span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"stars\" aria-label=\"4 out of 5\">★★★★</span><span class=\"stars off\">★</span>","<span class=\"num\">10x42 binocular</span>","<span class=\"num\">—</span><span class=\"sub\">deer 1,600 yd · tree 2,400</span>","<span class=\"num\">AB Elite</span><span class=\"sub\">Kestrel and Garmin pairing</span>","<span class=\"num\">—</span>","<div class=\"pc\"><span class=\"pro\">+ Binocular and LRF in one, good warranty</span><span class=\"con\">− Heavy and expensive</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]},{"tags":["premium","ballistic","bino"],"k":{"name":"Geovid Pro 10x42 AB+","price":4000,"pop":3,"rng":4.5,"glass":5,"refl":3200,"deer":null,"wt":null},"c":["<span class=\"cart\">Geovid Pro 10x42 AB+</span><span class=\"year\">Leica · Germany</span>","Premium rangefinding binocular with the best glass in the class.<div class=\"tags\"><span class=\"tag\">Ballistic solver</span><span class=\"tag\">Binocular</span><span class=\"tag\">$800+</span></div>","<span class=\"num\">$4,000</span><span class=\"sub\">list</span>","<span class=\"stars\" aria-label=\"3 out of 5\">★★★</span><span class=\"stars off\">★★</span>","<span class=\"stars\" aria-label=\"4.5 out of 5\">★★★★½</span><span class=\"stars off\"></span>","<span class=\"stars\" aria-label=\"5 out of 5\">★★★★★</span><span class=\"stars off\"></span>","<span class=\"num\">10x42 binocular</span>","<span class=\"num\">3,200 yd</span><span class=\"sub\">deer range not confirmed · approx. reflective</span>","<span class=\"num\">AB Elite</span><span class=\"sub\">full Applied Ballistics</span>","<span class=\"num\">—</span>","<div class=\"pc\"><span class=\"pro\">+ Best glass, AB Elite</span><span class=\"con\">− Very expensive; slower than a handheld</span></div>"],"cls":[null,"purpose",null,null,null,null,null,null,null,null,"purpose"]}];
+let filter="all",sortKey=null,sortDir="asc";
+function render(){
+  let rows=DATA.filter(d=>filter==="all"||d.tags.includes(filter));
+  if(sortKey){rows=[...rows].sort((a,b)=>{const x=a.k[sortKey],y=b.k[sortKey];const c=typeof x==="string"?x.localeCompare(y):(x??-1)-(y??-1);return sortDir==="asc"?c:-c});}
+  document.getElementById("rows").innerHTML=rows.map(d=>"<tr>"+d.c.map((c,i)=>`<td${d.cls&&d.cls[i]?` class="${d.cls[i]}"`:""}>${c}</td>`).join("")+"</tr>").join("");
+  document.getElementById("count").textContent=`Showing ${rows.length} of ${DATA.length} rangefinders`;
+}
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.f;document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));render();}));
+document.querySelectorAll(".th-btn").forEach(b=>b.addEventListener("click",()=>{const k=b.dataset.k;sortDir=(sortKey===k&&sortDir==="asc")?"desc":"asc";sortKey=k;document.querySelectorAll(".th-btn").forEach(x=>x.removeAttribute("data-dir"));b.dataset.dir=sortDir;render();}));
+render();
+</script>
+
+<script src="scroll-hint.js"></script>
+<p class="kofi">Free and ad-free. If this site helped you, <a href="https://ko-fi.com/marcustravis" target="_blank" rel="noopener">buy me a coffee →</a></p>
+</body>
+</html>
