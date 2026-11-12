@@ -7,3 +7,5 @@ Many figures (velocities, BCs, prices, specs) are typical values and estimates; 
 Live site: https://ammochart.pages.dev
 
 Tips page priorities: tips labeled "Must know" in red prevent accidents or wasted hunts, tips labeled "Should know" in orange are worth learning early, and the rest are general tips.
+
+Visitor stats: Cloudflare Web Analytics (Pages project > Metrics > View Web Analytics).
