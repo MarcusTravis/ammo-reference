@@ -11,3 +11,5 @@ Tips page priorities: tips labeled "Must know" in red prevent accidents or waste
 Visitor stats: Cloudflare Web Analytics (Pages project > Metrics > View Web Analytics).
 
 Data check: the same cartridge facts appear on the charts, the profile pages, the compare pages and the deer guide. After editing any of them, run `node tools/check-consistency.mjs` (Node 18+, no install). The charts are the source of truth; it exits non-zero and lists anything that disagrees.
+
+Changes: every data or site change goes in `CHANGELOG.md` (before → after, with sources) and gets a short plain-English entry on the public Updates page (`updates.html`, https://ammochart.net/updates).

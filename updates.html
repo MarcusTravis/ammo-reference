@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Site Updates · Ammo Reference Library</title>
+<meta name="description" content="What changed on the Ammo Reference Library and when: data corrections, chart audits against maker data, and site fixes, newest first.">
+<link rel="canonical" href="https://ammochart.net/updates">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ammo Reference Library">
+<meta property="og:title" content="Site Updates · Ammo Reference Library">
+<meta property="og:description" content="What changed on the Ammo Reference Library and when: data corrections, chart audits against maker data, and site fixes, newest first.">
+<meta property="og:url" content="https://ammochart.net/updates">
+<meta property="og:image" content="https://ammochart.net/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ammo Reference Library: cartridge, caliber, rifle and optics charts">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Site Updates · Ammo Reference Library">
+<meta name="twitter:description" content="What changed on the Ammo Reference Library and when: data corrections, chart audits against maker data, and site fixes, newest first.">
+<meta name="twitter:image" content="https://ammochart.net/og-image.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: field-card reference — short header, filter chips, a grid of tip cards */
+:root{
+  --bg:#f2f3ec; --surface:#fbfbf7; --fg:#20241b; --muted:#5d6352; --line:#d6d9cb;
+  --accent:#e8590c; --accent-soft:#fde3d3; --olive:#55683a; --bar-bg:#e3e6d8;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171a14; --surface:#1f231b; --fg:#e7e9df; --muted:#a2a894; --line:#343a2c;
+  --accent:#ff7a33; --accent-soft:#3d2414; --olive:#9bb276; --bar-bg:#2c3125; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+
+.log{max-width:80ch}
+.entry{margin:0 0 28px;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.entry h2{margin:0 0 4px;font-size:22px}
+.entry time{display:block;color:var(--muted);font-size:14px;margin-bottom:10px}
+.entry p{margin:8px 0}
+.entry ul{margin:8px 0;padding-left:20px}
+.entry li{margin:0 0 10px;line-height:1.45}
+.entry .ct{color:var(--muted);font-size:14px}
+.more{font-size:15px}
+</style>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<a href="index.html" style="display:inline-block;margin:16px 0 0 max(16px,env(safe-area-inset-left,0px));font:600 13px system-ui,sans-serif;color:var(--accent);text-decoration:none">← All charts</a>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Site updates</span>
+    <h1>What's New</h1>
+    <p class="lede">Data corrections and site changes, newest first. Every number change, with the before and after values and the maker source, is in the <a href="https://github.com/MarcusTravis/ammo-reference/blob/main/CHANGELOG.md">changelog on GitHub</a>.</p>
+  </header>
+  <div class="log">
+    <article class="entry" id="2026-11-12-audit">
+      <h2>Every chart checked against maker data</h2>
+      <time datetime="2026-11-12">November 12, 2026</time>
+      <p>All 298 rows on the 17 charts were matched to a real factory load or product and checked against the maker's published numbers (or SAAMI and spec sheets where there is no single maker load). Wrong values were fixed everywhere they appear, including cartridge profiles, comparisons and the deer guide, and energy and point-blank ranges were recalculated. 174 rows changed, many of them only by a recalculated point-blank range or an updated price.</p>
+      <ul>
+        <li><a href="hunting.html">Hunting rifle cartridges</a> <span class="ct">33 rows · 15 updated</span><br>Corrected 22 ARC, 6mm ARC and .25 Creedmoor speeds to Hornady's catalog; fixed BCs on .223, .270, 6mm Rem and .338 Win Mag; relabeled .25 PRC as a handload-only wildcat.</li>
+        <li><a href="precision.html">Precision rifle</a> <span class="ct">13 rows · 4 updated</span><br>.300 Norma Magnum now matches Berger's factory load (2,934 ft/s); .375 CheyTac and .416 Barrett BCs corrected, with drop, wind and supersonic range recomputed.</li>
+        <li><a href="wildcats.html">Wildcat cartridges</a> <span class="ct">14 rows · 5 updated</span><br>.30-30 Ackley BC lowered to match real 150 gr flat-nose bullets; four out-of-date point-blank ranges recomputed.</li>
+        <li><a href="military-surplus.html">Military surplus</a> <span class="ct">18 rows · 6 updated</span><br>7.5x55 Swiss GP 11 speed and 7.62x54R BC corrected; four point-blank ranges recomputed.</li>
+        <li><a href="ar-calibers.html">AR calibers</a> <span class="ct">20 rows · 5 updated</span><br>22 ARC, 6mm ARC, 6.8 SPC, .50 Beowulf and .338 Federal now match their makers' published loads.</li>
+        <li><a href="rimfire.html">Rimfire</a> <span class="ct">7 rows · 2 updated</span><br>.22 LR and .22 WMR point-blank ranges recomputed.</li>
+        <li><a href="big-bore.html">Big bore</a> <span class="ct">13 rows · 9 updated</span><br>Loads confirmed; point-blank ranges recomputed so .375 H&amp;H matches the Hunting chart.</li>
+        <li><a href="handguns.html">Handgun cartridges</a> <span class="ct">17 rows · 13 updated</span><br>5.7x28 (1,738 ft/s, FN), .38 Special (755 ft/s), .454 Casull and .460 S&amp;W loads corrected; small point-blank fixes elsewhere.</li>
+        <li><a href="shotshells.html">Shotshells &amp; slugs</a> <span class="ct">17 rows · 6 updated</span><br>.410 load is the 3" shell; 20 ga sabot BC from Hornady; CCI rimfire and revolver shotshells updated to CCI's 2026 catalog.</li>
+        <li><a href="rifle-models.html">Rifle models</a> <span class="ct">22 rows · 4 updated</span><br>Browning X-Bolt 2 and CZ 457 trigger specs, Christensen barrel wording and the CVA Scout sales claim corrected.</li>
+        <li><a href="scopes.html">Rifle scopes</a> <span class="ct">25 rows · 14 updated</span><br>Bushnell R7 is the 4-20x50 FFP; Burris Fullfield E1 and Nightforce SHV 4-14x56 replace discontinued models; weights fixed to maker specs.</li>
+        <li><a href="thermal-scopes.html">Thermal scopes</a> <span class="ct">20 rows · 20 updated</span><br>Every row updated: sensor resolution fixed on six models, discontinued models renamed to current ones, and prices, weights and battery life set from maker pages.</li>
+        <li><a href="thermal-monoculars.html">Thermal monoculars</a> <span class="ct">20 rows · 20 updated</span><br>Prices, weights, battery life and detection ranges filled in or corrected from maker pages; Telos XP50 now shows in the Rangefinder filter.</li>
+        <li><a href="rangefinders.html">Laser rangefinders</a> <span class="ct">17 rows · 11 updated</span><br>Prices, deer and reflective ranges and weights updated from maker pages; KILO3K and Midas 1 Mile now sit under $300.</li>
+        <li><a href="binoculars.html">Hunting binoculars</a> <span class="ct">21 rows · 21 updated</span><br>Missing field-of-view and weight figures filled in; ZULU4, Kite APC, Toric and Viper HD prices corrected; Razor HD marked discontinued.</li>
+        <li><a href="muzzleloaders.html">Muzzleloaders</a> <span class="ct">12 rows · 10 updated</span><br>Speeds checked against GOEX and Hodgdon load data; .50 sabot, .54 conical, .62 and .72 loads corrected; point-blank ranges recomputed.</li>
+        <li><a href="airguns.html">Airguns</a> <span class="ct">9 rows · 9 updated</span><br>.20 pellet set to a real 11.42 gr pellet, .357 shown as JSB's 81 gr domed pellet, and point-blank ranges recomputed.</li>
+      </ul>
+      <p class="more">Rows I could not confirm against a published source are listed per chart in the <a href="https://github.com/MarcusTravis/ammo-reference/blob/main/CHANGELOG.md">changelog</a>.</p>
+    </article>
+    <article class="entry" id="2026-11-12-consistency">
+      <h2>Data consistency fixes</h2>
+      <time datetime="2026-11-12">November 12, 2026</time>
+      <p>A new automatic check compares every chart with the cartridge profiles, comparisons and deer guide. It found a handful of loads shown with different numbers in different places (.308 Win, .243 Win, 7mm-08, 6mm GT, .22 LR Subsonic, 6mm Dasher, .284 Shehane). Each was set to the maker's published figure, not copied from another chart.</p>
+    </article>
+    <article class="entry" id="2026-11-12-site">
+      <h2>Error page, link previews and Articles</h2>
+      <time datetime="2026-11-12">November 12, 2026</time>
+      <ul>
+        <li>Broken links now show a proper "page not found" page instead of the home page.</li>
+        <li>Links shared in texts and social apps now show a title, description and preview image, and every page has an icon.</li>
+        <li>The home page has a new Articles section with the five longer reads.</li>
+      </ul>
+    </article>
+  </div>
+</div>
+<p class="kofi">Free and ad-free. If this site helped you, <a href="https://ko-fi.com/marcustravis" target="_blank" rel="noopener">buy me a coffee →</a></p>
+</body>
+</html>

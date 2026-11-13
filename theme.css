@@ -100,3 +100,9 @@ body *{text-transform:none!important}
 .kofi{max-width:1200px;margin:48px auto 36px;padding:0 24px;text-align:center;color:var(--muted);font-size:14px}
 .kofi a{color:var(--accent);text-decoration:none}
 .kofi a:hover{text-decoration:underline}
+
+/* "Data last checked" line under each chart title; bump the date in one spot per chart */
+.checked{margin:4px 0 0;color:var(--muted);font-size:14px}
+.checked a{color:var(--accent);text-decoration:none}
+.checked a:hover{text-decoration:underline}
+.kofi.updated{margin-bottom:-24px}
