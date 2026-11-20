@@ -5,6 +5,17 @@ The plain-English summary for readers is the [Updates page](https://ammochart.ne
 
 Status key used in the audit tables: ✓ = matches source · ✎ = changed · ~ = generic row, inside the published range · ? = could not confirm (reason given).
 
+## 2026-11-20
+
+### Search and AI-search improvements (no data values changed)
+
+- **Static table rows:** `tools/render-static-rows.mjs` renders each chart's `DATA` into its `<tbody id="rows">` (298 rows across 17 charts, with profile links) so the data is in the HTML without JavaScript. `render()` still replaces the rows on load; filters and sorting are unchanged. Re-run the script after any chart data edit.
+- **FAQ:** visible "Common questions" on the home page (7), hunting chart (4) and precision chart (3), using only figures already on the charts, with matching `FAQPage` JSON-LD.
+- **Structured data:** `WebSite` + `Person` on home; `Dataset` (dateModified = "Data last checked") + `BreadcrumbList` on every chart; `BreadcrumbList` on articles, guides, Updates and the A–Z and comparison indexes (profiles and comparisons already had it).
+- **Titles:** more descriptive `<title>` / `og:title` on 23 pages; fixed the truncated thermal-scope description and the thin wildcat description.
+- **Crawlers:** `robots.txt` now names Googlebot, Bingbot, Google-Extended, GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User, Applebot and Applebot-Extended (all allowed). New `llms.txt` and `llms-full.txt` (built by `tools/build-llms.py`). IndexNow key file at the root. `sitemap.xml` now has `<lastmod>`.
+- **Speed:** removed the unused Google Fonts stylesheet from 25 pages (`theme.css` already uses system fonts, so nothing looks different).
+
 ## 2026-11-12
 
 ### Added: Updates page, changelog, "Data last checked" dates
