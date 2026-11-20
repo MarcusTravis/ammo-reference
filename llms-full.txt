@@ -1,0 +1,807 @@
+# Ammo Reference Library: cartridge profiles (ammochart.net)
+
+Typical factory-load figures from https://ammochart.net/. Values vary by brand, lot and barrel length; check the maker's data for your exact load.
+
+## 10mm Auto
+URL: https://ammochart.net/cartridges/10mm-auto
+Powerful semi-auto round for hog and deer hunting and woods carry against black bear.
+Good for: Pistol, Self-defense, Hunting
+A typical factory load is a 180 gr JHP bullet at about 1,250 ft/s, with roughly 624 ft-lbs of energy at the muzzle.
+Typical load: 180 gr JHP · 5" barrel; Muzzle speed: 1,250 ft/s; Muzzle energy: 624 ft-lbs; Typical BC (G1): ≈ 0.16 typical, varies by brand; Twist rate: 1:16; Practical range: 50 yd hog/deer; Point-blank range: 116 yd 6" vital zone; Recommended platform: Full-size pistol Stout with full-power loads
+
+## .17 Ackley Hornet
+URL: https://ammochart.net/cartridges/17-ackley-hornet
+P.O. Ackley's improved .22 Hornet necked to .17. Very low noise and recoil for prairie dogs, ground squirrels and foxes on small farms.
+Good for: Varmint, Ackley Improved
+A typical factory load is a 20 gr V-Max bullet at about 3,650 ft/s, with roughly 592 ft-lbs of energy at the muzzle.
+Typical load: 20 gr V-Max; Muzzle speed: 3,650 ft/s; Muzzle energy: 592 ft-lbs; Typical BC (G1): 0.185 maker's published G1; Twist rate: 1:9; Practical range: 250 yd varmint; Point-blank range: 265 yd 4" vital zone; Recommended platform: Any rifle, ultralights included Very light recoil
+
+## .17 HM2
+URL: https://ammochart.net/cartridges/17-hm2
+.22 LR-length case necked to .17 (Mach 2). Flatter than the .22 LR for squirrels and pests.
+Good for: Small game, Pests
+A typical factory load is a 17 gr V-Max bullet at about 2,100 ft/s, with roughly 166 ft-lbs of energy at the muzzle.
+Typical load: 17 gr V-Max; Muzzle speed: 2,100 ft/s; Muzzle energy: 166 ft-lbs; Typical BC (G1): 0.125 maker's published G1; Twist rate: 1:9; Practical range: 100 yd; Point-blank range: 123 yd 2" vital zone
+
+## .17 HMR
+URL: https://ammochart.net/cartridges/17-hmr
+.22 WMR necked to .17. Very flat and accurate for prairie dogs, squirrels and pests.
+Good for: Small game, Pests, Varmint
+A typical factory load is a 17 gr V-Max bullet at about 2,550 ft/s, with roughly 245 ft-lbs of energy at the muzzle.
+Typical load: 17 gr V-Max; Muzzle speed: 2,550 ft/s; Muzzle energy: 245 ft-lbs; Typical BC (G1): 0.125 maker's published G1; Twist rate: 1:9; Practical range: 150 yd; Point-blank range: 145 yd 2" vital zone
+
+## .17 WSM
+URL: https://ammochart.net/cartridges/17-wsm
+The fastest rimfire, built on a nail-gun case. Prairie dogs and coyotes past 200 yd.
+Good for: Varmint, Pests
+A typical factory load is a 20 gr V-Max bullet at about 3,000 ft/s, with roughly 400 ft-lbs of energy at the muzzle.
+Typical load: 20 gr V-Max; Muzzle speed: 3,000 ft/s; Muzzle energy: 400 ft-lbs; Typical BC (G1): 0.185 maker's published G1; Twist rate: 1:9; Practical range: 200 yd; Point-blank range: 181 yd 2" vital zone
+
+## .20 Practical
+URL: https://ammochart.net/cartridges/20-practical
+.223 brass necked down to .20 cal. Flat, fast and easy on barrels; a favorite prairie dog and coyote round. Forming brass is a single neck-sizing pass.
+Good for: Varmint
+A typical factory load is a 39 gr Sierra BlitzKing bullet at about 3,500 ft/s, with roughly 1,061 ft-lbs of energy at the muzzle.
+Typical load: 39 gr Sierra BlitzKing; Muzzle speed: 3,500 ft/s; Muzzle energy: 1,061 ft-lbs; Typical BC (G1): 0.287 maker's published G1; Twist rate: 1:9 1:8 for 40+ gr; Practical range: 350–400 yd varmint; Point-blank range: 277 yd 4" vital zone; Recommended platform: Any rifle, ultralights included Very light recoil
+
+## .22-250 Ackley Improved
+URL: https://ammochart.net/cartridges/22-250-ackley-improved
+Blown-out .22-250 with a sharp 40° shoulder for about 100 fps more and longer brass life. Fires factory .22-250 ammo in a pinch.
+Good for: Varmint, Ackley Improved
+A typical factory load is a 55 gr V-Max bullet at about 3,800 ft/s, with roughly 1,763 ft-lbs of energy at the muzzle.
+Typical load: 55 gr V-Max; Muzzle speed: 3,800 ft/s; Muzzle energy: 1,763 ft-lbs; Typical BC (G1): 0.255 maker's published G1; Twist rate: 1:14 1:8 for 70+ gr; Practical range: 400–450 yd varmint; Point-blank range: 292 yd 4" vital zone; Recommended platform: Any rifle, ultralights included Very light recoil
+
+## .22-250 Remington
+URL: https://ammochart.net/cartridges/22-250-remington
+Purpose-built high-speed varmint and predator round: prairie dogs, coyotes, foxes.
+Good for: Varmint
+A typical factory load is a 55 gr V-Max bullet at about 3,680 ft/s, with roughly 1,654 ft-lbs of energy at the muzzle.
+Typical load: 55 gr V-Max; Muzzle speed: 3,680 ft/s; Muzzle energy: 1,654 ft-lbs; Typical BC (G1): 0.255 maker's published G1; Twist rate: 1:14 1:8 for 70+ gr; Practical range: 400 yd varmint; Point-blank range: 284 yd 4" vital zone; Recommended platform: Any rifle, ultralights included Very light recoil
+
+## 22 ARC
+URL: https://ammochart.net/cartridges/22-arc
+Hornady's modern answer to the .223: 6mm ARC case necked to .22 for heavy, high-BC bullets. Coyotes and varmints far out, deer where .22s are legal, from an AR-15 or small bolt gun.
+Good for: Varmint, Deer/hog
+A typical factory load is an 88 gr ELD Match bullet at about 2,820 ft/s, with roughly 1,554 ft-lbs of energy at the muzzle.
+Typical load: 88 gr ELD Match; Muzzle speed: 2,820 ft/s; Muzzle energy: 1,554 ft-lbs; Typical BC (G1): 0.545 maker's published G1; Twist rate: 1:7; Practical range: 400+ yd varmint · 250 yd deer; Point-blank range: 243 yd 4" vital zone; Recommended platform: AR-15 or any light rifle Very light recoil
+
+## .22 BR
+URL: https://ammochart.net/cartridges/22-br
+6mm BR necked to .22. Benchrest-grade accuracy with .22-250 speed from a small, efficient case. Long-range varmints.
+Good for: Varmint
+A typical factory load is a 55 gr ballistic tip bullet at about 3,700 ft/s, with roughly 1,672 ft-lbs of energy at the muzzle.
+Typical load: 55 gr ballistic tip; Muzzle speed: 3,700 ft/s; Muzzle energy: 1,672 ft-lbs; Typical BC (G1): 0.267 maker's published G1; Twist rate: 1:12 1:8 for 70+ gr; Practical range: 400 yd varmint; Point-blank range: 287 yd 4" vital zone; Recommended platform: Any rifle, ultralights included Very light recoil
+
+## .22 Long Rifle
+URL: https://ammochart.net/cartridges/22-long-rifle
+Rimfire for small game and plinking: squirrels, rabbits, and pests out to about 75 yards. Not for deer.
+Good for: Small game, Varmint
+A typical factory load is a 40 gr round nose bullet at about 1,235 ft/s, with roughly 135 ft-lbs of energy at the muzzle.
+Typical load: 40 gr round nose; Muzzle speed: 1,235 ft/s; Muzzle energy: 135 ft-lbs; Typical BC (G1): ≈ 0.12 typical, varies by brand; Twist rate: 1:16; Practical range: 50–75 yd small game; Point-blank range: 79 yd 2" vital zone; Recommended platform: Any rifle, ultralights included Very light recoil
+
+## .22 LR Subsonic
+URL: https://ammochart.net/cartridges/22-lr-subsonic
+Stays below the speed of sound, so it's very quiet, especially suppressed. Squirrels, rabbits and pests close in without spooking everything nearby.
+Good for: Small game
+A typical factory load is a 40 gr hollow point bullet at about 1,050 ft/s, with roughly 98 ft-lbs of energy at the muzzle.
+Typical load: 40 gr hollow point; Muzzle speed: 1,050 ft/s; Muzzle energy: 98 ft-lbs; Typical BC (G1): ≈ 0.12 typical, varies by brand; Twist rate: 1:16; Practical range: 25–50 yd small game; Point-blank range: 71 yd 2" vital zone; Recommended platform: Any rifle, ultralights included Very light recoil
+
+## .22 Short
+URL: https://ammochart.net/cartridges/22-short
+The oldest metallic cartridge still made. Very quiet; barn pests and gallery shooting.
+Good for: Pests, Plinking/training, Quiet
+A typical factory load is a 29 gr lead round nose bullet at about 1,095 ft/s, with roughly 77 ft-lbs of energy at the muzzle.
+Typical load: 29 gr lead round nose; Muzzle speed: 1,095 ft/s; Muzzle energy: 77 ft-lbs; Typical BC (G1): ≈ 0.080 typical, varies by brand; Twist rate: 1:16; Practical range: 25 yd; Point-blank range: 71 yd 2" vital zone
+
+## .22 WMR
+URL: https://ammochart.net/cartridges/22-wmr
+Rimfire magnum for rabbits, groundhogs, foxes and coyotes close in.
+Good for: Small game, Pests, Varmint
+A typical factory load is a 40 gr JHP bullet at about 1,910 ft/s, with roughly 324 ft-lbs of energy at the muzzle.
+Typical load: 40 gr JHP; Muzzle speed: 1,910 ft/s; Muzzle energy: 324 ft-lbs; Typical BC (G1): ≈ 0.11 typical, varies by brand; Twist rate: 1:16; Practical range: 125 yd; Point-blank range: 110 yd 2" vital zone; Recommended platform: Revolver or full-size pistol Very light recoil, loud blast
+
+## .223 Remington
+URL: https://ammochart.net/cartridges/223-remington
+Civilian twin of the 5.56 NATO. Built for varmints and coyotes; deer only with 62–70 gr bonded bullets where legal.
+Good for: Varmint, Deer/hog
+A typical factory load is a 55 gr soft point bullet at about 3,240 ft/s, with roughly 1,282 ft-lbs of energy at the muzzle.
+Typical load: 55 gr soft point; Muzzle speed: 3,240 ft/s; Muzzle energy: 1,282 ft-lbs; Typical BC (G1): ≈ 0.22 typical, varies by brand; Twist rate: 1:9 1:7 for 70+ gr; Practical range: 300 yd varmint · 150 yd deer; Point-blank range: 248 yd 4" vital zone; Recommended platform: Any rifle, ultralights included Very light recoil
+
+## .224 Valkyrie
+URL: https://ammochart.net/cartridges/224-valkyrie
+Federal's long-range .22 for the AR-15, built on the 6.8 SPC case.
+Good for: AR-15, Varmint, Target/long range
+A typical factory load is a 90 gr Sierra MatchKing bullet at about 2,700 ft/s, with roughly 1,457 ft-lbs of energy at the muzzle.
+Typical load: 90 gr Sierra MatchKing · 24" barrel; Muzzle speed: 2,700 ft/s; Muzzle energy: 1,457 ft-lbs; Typical BC (G1): ≈ 0.50 typical, varies by brand; Twist rate: 1:7; Practical range: 600+ yd steel
+
+## .243 Winchester
+URL: https://ammochart.net/cartridges/243-winchester
+Dual-purpose: long-range varmints with light bullets, whitetail and pronghorn with 95–100 gr.
+Good for: Varmint, Deer/hog
+A typical factory load is a 100 gr soft point bullet at about 2,960 ft/s, with roughly 1,945 ft-lbs of energy at the muzzle.
+Typical load: 100 gr soft point; Muzzle speed: 2,960 ft/s; Muzzle energy: 1,945 ft-lbs; Typical BC (G1): ≈ 0.36 typical, varies by brand; Twist rate: 1:10 1:8 for 105+ gr; Practical range: 300 yd; Point-blank range: 283 yd 6" vital zone; Recommended platform: Light or standard rifle Light recoil; fine in a 6–7 lb rifle
+
+## .25-06 Remington
+URL: https://ammochart.net/cartridges/25-06-remington
+Flat-shooting plains cartridge for pronghorn, mule deer and whitetail across open country.
+Good for: Varmint, Deer/hog
+A typical factory load is a 117 gr InterLock BTSP bullet at about 2,990 ft/s, with roughly 2,322 ft-lbs of energy at the muzzle.
+Typical load: 117 gr InterLock BTSP; Muzzle speed: 2,990 ft/s; Muzzle energy: 2,322 ft-lbs; Typical BC (G1): 0.391 maker's published G1; Twist rate: 1:10 1:8 for 115+ gr; Practical range: 350–400 yd; Point-blank range: 289 yd 6" vital zone; Recommended platform: Standard rifle, 7–8 lb Moderate recoil; snappy in an ultralight
+
+## .25 Creedmoor
+URL: https://ammochart.net/cartridges/25-creedmoor
+Hornady's flat-shooting, low-recoil 6.5 Creedmoor necked down to .25 cal. Built for long-range deer, pronghorn and hogs; coyotes too.
+Good for: Varmint, Deer/hog
+A typical factory load is a 128 gr ELD-X bullet at about 2,850 ft/s, with roughly 2,308 ft-lbs of energy at the muzzle.
+Typical load: 128 gr ELD-X; Muzzle speed: 2,850 ft/s; Muzzle energy: 2,308 ft-lbs; Typical BC (G1): 0.633 maker's published G1; Twist rate: 1:7.5; Practical range: 400–500 yd; Point-blank range: 248 yd 4" vital zone; Recommended platform: Standard rifle, 7–8 lb Moderate recoil; snappy in an ultralight
+
+## .25 PRC
+URL: https://ammochart.net/cartridges/25-prc
+Wildcat: the 6.5 PRC necked down to .25 cal, with no SAAMI spec or factory ammo. Handloaded with heavy high-BC .25 bullets for long-range mule deer, pronghorn and sheep; elk with good shot placement.
+Good for: Varmint, Deer/hog, Elk/moose
+A typical handload is a 134 gr ELD Match bullet at about 3,200 ft/s, with roughly 3,047 ft-lbs of energy at the muzzle.
+Typical load: 134 gr ELD Match; Muzzle speed: 3,200 ft/s; Muzzle energy: 3,047 ft-lbs; Typical BC (G1): 0.645 maker's published G1; Twist rate: 1:7.5; Practical range: 500+ yd; Point-blank range: 274 yd 4" vital zone; Recommended platform: Standard to heavy rifle, 8 lb+ Stout recoil; use a good pad or brake in a light rifle
+
+## .257 Blackbird
+URL: https://ammochart.net/cartridges/257-blackbird
+Also called the .250-7 Blaser. Built to match .257 Weatherby speed without belted brass, using heavy high-BC .25 bullets for long-range deer, pronghorn and elk.
+Good for: Varmint, Deer/hog, Elk/moose
+A typical handload is a 131 gr Blackjack ACE bullet at about 3,400 ft/s, with roughly 3,362 ft-lbs of energy at the muzzle.
+Typical load: 131 gr Blackjack ACE; Muzzle speed: 3,400 ft/s; Muzzle energy: 3,362 ft-lbs; Typical BC (G1): ≈ 0.66 typical, varies by brand; Twist rate: 1:7 for 131+ gr bullets; Practical range: 500–600 yd; Point-blank range: 295 yd 4" vital zone; Recommended platform: Standard to heavy rifle, 8 lb+ Stout recoil; use a good pad or brake in a light rifle
+
+## .257 Roberts Ackley Improved
+URL: https://ammochart.net/cartridges/257-roberts-ackley-improved
+Classic Ackley conversion that brings the mild .257 Roberts close to .25-06 speed. Deer and pronghorn rifle with light recoil.
+Good for: Hunting, Ackley Improved
+A typical factory load is a 117 gr soft point bullet at about 2,950 ft/s, with roughly 2,261 ft-lbs of energy at the muzzle.
+Typical load: 117 gr soft point; Muzzle speed: 2,950 ft/s; Muzzle energy: 2,261 ft-lbs; Typical BC (G1): ≈ 0.39 typical, varies by brand; Twist rate: 1:10; Practical range: 350 yd; Point-blank range: 286 yd 6" vital zone; Recommended platform: Light or standard rifle Light recoil; fine in a 6–7 lb rifle
+
+## .260 Ackley Improved
+URL: https://ammochart.net/cartridges/260-ackley-improved
+Improved .260 Rem in a short action. About 100 fps over the parent with heavy 6.5 bullets: deer, sheep and long-range steel.
+Good for: Hunting, Target/match, Ackley Improved
+A typical factory load is a 140 gr Berger Hunting VLD bullet at about 2,850 ft/s, with roughly 2,525 ft-lbs of energy at the muzzle.
+Typical load: 140 gr Berger Hunting VLD; Muzzle speed: 2,850 ft/s; Muzzle energy: 2,525 ft-lbs; Typical BC (G1): ≈ 0.61 typical, varies by brand; Twist rate: 1:8; Practical range: 450–500 yd; Point-blank range: 288 yd 6" vital zone; Recommended platform: Standard rifle, 7–8 lb Moderate recoil; snappy in an ultralight
+
+## .260 Remington
+URL: https://ammochart.net/cartridges/260-remington
+.308 necked to 6.5; the 6.5 Creedmoor's older cousin.
+Good for: AR-10, Deer/hog, Target/long range
+A typical factory load is a 140 gr soft point bullet at about 2,750 ft/s, with roughly 2,351 ft-lbs of energy at the muzzle.
+Typical load: 140 gr soft point · 24" barrel; Muzzle speed: 2,750 ft/s; Muzzle energy: 2,351 ft-lbs; Typical BC (G1): ≈ 0.48 typical, varies by brand; Twist rate: 1:8; Practical range: 400 yd
+
+## .270 Winchester
+URL: https://ammochart.net/cartridges/270-winchester
+Mountain and plains rifle for deer, sheep and goats; elk with 140–150 gr bullets.
+Good for: Deer/hog, Elk/moose
+A typical factory load is a 130 gr soft point bullet at about 3,060 ft/s, with roughly 2,703 ft-lbs of energy at the muzzle.
+Typical load: 130 gr soft point; Muzzle speed: 3,060 ft/s; Muzzle energy: 2,703 ft-lbs; Typical BC (G1): ≈ 0.37 typical, varies by brand; Twist rate: 1:10 1:8 for 150+ gr; Practical range: 400 yd; Point-blank range: 293 yd 6" vital zone; Recommended platform: Standard rifle, 7–8 lb Moderate recoil; snappy in an ultralight
+
+## .284 Shehane
+URL: https://ammochart.net/cartridges/284-shehane
+Top F-Class Open cartridge for 1,000 yd with heavy 7mm bullets.
+Good for: F-Class
+A typical factory load is a 180 gr Berger Hybrid bullet at about 2,850 ft/s, with roughly 3,246 ft-lbs of energy at the muzzle.
+Typical load: 180 gr Berger Hybrid; Muzzle speed: 2,850 ft/s; Muzzle energy: 3,246 ft-lbs; Typical BC (G1): 0.680 maker's G1, used for the drop figures; Twist rate: 1:9; Practical range: F-Class to 1,000 yd · 500 yd elk; Point-blank range: 290 yd 6" vital zone; Recommended platform: F-Class rifle, 15–20 lb Moderate; the rifle's weight soaks it up
+
+## .30-06 Ackley Improved
+URL: https://ammochart.net/cartridges/30-06-ackley-improved
+Ackley's improved .30-06: steeper 40° shoulder, more powder space, about 100–150 fps gain. Elk, moose and anything the '06 does, a bit farther.
+Good for: Hunting, Ackley Improved
+A typical factory load is a 180 gr soft point bullet at about 2,850 ft/s, with roughly 3,246 ft-lbs of energy at the muzzle.
+Typical load: 180 gr soft point; Muzzle speed: 2,850 ft/s; Muzzle energy: 3,246 ft-lbs; Typical BC (G1): ≈ 0.45 typical, varies by brand; Twist rate: 1:10; Practical range: 450 yd; Point-blank range: 281 yd 6" vital zone; Recommended platform: Standard to heavy rifle, 8 lb+ Stout recoil; use a good pad or brake in a light rifle
+
+## .30-06 Springfield
+URL: https://ammochart.net/cartridges/30-06-springfield
+U.S. Army service round turned the classic do-it-all hunting cartridge for any North American game.
+Good for: Deer/hog, Elk/moose, Big/dangerous
+A typical factory load is a 165 gr soft point bullet at about 2,800 ft/s, with roughly 2,872 ft-lbs of energy at the muzzle.
+Typical load: 165 gr soft point; Muzzle speed: 2,800 ft/s; Muzzle energy: 2,872 ft-lbs; Typical BC (G1): ≈ 0.40 typical, varies by brand; Twist rate: 1:10; Practical range: 400–450 yd; Point-blank range: 273 yd 6" vital zone; Recommended platform: Standard rifle, 7–8 lb Moderate recoil; snappy in an ultralight
+
+## .30-30 Ackley Improved
+URL: https://ammochart.net/cartridges/30-30-ackley-improved
+Straighter, sharper-shouldered .30-30 for lever guns. About 100 fps more and longer brass life; fires factory .30-30 ammo too.
+Good for: Hunting, Ackley Improved
+A typical factory load is a 150 gr flat nose bullet at about 2,500 ft/s, with roughly 2,081 ft-lbs of energy at the muzzle.
+Typical load: 150 gr flat nose; Muzzle speed: 2,500 ft/s; Muzzle energy: 2,081 ft-lbs; Typical BC (G1): ≈ 0.19 typical, varies by brand; Twist rate: 1:12; Practical range: 200 yd; Point-blank range: 220 yd 6" vital zone; Recommended platform: Lever-action carbine Light-to-moderate recoil
+
+## .30-30 Winchester
+URL: https://ammochart.net/cartridges/30-30-winchester
+Lever-action whitetail and black bear round for woods and brush shots.
+Good for: Deer/hog
+A typical factory load is a 150 gr flat nose bullet at about 2,390 ft/s, with roughly 1,902 ft-lbs of energy at the muzzle.
+Typical load: 150 gr flat nose; Muzzle speed: 2,390 ft/s; Muzzle energy: 1,902 ft-lbs; Typical BC (G1): ≈ 0.19 typical, varies by brand; Twist rate: 1:12; Practical range: 150–200 yd; Point-blank range: 212 yd 6" vital zone; Recommended platform: Lever-action carbine Light recoil; right at home in a 7-lb lever gun
+
+## .30-40 Krag
+URL: https://ammochart.net/cartridges/30-40-krag
+First U.S. smokeless round; used in the Spanish-American War.
+Good for: 1800s, Deer today, Elk today
+A typical factory load is a 220 gr round nose bullet at about 2,000 ft/s, with roughly 1,954 ft-lbs of energy at the muzzle.
+Typical load: 220 gr round nose; Muzzle speed: 2,000 ft/s; Muzzle energy: 1,954 ft-lbs; Typical BC (G1): ≈ 0.30 typical, varies by brand; Twist rate: 1:10; Point-blank range: 188 yd 6" vital zone; Hunting today: Yes: deer and black bear; ammo is limited.
+
+## .30 BR
+URL: https://ammochart.net/cartridges/30-br
+6mm BR necked up to .30. The dominant benchrest-for-score round at 100–200 yd. Also a handy short-range hog and deer load.
+Good for: Target/match, Hunting
+A typical factory load is a 118 gr flat base bullet at about 2,950 ft/s, with roughly 2,280 ft-lbs of energy at the muzzle.
+Typical load: 118 gr flat base; Muzzle speed: 2,950 ft/s; Muzzle energy: 2,280 ft-lbs; Typical BC (G1): ≈ 0.25 typical, varies by brand; Twist rate: 1:17; Practical range: 100–200 yd score · 200 yd deer/hog; Point-blank range: 268 yd 6" vital zone; Recommended platform: Benchrest rifle or light bolt gun Light recoil
+
+## .300 Blackout Subsonic
+URL: https://ammochart.net/cartridges/300-blackout-subsonic
+Heavy, slow load that stays below the speed of sound, so it's very quiet through a suppressor. Hogs and deer at close range with a subsonic expanding bullet.
+Good for: Deer/hog
+A typical factory load is a 220 gr subsonic bullet at about 1,010 ft/s, with roughly 498 ft-lbs of energy at the muzzle.
+Typical load: 220 gr subsonic; Muzzle speed: 1,010 ft/s; Muzzle energy: 498 ft-lbs; Typical BC (G1): ≈ 0.60 typical, varies by brand; Twist rate: 1:7 1:8 works for most; Practical range: 50–100 yd; Point-blank range: 72 yd 2" vital zone; Recommended platform: AR-15 or short handy rifle Almost no recoil; built for a suppressor
+
+## .300 Blackout
+URL: https://ammochart.net/cartridges/300-blackout
+Built for short, suppressed AR carbines. Hogs and deer at close range with expanding bullets.
+Good for: Deer/hog
+A typical factory load is a 120 gr expanding bullet at about 2,100 ft/s, with roughly 1,175 ft-lbs of energy at the muzzle.
+Typical load: 120 gr expanding; Muzzle speed: 2,100 ft/s; Muzzle energy: 1,175 ft-lbs; Typical BC (G1): ≈ 0.30 typical, varies by brand; Twist rate: 1:8; Practical range: 100–150 yd; Point-blank range: 202 yd 6" vital zone; Recommended platform: AR-15 or short handy rifle Very light recoil; great with a suppressor
+
+## .300 Norma Magnum
+URL: https://ammochart.net/cartridges/300-norma-magnum
+U.S. SOCOM's choice for its Advanced Sniper Rifle. Heavy .30 bullets with huge reach and energy.
+Good for: ELR, Military/LE
+A typical factory load is a 230 gr Berger Hybrid OTM bullet at about 2,934 ft/s, with roughly 4,397 ft-lbs of energy at the muzzle.
+Typical load: 230 gr Berger Hybrid OTM; Muzzle speed: 2,934 ft/s; Muzzle energy: 4,397 ft-lbs; Typical BC (G1): 0.717 maker's G1, used for the drop figures; Twist rate: 1:9; Recommended platform: ELR rifle, 15 lb+ with brake Heavy recoil without a brake
+
+## .300 PRC
+URL: https://ammochart.net/cartridges/300-prc
+Hornady's long-range .30 magnum, adopted by U.S. military snipers. Built for heavy, high-BC bullets: elk, moose and big bears at long distance.
+Good for: Elk/moose, Big/dangerous
+A typical factory load is a 212 gr ELD-X bullet at about 2,860 ft/s, with roughly 3,850 ft-lbs of energy at the muzzle.
+Typical load: 212 gr ELD-X; Muzzle speed: 2,860 ft/s; Muzzle energy: 3,850 ft-lbs; Typical BC (G1): 0.663 maker's published G1; Twist rate: 1:8.5 1:8 for 225+ gr; Practical range: 600–700 yd; Point-blank range: 292 yd 6" vital zone; Recommended platform: Heavy rifle, 8½–9 lb+ Heavy recoil; skip ultralights, consider a brake
+
+## .300 Winchester Mag
+URL: https://ammochart.net/cartridges/300-winchester-mag
+Long-range elk and moose cartridge; also used on big bears and plains game.
+Good for: Elk/moose, Big/dangerous
+A typical factory load is a 180 gr soft point bullet at about 2,960 ft/s, with roughly 3,502 ft-lbs of energy at the muzzle.
+Typical load: 180 gr soft point; Muzzle speed: 2,960 ft/s; Muzzle energy: 3,502 ft-lbs; Typical BC (G1): ≈ 0.40 typical, varies by brand; Twist rate: 1:10 1:9 for 200+ gr; Practical range: 500+ yd; Point-blank range: 286 yd 6" vital zone; Recommended platform: Heavy rifle, 8½–9 lb+ Heavy recoil; skip ultralights, consider a brake
+
+## .303 British
+URL: https://ammochart.net/cartridges/303-british
+British Empire service round for two world wars.
+Good for: 1800s, WWI era, WWII era, Deer today, Elk today
+A typical factory load is a 174 gr Mk VII FMJ bullet at about 2,440 ft/s, with roughly 2,300 ft-lbs of energy at the muzzle.
+Typical load: 174 gr Mk VII FMJ; Muzzle speed: 2,440 ft/s; Muzzle energy: 2,300 ft-lbs; Typical BC (G1): ≈ 0.45 typical, varies by brand; Twist rate: 1:10; Point-blank range: 236 yd 6" vital zone; Hunting today: Yes: deer, moose and black bear across Canada and the Commonwealth.
+
+## .308 Winchester
+URL: https://ammochart.net/cartridges/308-winchester
+Commercial version of the 7.62 NATO. All-around North American: deer, hogs, black bear, elk.
+Good for: Deer/hog, Elk/moose
+A typical factory load is a 150 gr soft point bullet at about 2,820 ft/s, with roughly 2,648 ft-lbs of energy at the muzzle.
+Typical load: 150 gr soft point; Muzzle speed: 2,820 ft/s; Muzzle energy: 2,648 ft-lbs; Typical BC (G1): ≈ 0.31 typical, varies by brand; Twist rate: 1:10; Practical range: 400 yd; Point-blank range: 266 yd 6" vital zone; Recommended platform: Standard rifle, 7–8 lb Moderate recoil; snappy in an ultralight
+
+## .338 Federal
+URL: https://ammochart.net/cartridges/338-federal
+.308 necked up to .338 for elk, moose and bear from an AR-10.
+Good for: AR-10, Deer/hog
+A typical factory load is a 200 gr soft point bullet at about 2,700 ft/s, with roughly 3,238 ft-lbs of energy at the muzzle.
+Typical load: 200 gr soft point · 22" barrel; Muzzle speed: 2,700 ft/s; Muzzle energy: 3,238 ft-lbs; Typical BC (G1): ≈ 0.41 typical, varies by brand; Twist rate: 1:10; Practical range: 250 yd
+
+## .338 Lapua Magnum
+URL: https://ammochart.net/cartridges/338-lapua-magnum
+Long-range sniper round designed to reach 1,500 m with full power. Also a heavy-game hunting round.
+Good for: ELR, Military/LE, Hunting too
+A typical factory load is a 300 gr Sierra MatchKing bullet at about 2,700 ft/s, with roughly 4,856 ft-lbs of energy at the muzzle.
+Typical load: 300 gr Sierra MatchKing; Muzzle speed: 2,700 ft/s; Muzzle energy: 4,856 ft-lbs; Typical BC (G1): 0.768 maker's G1, used for the drop figures; Twist rate: 1:10; Recommended platform: ELR rifle, 15–18 lb with brake Heavy recoil; a brake is close to required
+
+## .338 Winchester Mag
+URL: https://ammochart.net/cartridges/338-winchester-mag
+Built for elk, moose and brown bear where heavy bullets and deep penetration matter.
+Good for: Elk/moose, Big/dangerous
+A typical factory load is a 225 gr soft point bullet at about 2,780 ft/s, with roughly 3,861 ft-lbs of energy at the muzzle.
+Typical load: 225 gr soft point; Muzzle speed: 2,780 ft/s; Muzzle energy: 3,861 ft-lbs; Typical BC (G1): ≈ 0.43 typical, varies by brand; Twist rate: 1:10; Practical range: 400 yd; Point-blank range: 273 yd 6" vital zone; Recommended platform: Heavy rifle, 9 lb+ Very heavy recoil; not for ultralights or beginners
+
+## .350 Legend
+URL: https://ammochart.net/cartridges/350-legend
+Made for straight-wall-cartridge deer states. Whitetail and hogs from AR-15s and bolt guns with mild recoil.
+Good for: Deer/hog, Straight-wall
+A typical factory load is a 150 gr Deer Season XP bullet at about 2,325 ft/s, with roughly 1,800 ft-lbs of energy at the muzzle.
+Typical load: 150 gr Deer Season XP · Alt: 180 gr soft point · 2,100 fps; Muzzle speed: 2,325 ft/s; Muzzle energy: 1,800 ft-lbs; Typical BC (G1): 0.223 maker's published G1; Twist rate: 1:16; Practical range: 150–200 yd; Point-blank range: 212 yd 6" vital zone; Recommended platform: AR-15 or light bolt rifle Light recoil
+
+## .357 Magnum
+URL: https://ammochart.net/cartridges/357-magnum
+Lengthened .38 Special at much higher pressure. Self-defense, deer and hogs at short range from a 6" revolver.
+Good for: Revolver, Self-defense, Hunting
+A typical factory load is a 158 gr JHP bullet at about 1,235 ft/s, with roughly 535 ft-lbs of energy at the muzzle.
+Typical load: 158 gr JHP · 6" barrel; Muzzle speed: 1,235 ft/s; Muzzle energy: 535 ft-lbs; Typical BC (G1): ≈ 0.16 typical, varies by brand; Twist rate: 1:18.75; Practical range: 50 yd deer/hog; Point-blank range: 115 yd 6" vital zone; Recommended platform: Steel revolver, 4" barrel+ Harsh in light snubbies; shoot .38s in those
+
+## .357 SIG
+URL: https://ammochart.net/cartridges/357-sig
+A .40 S&W case necked to 9mm to match .357 Magnum speed in a semi-auto. Police and self-defense.
+Good for: Pistol, Self-defense
+A typical factory load is a 125 gr JHP bullet at about 1,350 ft/s, with roughly 506 ft-lbs of energy at the muzzle.
+Typical load: 125 gr JHP · 4" barrel; Muzzle speed: 1,350 ft/s; Muzzle energy: 506 ft-lbs; Typical BC (G1): ≈ 0.14 typical, varies by brand; Twist rate: 1:16; Practical range: 25 yd; Point-blank range: 121 yd 6" vital zone; Recommended platform: Compact or full-size pistol Snappy
+
+## .375 CheyTac
+URL: https://ammochart.net/cartridges/375-cheytac
+Purpose-built extreme long-range round for shots past a mile, using solid machined bullets.
+Good for: ELR
+A typical factory load is a 350 gr solid bullet at about 2,950 ft/s, with roughly 6,765 ft-lbs of energy at the muzzle.
+Typical load: 350 gr solid; Muzzle speed: 2,950 ft/s; Muzzle energy: 6,765 ft-lbs; Typical BC (G1): 0.988 maker's G1, used for the drop figures; Twist rate: 1:9.5; Recommended platform: ELR rifle, 20 lb+ with brake Very heavy recoil
+
+## .375 H&H Magnum
+URL: https://ammochart.net/cartridges/375-h-and-h-magnum
+Designed for African dangerous game; the standard for Cape buffalo and big brown bear.
+Good for: Big/dangerous
+A typical factory load is a 300 gr soft point bullet at about 2,530 ft/s, with roughly 4,263 ft-lbs of energy at the muzzle.
+Typical load: 300 gr soft point; Muzzle speed: 2,530 ft/s; Muzzle energy: 4,263 ft-lbs; Typical BC (G1): ≈ 0.30 typical, varies by brand; Twist rate: 1:12; Practical range: 250–300 yd; Point-blank range: 239 yd 6" vital zone; Recommended platform: Heavy rifle, 9 lb+ Very heavy recoil; not for ultralights or beginners
+
+## .375 Ruger
+URL: https://ammochart.net/cartridges/375-ruger
+Modern beltless .375 that beats the H&H's speed in a standard-length action.
+Good for: Africa, Big bear, Plains game, Moose/elk, Bolt action
+A typical factory load is a 300 gr DGX bullet at about 2,660 ft/s, with roughly 4,713 ft-lbs of energy at the muzzle.
+Typical load: 300 gr DGX; Muzzle speed: 2,660 ft/s; Muzzle energy: 4,713 ft-lbs; Typical BC (G1): 0.275 maker's published G1; Twist rate: 1:12; Practical range: 250 yd; Point-blank range: 248 yd 6" vital zone; Recommended platform: Bolt rifle, 9–10 lb Heavy but manageable
+
+## .38 Special
+URL: https://ammochart.net/cartridges/38-special
+Classic revolver round for police, self-defense and target shooting. Mild recoil; also fires in any .357 Magnum.
+Good for: Revolver, Self-defense, Target
+A typical factory load is a 158 gr lead round nose bullet at about 755 ft/s, with roughly 200 ft-lbs of energy at the muzzle.
+Typical load: 158 gr lead round nose · 4" barrel; Muzzle speed: 755 ft/s; Muzzle energy: 200 ft-lbs; Typical BC (G1): ≈ 0.15 typical, varies by brand; Twist rate: 1:18.75; Practical range: 25 yd; Point-blank range: 76 yd 6" vital zone; Recommended platform: Any steel-frame revolver Mild; stout in ultralight snubbies
+
+## .380 ACP
+URL: https://ammochart.net/cartridges/380-acp
+Designed by John Browning for small pocket pistols. Mild recoil in tiny guns; meant for close-range self-defense.
+Good for: Pistol, Self-defense
+A typical factory load is a 90 gr JHP bullet at about 950 ft/s, with roughly 180 ft-lbs of energy at the muzzle.
+Typical load: 90 gr JHP · 3.75" barrel; Muzzle speed: 950 ft/s; Muzzle energy: 180 ft-lbs; Typical BC (G1): ≈ 0.10 typical, varies by brand; Twist rate: 1:16; Practical range: 15 yd; Point-blank range: 92 yd 6" vital zone; Recommended platform: Small or mid-size pistol Snappy in tiny pocket guns
+
+## .40 S&W
+URL: https://ammochart.net/cartridges/40-s-and-w
+Shortened 10mm built for the FBI and police. More punch than 9mm in a standard-size pistol.
+Good for: Pistol, Self-defense
+A typical factory load is a 180 gr JHP bullet at about 1,000 ft/s, with roughly 400 ft-lbs of energy at the muzzle.
+Typical load: 180 gr JHP · 4" barrel; Muzzle speed: 1,000 ft/s; Muzzle energy: 400 ft-lbs; Typical BC (G1): ≈ 0.16 typical, varies by brand; Twist rate: 1:16; Practical range: 25 yd; Point-blank range: 99 yd 6" vital zone; Recommended platform: Compact or full-size pistol Snappier than 9mm
+
+## .404 Jeffery
+URL: https://ammochart.net/cartridges/404-jeffery
+British bolt-action answer to the double-rifle cartridges; the classic professional hunter's round in East Africa.
+Good for: Africa, Bolt action
+A typical factory load is a 400 gr solid bullet at about 2,350 ft/s, with roughly 4,905 ft-lbs of energy at the muzzle.
+Typical load: 400 gr solid; Muzzle speed: 2,350 ft/s; Muzzle energy: 4,905 ft-lbs; Typical BC (G1): ≈ 0.32 typical, varies by brand; Twist rate: 1:16; Practical range: 150 yd; Point-blank range: 226 yd 6" vital zone; Recommended platform: Bolt rifle, 9½–10½ lb Very heavy recoil; practice before the hunt
+
+## .416 Barrett
+URL: https://ammochart.net/cartridges/416-barrett
+.50 BMG case shortened and necked to .416 for civilians where .50 BMG is banned. Very fast and flat for ELR.
+Good for: ELR
+A typical factory load is a 395 gr solid bullet at about 3,250 ft/s, with roughly 9,267 ft-lbs of energy at the muzzle.
+Typical load: 395 gr solid; Muzzle speed: 3,250 ft/s; Muzzle energy: 9,267 ft-lbs; Typical BC (G1): 0.730 maker's G1, used for the drop figures; Twist rate: 1:12; Recommended platform: Heavy ELR rifle, 25 lb+ with brake Very heavy recoil
+
+## .416 Remington Magnum
+URL: https://ammochart.net/cartridges/416-remington-magnum
+Matches .416 Rigby power from a belted magnum case in a standard .375-length action.
+Good for: Africa, Big bear, Bolt action
+A typical factory load is a 400 gr solid bullet at about 2,400 ft/s, with roughly 5,115 ft-lbs of energy at the muzzle.
+Typical load: 400 gr solid; Muzzle speed: 2,400 ft/s; Muzzle energy: 5,115 ft-lbs; Typical BC (G1): ≈ 0.32 typical, varies by brand; Twist rate: 1:14; Practical range: 150–200 yd; Point-blank range: 230 yd 6" vital zone; Recommended platform: Bolt rifle, 9½–10 lb Very heavy recoil; practice before the hunt
+
+## .416 Rigby
+URL: https://ammochart.net/cartridges/416-rigby
+Legendary low-pressure buffalo and elephant round. Big case, heavy bullet, deep penetration.
+Good for: Africa, Bolt action
+A typical factory load is a 400 gr solid bullet at about 2,400 ft/s, with roughly 5,115 ft-lbs of energy at the muzzle.
+Typical load: 400 gr solid; Muzzle speed: 2,400 ft/s; Muzzle energy: 5,115 ft-lbs; Typical BC (G1): ≈ 0.32 typical, varies by brand; Twist rate: 1:16; Practical range: 150–200 yd; Point-blank range: 230 yd 6" vital zone; Recommended platform: Bolt rifle, 10–10½ lb Very heavy recoil; practice before the hunt
+
+## .44 Magnum
+URL: https://ammochart.net/cartridges/44-magnum
+Made famous as the powerful handgun of its day. Deer, hogs and black bear; backup against big bears.
+Good for: Revolver, Hunting, Big game/bear
+A typical factory load is a 240 gr JHP bullet at about 1,350 ft/s, with roughly 971 ft-lbs of energy at the muzzle.
+Typical load: 240 gr JHP · 6" barrel; Muzzle speed: 1,350 ft/s; Muzzle energy: 971 ft-lbs; Typical BC (G1): ≈ 0.17 typical, varies by brand; Twist rate: 1:20; Practical range: 75 yd deer; Point-blank range: 123 yd 6" vital zone; Recommended platform: Large-frame revolver, 6"+ Heavy recoil; practice with .44 Specials
+
+## .44 Special
+URL: https://ammochart.net/cartridges/44-special
+Mild, accurate big-bore revolver round. Self-defense and target; also fires in any .44 Magnum.
+Good for: Revolver, Self-defense, Target
+A typical factory load is a 240 gr lead SWC bullet at about 900 ft/s, with roughly 432 ft-lbs of energy at the muzzle.
+Typical load: 240 gr lead SWC · 4" barrel; Muzzle speed: 900 ft/s; Muzzle energy: 432 ft-lbs; Typical BC (G1): ≈ 0.16 typical, varies by brand; Twist rate: 1:20; Practical range: 25–50 yd; Point-blank range: 90 yd 6" vital zone; Recommended platform: Medium or large revolver Moderate
+
+## .45-70 Government
+URL: https://ammochart.net/cartridges/45-70-government
+Army rifle round that took bison. Today a lever-gun choice for bear, moose and elk up close.
+Good for: Deer/hog, Elk/moose, Big/dangerous, Straight-wall
+A typical factory load is a 300 gr hollow point bullet at about 1,880 ft/s, with roughly 2,354 ft-lbs of energy at the muzzle.
+Typical load: 300 gr hollow point; Muzzle speed: 1,880 ft/s; Muzzle energy: 2,354 ft-lbs; Typical BC (G1): ≈ 0.20 typical, varies by brand; Twist rate: 1:20 1:18 to 1:22; Practical range: 150–200 yd; Point-blank range: 171 yd 6" vital zone; Recommended platform: Lever or single-shot, 7½ lb+ Heavy with full-power loads; mild with standard ones
+
+## .45 ACP
+URL: https://ammochart.net/cartridges/45-acp
+John Browning's U.S. Army round for the 1911. Big, slow bullet for self-defense and bullseye target shooting.
+Good for: Pistol, Self-defense, Target
+A typical factory load is a 230 gr JHP bullet at about 850 ft/s, with roughly 369 ft-lbs of energy at the muzzle.
+Typical load: 230 gr JHP · 5" barrel; Muzzle speed: 850 ft/s; Muzzle energy: 369 ft-lbs; Typical BC (G1): ≈ 0.17 typical, varies by brand; Twist rate: 1:16; Practical range: 25 yd; Point-blank range: 86 yd 6" vital zone; Recommended platform: Compact or full-size pistol More push than snap
+
+## .45 Colt
+URL: https://ammochart.net/cartridges/45-colt
+The Colt Single Action Army round of the Old West. Cowboy action shooting today; heavier loads take deer in strong revolvers.
+Good for: Revolver, Self-defense, Target, Hunting
+A typical factory load is a 255 gr lead flat nose bullet at about 860 ft/s, with roughly 419 ft-lbs of energy at the muzzle.
+Typical load: 255 gr lead flat nose · 5.5" barrel; Muzzle speed: 860 ft/s; Muzzle energy: 419 ft-lbs; Typical BC (G1): ≈ 0.15 typical, varies by brand; Twist rate: 1:16; Practical range: 50 yd; Point-blank range: 86 yd 6" vital zone; Recommended platform: Single-action or large revolver Moderate with standard loads
+
+## .450/400 3" Nitro Express
+URL: https://ammochart.net/cartridges/450-400-3-nitro-express
+Light-recoiling double-rifle round for buffalo and elephant; a professional hunter favorite.
+Good for: Africa, Double rifle
+A typical factory load is a 400 gr solid bullet at about 2,050 ft/s, with roughly 3,732 ft-lbs of energy at the muzzle.
+Typical load: 400 gr solid; Muzzle speed: 2,050 ft/s; Muzzle energy: 3,732 ft-lbs; Typical BC (G1): ≈ 0.32 typical, varies by brand; Twist rate: 1:15; Practical range: 100 yd; Point-blank range: 199 yd 6" vital zone; Recommended platform: Double rifle, 10–11 lb Mild for a dangerous-game round
+
+## .450 Bushmaster
+URL: https://ammochart.net/cartridges/450-bushmaster
+Big-bore AR round for deer, hogs and black bear; legal in most straight-wall states.
+Good for: Deer/hog, Straight-wall
+A typical factory load is a 250 gr FTX bullet at about 2,200 ft/s, with roughly 2,687 ft-lbs of energy at the muzzle.
+Typical load: 250 gr FTX; Muzzle speed: 2,200 ft/s; Muzzle energy: 2,687 ft-lbs; Typical BC (G1): 0.210 maker's published G1; Twist rate: 1:24; Practical range: 200 yd; Point-blank range: 200 yd 6" vital zone; Recommended platform: AR-15 or bolt rifle, 7 lb+ Stout for its size; a good pad helps
+
+## .454 Casull
+URL: https://ammochart.net/cartridges/454-casull
+Long, high-pressure .45 Colt for big-game handgun hunting and bear defense. Heavy recoil.
+Good for: Revolver, Hunting, Big game/bear
+A typical factory load is a 300 gr XTP Mag bullet at about 1,650 ft/s, with roughly 1,813 ft-lbs of energy at the muzzle.
+Typical load: 300 gr XTP Mag · 7.5" barrel; Muzzle speed: 1,650 ft/s; Muzzle energy: 1,813 ft-lbs; Typical BC (G1): 0.180 maker's published G1; Twist rate: 1:24; Practical range: 100 yd; Point-blank range: 146 yd 6" vital zone; Recommended platform: Heavy large-frame revolver Very heavy recoil
+
+## .458 Lott
+URL: https://ammochart.net/cartridges/458-lott
+Lengthened .458 Win Mag designed after its creator was hurt by a buffalo; more speed and fires .458 Win Mag ammo too.
+Good for: Africa, Big bear, Bolt action
+A typical factory load is a 500 gr solid bullet at about 2,300 ft/s, with roughly 5,873 ft-lbs of energy at the muzzle.
+Typical load: 500 gr solid; Muzzle speed: 2,300 ft/s; Muzzle energy: 5,873 ft-lbs; Typical BC (G1): ≈ 0.30 typical, varies by brand; Twist rate: 1:14; Practical range: 150 yd; Point-blank range: 219 yd 6" vital zone; Recommended platform: Bolt rifle, 10–11 lb Brutal recoil
+
+## .458 SOCOM
+URL: https://ammochart.net/cartridges/458-socom
+Heavy .458 bullets from an AR; hogs and bear, and quiet subsonic loads.
+Good for: AR-15, Deer/hog, Straight-wall, Suppressor
+A typical factory load is a 300 gr JHP bullet at about 1,900 ft/s, with roughly 2,405 ft-lbs of energy at the muzzle.
+Typical load: 300 gr JHP · 16" barrel; Muzzle speed: 1,900 ft/s; Muzzle energy: 2,405 ft-lbs; Typical BC (G1): ≈ 0.20 typical, varies by brand; Twist rate: 1:14; Practical range: 150 yd
+
+## .458 Winchester Magnum
+URL: https://ammochart.net/cartridges/458-winchester-magnum
+American elephant and buffalo round in a standard-length action. Short-range stopping power.
+Good for: Africa, Big bear, Bolt action
+A typical factory load is a 500 gr solid bullet at about 2,090 ft/s, with roughly 4,849 ft-lbs of energy at the muzzle.
+Typical load: 500 gr solid; Muzzle speed: 2,090 ft/s; Muzzle energy: 4,849 ft-lbs; Typical BC (G1): ≈ 0.30 typical, varies by brand; Twist rate: 1:14; Practical range: 100–150 yd; Point-blank range: 201 yd 6" vital zone; Recommended platform: Bolt rifle, 10 lb+ Brutal recoil
+
+## .460 S&W Magnum
+URL: https://ammochart.net/cartridges/460-s-and-w-magnum
+The fastest production revolver round. Built for long-range handgun hunting of elk, moose and big bears.
+Good for: Revolver, Hunting, Big game/bear
+A typical factory load is a 200 gr FTX bullet at about 2,200 ft/s, with roughly 2,149 ft-lbs of energy at the muzzle.
+Typical load: 200 gr FTX · 8.375" barrel; Muzzle speed: 2,200 ft/s; Muzzle energy: 2,149 ft-lbs; Typical BC (G1): 0.151 maker's published G1; Twist rate: 1:18.75; Practical range: 100–150 yd; Point-blank range: 181 yd 6" vital zone; Recommended platform: Heavy X-frame revolver with brake Very heavy recoil
+
+## .470 Nitro Express
+URL: https://ammochart.net/cartridges/470-nitro-express
+The classic double-rifle round for elephant, buffalo and lion at close range.
+Good for: Africa, Double rifle
+A typical factory load is a 500 gr solid bullet at about 2,150 ft/s, with roughly 5,132 ft-lbs of energy at the muzzle.
+Typical load: 500 gr solid; Muzzle speed: 2,150 ft/s; Muzzle energy: 5,132 ft-lbs; Typical BC (G1): ≈ 0.32 typical, varies by brand; Twist rate: 1:21; Practical range: 100 yd; Point-blank range: 208 yd 6" vital zone; Recommended platform: Double rifle, 11–12 lb Very heavy recoil
+
+## 5.45x39
+URL: https://ammochart.net/cartridges/5-45x39
+Soviet small-caliber round that replaced the 7.62x39 in the AK-74.
+Good for: Cold War & modern, Varmint today
+A typical factory load is a 53 gr 7N6 FMJ bullet at about 2,900 ft/s, with roughly 990 ft-lbs of energy at the muzzle.
+Typical load: 53 gr 7N6 FMJ; Muzzle speed: 2,900 ft/s; Muzzle energy: 990 ft-lbs; Typical BC (G1): ≈ 0.33 typical, varies by brand; Twist rate: 1:7.87; Point-blank range: 268 yd 6" vital zone; Hunting today: Varmints and coyotes; import limits keep surplus scarce.
+
+## 5.56x45 NATO
+URL: https://ammochart.net/cartridges/5-56x45-nato
+U.S. and NATO service round since the M16.
+Good for: Cold War & modern, Varmint today
+A typical factory load is a 62 gr M855 green tip bullet at about 3,020 ft/s, with roughly 1,255 ft-lbs of energy at the muzzle.
+Typical load: 62 gr M855 green tip; Muzzle speed: 3,020 ft/s; Muzzle energy: 1,255 ft-lbs; Typical BC (G1): ≈ 0.30 typical, varies by brand; Twist rate: 1:7; Point-blank range: 275 yd 6" vital zone; Hunting today: Varmints and coyotes; deer only with proper hunting bullets where legal.
+
+## 5.7x28mm
+URL: https://ammochart.net/cartridges/5-7x28mm
+FN's small, fast bottlenecked round for the P90 and Five-seveN. Flat shooting, light recoil, high-capacity magazines.
+Good for: Pistol, Self-defense, Target
+A typical factory load is a 40 gr V-Max bullet at about 1,738 ft/s, with roughly 268 ft-lbs of energy at the muzzle.
+Typical load: 40 gr V-Max · 4.8" barrel; Muzzle speed: 1,738 ft/s; Muzzle energy: 268 ft-lbs; Typical BC (G1): 0.200 maker's published G1; Twist rate: 1:9; Practical range: 50 yd; Point-blank range: 155 yd 6" vital zone; Recommended platform: Full-size pistol or carbine Very light recoil
+
+## .50 Beowulf
+URL: https://ammochart.net/cartridges/50-beowulf
+The biggest common AR-15 round. Hard-hitting at short range on hogs and bear.
+Good for: AR-15, Deer/hog, Straight-wall
+A typical factory load is a 350 gr JHP bullet at about 1,750 ft/s, with roughly 2,381 ft-lbs of energy at the muzzle.
+Typical load: 350 gr JHP · 16" barrel; Muzzle speed: 1,750 ft/s; Muzzle energy: 2,381 ft-lbs; Typical BC (G1): ≈ 0.15 typical, varies by brand; Twist rate: 1:18; Practical range: 125 yd
+
+## .50 BMG
+URL: https://ammochart.net/cartridges/50-bmg
+John Browning's heavy machine gun round. Used for anti-materiel rifles and long-range competition.
+Good for: ELR, Military/LE
+A typical factory load is a 750 gr A-Max bullet at about 2,815 ft/s, with roughly 13,200 ft-lbs of energy at the muzzle.
+Typical load: 750 gr A-Max; Muzzle speed: 2,815 ft/s; Muzzle energy: 13,200 ft-lbs; Typical BC (G1): 1.050 maker's G1, used for the drop figures; Twist rate: 1:15; Recommended platform: Heavy rifle, 25–35 lb with brake Massive recoil without the weight and brake
+
+## .500 Nitro Express 3"
+URL: https://ammochart.net/cartridges/500-nitro-express-3
+Big double-rifle stopper for elephant and buffalo charges.
+Good for: Africa, Double rifle
+A typical factory load is a 570 gr solid bullet at about 2,150 ft/s, with roughly 5,850 ft-lbs of energy at the muzzle.
+Typical load: 570 gr solid; Muzzle speed: 2,150 ft/s; Muzzle energy: 5,850 ft-lbs; Typical BC (G1): ≈ 0.33 typical, varies by brand; Twist rate: 1:15; Practical range: 100 yd; Point-blank range: 208 yd 6" vital zone; Recommended platform: Double rifle, 11–12 lb Very heavy recoil
+
+## .500 S&W Magnum
+URL: https://ammochart.net/cartridges/500-s-and-w-magnum
+The most powerful production revolver round. Big-game handgun hunting and defense against grizzly and brown bear.
+Good for: Revolver, Hunting, Big game/bear
+A typical factory load is a 350 gr XTP bullet at about 1,900 ft/s, with roughly 2,805 ft-lbs of energy at the muzzle.
+Typical load: 350 gr XTP · 8.375" barrel; Muzzle speed: 1,900 ft/s; Muzzle energy: 2,805 ft-lbs; Typical BC (G1): ≈ 0.15 typical, varies by brand; Twist rate: 1:18.75; Practical range: 100 yd; Point-blank range: 159 yd 6" vital zone; Recommended platform: Heavy X-frame revolver with brake Brutal recoil; not a beginner gun
+
+## .505 Gibbs
+URL: https://ammochart.net/cartridges/505-gibbs
+Massive bolt-action round for elephant; the bolt gun's answer to the .500 NE.
+Good for: Africa, Bolt action
+A typical factory load is a 525 gr solid bullet at about 2,300 ft/s, with roughly 6,166 ft-lbs of energy at the muzzle.
+Typical load: 525 gr solid; Muzzle speed: 2,300 ft/s; Muzzle energy: 6,166 ft-lbs; Typical BC (G1): ≈ 0.32 typical, varies by brand; Twist rate: 1:16; Practical range: 100 yd; Point-blank range: 221 yd 6" vital zone; Recommended platform: Bolt rifle, 11 lb+ Brutal recoil
+
+## .577 Nitro Express 3"
+URL: https://ammochart.net/cartridges/577-nitro-express-3
+Elephant stopper for the thickest cover. Brutal recoil in heavy double rifles.
+Good for: Africa, Double rifle
+A typical factory load is a 750 gr solid bullet at about 2,050 ft/s, with roughly 6,998 ft-lbs of energy at the muzzle.
+Typical load: 750 gr solid; Muzzle speed: 2,050 ft/s; Muzzle energy: 6,998 ft-lbs; Typical BC (G1): ≈ 0.33 typical, varies by brand; Twist rate: 1:30; Practical range: 75 yd; Point-blank range: 199 yd 6" vital zone; Recommended platform: Double rifle, 13–14 lb Extreme recoil
+
+## 6.5 Carcano
+URL: https://ammochart.net/cartridges/6-5-carcano
+Italian service round for both world wars.
+Good for: 1800s, WWI era, WWII era, Deer today
+A typical factory load is a 162 gr round nose FMJ bullet at about 2,300 ft/s, with roughly 1,903 ft-lbs of energy at the muzzle.
+Typical load: 162 gr round nose FMJ; Muzzle speed: 2,300 ft/s; Muzzle energy: 1,903 ft-lbs; Typical BC (G1): ≈ 0.28 typical, varies by brand; Twist rate: 1:7.5–1:10 (gain twist); Point-blank range: 212 yd 6" vital zone; Hunting today: Yes: deer at moderate range with soft points.
+
+## 6.5 Creedmoor +Peak
+URL: https://ammochart.net/cartridges/6-5-creedmoor-plus-peak
+Federal's higher-pressure Peak Alloy case drives bullets up to 300 fps faster than standard 6.5 CM. This Gold Medal load is a match (target) bullet, so pick a +Peak hunting bullet for game.
+Good for: Deer/hog
+A typical factory load is a 153 gr Sierra Tipped MatchKing bullet at about 2,850 ft/s, with roughly 2,759 ft-lbs of energy at the muzzle.
+Typical load: 153 gr Sierra Tipped MatchKing; Muzzle speed: 2,850 ft/s; Muzzle energy: 2,759 ft-lbs; Typical BC (G1): 0.642 maker's published G1; Twist rate: 1:8 1:7.5 ideal for 153 gr; Practical range: Target load · 500+ yd; Point-blank range: 290 yd 6" vital zone; Recommended platform: Standard rifle, 7–8 lb Moderate recoil; snappy in an ultralight
+
+## 6.5 Creedmoor
+URL: https://ammochart.net/cartridges/6-5-creedmoor
+Designed for long-range target matches; adopted for deer, pronghorn and hogs. Elk with good bullets inside 400.
+Good for: Deer/hog, Elk/moose
+A typical factory load is a 143 gr ELD-X bullet at about 2,700 ft/s, with roughly 2,315 ft-lbs of energy at the muzzle.
+Typical load: 143 gr ELD-X; Muzzle speed: 2,700 ft/s; Muzzle energy: 2,315 ft-lbs; Typical BC (G1): 0.623 maker's published G1; Twist rate: 1:8; Practical range: 400–500 yd; Point-blank range: 275 yd 6" vital zone; Recommended platform: Light or standard rifle Light recoil; fine in a 6–7 lb rifle
+
+## 6.5 Grendel
+URL: https://ammochart.net/cartridges/6-5-grendel
+Heavy 6.5 bullets from an AR-15: deer, hogs and long-range steel.
+Good for: AR-15, Deer/hog, Target/long range
+A typical factory load is a 123 gr SST bullet at about 2,580 ft/s, with roughly 1,818 ft-lbs of energy at the muzzle.
+Typical load: 123 gr SST · 24" barrel; Muzzle speed: 2,580 ft/s; Muzzle energy: 1,818 ft-lbs; Typical BC (G1): ≈ 0.51 typical, varies by brand; Twist rate: 1:8; Practical range: 300 yd deer
+
+## 6.5 PRC
+URL: https://ammochart.net/cartridges/6-5-prc
+Magnum-speed 6.5 for long-range deer, sheep and elk in open mountain country.
+Good for: Deer/hog, Elk/moose
+A typical factory load is a 143 gr ELD-X bullet at about 2,960 ft/s, with roughly 2,782 ft-lbs of energy at the muzzle.
+Typical load: 143 gr ELD-X; Muzzle speed: 2,960 ft/s; Muzzle energy: 2,782 ft-lbs; Typical BC (G1): 0.623 maker's published G1; Twist rate: 1:8; Practical range: 500+ yd; Point-blank range: 300 yd 6" vital zone; Recommended platform: Standard rifle, 7–8 lb Moderate recoil; snappy in an ultralight
+
+## 6.5 SAUM
+URL: https://ammochart.net/cartridges/6-5-saum
+Short Action Ultra Mag necked to 6.5. Popular in PRS and long-range hunting: magnum-class speed from a short action.
+Good for: Target/match, Hunting
+A typical factory load is a 140 gr ELD Match bullet at about 2,950 ft/s, with roughly 2,705 ft-lbs of energy at the muzzle.
+Typical load: 140 gr ELD Match; Muzzle speed: 2,950 ft/s; Muzzle energy: 2,705 ft-lbs; Typical BC (G1): 0.646 maker's published G1; Twist rate: 1:8; Practical range: Target 1,000 yd · 500 yd deer; Point-blank range: 300 yd 6" vital zone; Recommended platform: Standard rifle, 7–8 lb Moderate recoil; snappy in an ultralight
+
+## 6.5x47 Lapua
+URL: https://ammochart.net/cartridges/6-5x47-lapua
+Lapua's match round with famously strong, consistent brass. Excellent mid-range accuracy and barrel life.
+Good for: PRS, F-Class, Benchrest
+A typical factory load is a 140 gr Hybrid bullet at about 2,700 ft/s, with roughly 2,266 ft-lbs of energy at the muzzle.
+Typical load: 140 gr Hybrid; Muzzle speed: 2,700 ft/s; Muzzle energy: 2,266 ft-lbs; Typical BC (G1): 0.607 maker's G1, used for the drop figures; Twist rate: 1:8; Recommended platform: PRS or F-Class rifle, 12–16 lb Light recoil
+
+## 6.5x50 Arisaka
+URL: https://ammochart.net/cartridges/6-5x50-arisaka
+Japanese service round of the Russo-Japanese War and early WWII.
+Good for: 1800s, WWI era, WWII era, Deer today
+A typical factory load is a 139 gr spitzer FMJ bullet at about 2,500 ft/s, with roughly 1,930 ft-lbs of energy at the muzzle.
+Typical load: 139 gr spitzer FMJ; Muzzle speed: 2,500 ft/s; Muzzle energy: 1,930 ft-lbs; Typical BC (G1): ≈ 0.45 typical, varies by brand; Twist rate: 1:7.9; Point-blank range: 241 yd 6" vital zone; Hunting today: Sometimes: deer at moderate range; ammo is limited.
+
+## 6.5x55 Swedish
+URL: https://ammochart.net/cartridges/6-5x55-swedish
+Scandinavian service round famed for accuracy.
+Good for: 1800s, WWI era, WWII era, Deer today, Elk today
+A typical factory load is a 139 gr m/41 spitzer bullet at about 2,600 ft/s, with roughly 2,086 ft-lbs of energy at the muzzle.
+Typical load: 139 gr m/41 spitzer; Muzzle speed: 2,600 ft/s; Muzzle energy: 2,086 ft-lbs; Typical BC (G1): ≈ 0.50 typical, varies by brand; Twist rate: 1:7.87; Point-blank range: 253 yd 6" vital zone; Hunting today: Yes: a top moose, deer and target round in Europe.
+
+## 6.8 SPC
+URL: https://ammochart.net/cartridges/6-8-spc
+Developed with Army special operations for more close-range punch than 5.56. Popular hog round.
+Good for: AR-15, Deer/hog, Defense
+A typical factory load is a 110 gr V-Max / Accubond bullet at about 2,575 ft/s, with roughly 1,620 ft-lbs of energy at the muzzle.
+Typical load: 110 gr V-Max / Accubond · 16" barrel; Muzzle speed: 2,575 ft/s; Muzzle energy: 1,620 ft-lbs; Typical BC (G1): ≈ 0.37 typical, varies by brand; Twist rate: 1:11; Practical range: 250 yd
+
+## .600 Nitro Express
+URL: https://ammochart.net/cartridges/600-nitro-express
+Once the most powerful sporting cartridge. Built to stop charging elephants at a few yards.
+Good for: Africa, Double rifle
+A typical factory load is a 900 gr solid bullet at about 1,950 ft/s, with roughly 7,598 ft-lbs of energy at the muzzle.
+Typical load: 900 gr solid; Muzzle speed: 1,950 ft/s; Muzzle energy: 7,598 ft-lbs; Typical BC (G1): ≈ 0.30 typical, varies by brand; Twist rate: 1:30; Practical range: 50–75 yd; Point-blank range: 188 yd 6" vital zone; Recommended platform: Double rifle, 15–16 lb Extreme recoil; one of the hardest-kicking rifles made
+
+## 6mm-284
+URL: https://ammochart.net/cartridges/6mm-284
+.284 Win necked to 6mm. Very fast with heavy 6mm bullets for long-range target and varmint work. Known as a barrel burner.
+Good for: Target/match, Varmint, Hunting
+A typical factory load is a 105 gr Berger VLD bullet at about 3,200 ft/s, with roughly 2,387 ft-lbs of energy at the muzzle.
+Typical load: 105 gr Berger VLD; Muzzle speed: 3,200 ft/s; Muzzle energy: 2,387 ft-lbs; Typical BC (G1): ≈ 0.53 typical, varies by brand; Twist rate: 1:8; Practical range: Target 1,000+ yd · 400 yd deer; Point-blank range: 319 yd 6" vital zone; Recommended platform: Light or standard rifle Light recoil; fine in a 6–7 lb rifle
+
+## 6mm ARC
+URL: https://ammochart.net/cartridges/6mm-arc
+Hornady's Advanced Rifle Cartridge for the AR-15. Long-range-capable 6mm for deer, hogs and coyotes from a standard-size AR.
+Good for: Varmint, Deer/hog
+A typical factory load is a 103 gr ELD-X bullet at about 2,800 ft/s, with roughly 1,793 ft-lbs of energy at the muzzle.
+Typical load: 103 gr ELD-X; Muzzle speed: 2,800 ft/s; Muzzle energy: 1,793 ft-lbs; Typical BC (G1): 0.512 maker's published G1; Twist rate: 1:7.5; Practical range: 300 yd; Point-blank range: 275 yd 6" vital zone; Recommended platform: AR-15 or any light rifle Very light recoil
+
+## 6mm Creedmoor
+URL: https://ammochart.net/cartridges/6mm-creedmoor
+6.5 Creedmoor case necked to 6mm. Began as a target round; with hunting bullets it's a flat, low-recoil deer, pronghorn and coyote rifle.
+Good for: Varmint, Deer/hog
+A typical factory load is a 103 gr ELD-X bullet at about 3,050 ft/s, with roughly 2,127 ft-lbs of energy at the muzzle.
+Typical load: 103 gr ELD-X; Muzzle speed: 3,050 ft/s; Muzzle energy: 2,127 ft-lbs; Typical BC (G1): 0.512 maker's published G1; Twist rate: 1:7.5; Practical range: 400 yd; Point-blank range: 303 yd 6" vital zone; Recommended platform: Light or standard rifle Light recoil; fine in a 6–7 lb rifle
+
+## 6mm Dasher
+URL: https://ammochart.net/cartridges/6mm-dasher
+Benchrest, F-Class and PRS: tiny groups, very little recoil so you can spot your own hits.
+Good for: PRS, F-Class, Benchrest
+A typical factory load is a 105 gr Berger Hybrid bullet at about 2,950 ft/s, with roughly 2,029 ft-lbs of energy at the muzzle.
+Typical load: 105 gr Berger Hybrid; Muzzle speed: 2,950 ft/s; Muzzle energy: 2,029 ft-lbs; Typical BC (G1): 0.536 maker's G1, used for the drop figures; Twist rate: 1:8; Practical range: Target to 1,000 yd · 400 yd deer; Point-blank range: 296 yd 6" vital zone; Recommended platform: PRS or F-Class rifle, 12–16 lb Tiny recoil, so you can spot your own hits
+
+## 6mm GT
+URL: https://ammochart.net/cartridges/6mm-gt
+Designed by George Gardner and Tom Jacobs for PRS precision matches: low recoil and long barrel life. Handles deer and coyotes with a hunting bullet; most factory ammo is match.
+Good for: Varmint, Deer/hog
+A typical factory load is a 109 gr ELD Match bullet at about 2,870 ft/s, with roughly 1,993 ft-lbs of energy at the muzzle.
+Typical load: 109 gr ELD Match; Muzzle speed: 2,870 ft/s; Muzzle energy: 1,993 ft-lbs; Typical BC (G1): 0.557 maker's published G1; Twist rate: 1:7.5; Practical range: Target load · 400 yd w/ hunting bullet; Point-blank range: 289 yd 6" vital zone; Recommended platform: Light or standard rifle Light recoil; fine in a 6–7 lb rifle
+
+## 6mm Remington
+URL: https://ammochart.net/cartridges/6mm-remington
+Started as the .244 Remington (1955). A slightly faster cousin of the .243 for varmints, deer and pronghorn.
+Good for: Varmint, Deer/hog
+A typical factory load is a 100 gr soft point bullet at about 3,100 ft/s, with roughly 2,134 ft-lbs of energy at the muzzle.
+Typical load: 100 gr soft point; Muzzle speed: 3,100 ft/s; Muzzle energy: 2,134 ft-lbs; Typical BC (G1): ≈ 0.36 typical, varies by brand; Twist rate: 1:9; Practical range: 350 yd; Point-blank range: 296 yd 6" vital zone; Recommended platform: Light or standard rifle Light recoil; fine in a 6–7 lb rifle
+
+## 7.5x55 Swiss
+URL: https://ammochart.net/cartridges/7-5x55-swiss
+Swiss service round with very accurate match-grade surplus.
+Good for: WWI era, WWII era, Deer today, Elk today
+A typical factory load is a 174 gr GP11 ball bullet at about 2,560 ft/s, with roughly 2,533 ft-lbs of energy at the muzzle.
+Typical load: 174 gr GP11 ball; Muzzle speed: 2,560 ft/s; Muzzle energy: 2,533 ft-lbs; Typical BC (G1): ≈ 0.51 typical, varies by brand; Twist rate: 1:10.6; Point-blank range: 249 yd 6" vital zone; Hunting today: Yes: deer and elk; like a .308.
+
+## 7.62x39
+URL: https://ammochart.net/cartridges/7-62x39
+The AK round in an AR. Cheap steel-case ammo; good for hogs and deer in brush.
+Good for: AR-15, Deer/hog, Defense
+A typical factory load is a 123 gr soft point bullet at about 2,350 ft/s, with roughly 1,508 ft-lbs of energy at the muzzle.
+Typical load: 123 gr soft point · 16" barrel; Muzzle speed: 2,350 ft/s; Muzzle energy: 1,508 ft-lbs; Typical BC (G1): ≈ 0.28 typical, varies by brand; Twist rate: 1:10; Practical range: 200 yd; Point-blank range: 215 yd 6" vital zone; Hunting today: Yes: hogs and deer inside 150–200 yd with soft points.
+
+## 7.62x51 NATO
+URL: https://ammochart.net/cartridges/7-62x51-nato
+NATO's standard rifle round from the M14 era to today's machine guns and sniper rifles.
+Good for: Cold War & modern, Deer today, Elk today
+A typical factory load is a 147 gr M80 ball bullet at about 2,750 ft/s, with roughly 2,468 ft-lbs of energy at the muzzle.
+Typical load: 147 gr M80 ball; Muzzle speed: 2,750 ft/s; Muzzle energy: 2,468 ft-lbs; Typical BC (G1): ≈ 0.40 typical, varies by brand; Twist rate: 1:12 (M14) / 1:10; Point-blank range: 261 yd 6" vital zone; Hunting today: Yes: same as .308 Win for deer, elk and hogs.
+
+## 7.62x54R
+URL: https://ammochart.net/cartridges/7-62x54r
+Russian and Soviet service round, still in use: one of the longest-serving military cartridges.
+Good for: 1800s, WWI era, WWII era, Cold War & modern, Deer today, Elk today
+A typical factory load is a 148 gr light ball FMJ bullet at about 2,800 ft/s, with roughly 2,577 ft-lbs of energy at the muzzle.
+Typical load: 148 gr light ball FMJ; Muzzle speed: 2,800 ft/s; Muzzle energy: 2,577 ft-lbs; Typical BC (G1): ≈ 0.34 typical, varies by brand; Twist rate: 1:9.5; Point-blank range: 260 yd 6" vital zone; Hunting today: Yes: deer, hogs and elk; similar to .30-06.
+
+## 7.65x53 Argentine
+URL: https://ammochart.net/cartridges/7-65x53-argentine
+Mauser's round for Argentina, Belgium and Turkey.
+Good for: 1800s, WWI era, Deer today
+A typical factory load is a 154 gr spitzer bullet at about 2,700 ft/s, with roughly 2,493 ft-lbs of energy at the muzzle.
+Typical load: 154 gr spitzer; Muzzle speed: 2,700 ft/s; Muzzle energy: 2,493 ft-lbs; Typical BC (G1): ≈ 0.40 typical, varies by brand; Twist rate: 1:9.84; Point-blank range: 258 yd 6" vital zone; Hunting today: Yes: deer and hogs; handloaders keep it alive.
+
+## 7.7x58 Arisaka
+URL: https://ammochart.net/cartridges/7-7x58-arisaka
+Japan's WWII rifle round.
+Good for: WWII era, Deer today, Elk today
+A typical factory load is a 181 gr spitzer FMJ bullet at about 2,400 ft/s, with roughly 2,315 ft-lbs of energy at the muzzle.
+Typical load: 181 gr spitzer FMJ; Muzzle speed: 2,400 ft/s; Muzzle energy: 2,315 ft-lbs; Typical BC (G1): ≈ 0.45 typical, varies by brand; Twist rate: 1:10; Point-blank range: 231 yd 6" vital zone; Hunting today: Yes: deer and elk; similar to .303 British.
+
+## 7mm-08 Remington
+URL: https://ammochart.net/cartridges/7mm-08-remington
+Short-action, light-recoil deer and elk round; popular for youth and lighter rifles.
+Good for: Deer/hog, Elk/moose
+A typical factory load is a 140 gr soft point bullet at about 2,800 ft/s, with roughly 2,437 ft-lbs of energy at the muzzle.
+Typical load: 140 gr soft point; Muzzle speed: 2,800 ft/s; Muzzle energy: 2,437 ft-lbs; Typical BC (G1): ≈ 0.39 typical, varies by brand; Twist rate: 1:9.5; Practical range: 350 yd; Point-blank range: 272 yd 6" vital zone; Recommended platform: Light or standard rifle Light recoil; fine in a 6–7 lb rifle
+
+## 7mm PRC
+URL: https://ammochart.net/cartridges/7mm-prc
+Hornady's modern long-range magnum built around heavy, high-BC 7mm bullets. Elk, moose, mule deer and sheep at long distance in a standard long action.
+Good for: Deer/hog, Elk/moose, Big/dangerous
+A typical factory load is a 175 gr ELD-X bullet at about 3,000 ft/s, with roughly 3,497 ft-lbs of energy at the muzzle.
+Typical load: 175 gr ELD-X; Muzzle speed: 3,000 ft/s; Muzzle energy: 3,497 ft-lbs; Typical BC (G1): 0.689 maker's published G1; Twist rate: 1:8; Practical range: 500–600 yd; Point-blank range: 306 yd 6" vital zone; Recommended platform: Heavy rifle, 8½–9 lb+ Heavy recoil; skip ultralights, consider a brake
+
+## 7mm Remington Mag
+URL: https://ammochart.net/cartridges/7mm-remington-mag
+Long-range elk, mule deer and sheep with less recoil than a .300 magnum.
+Good for: Deer/hog, Elk/moose
+A typical factory load is a 150 gr soft point bullet at about 3,110 ft/s, with roughly 3,221 ft-lbs of energy at the muzzle.
+Typical load: 150 gr soft point; Muzzle speed: 3,110 ft/s; Muzzle energy: 3,221 ft-lbs; Typical BC (G1): ≈ 0.40 typical, varies by brand; Twist rate: 1:9.5 1:8 for 175+ gr; Practical range: 500 yd; Point-blank range: 301 yd 6" vital zone; Recommended platform: Standard to heavy rifle, 8 lb+ Stout recoil; use a good pad or brake in a light rifle
+
+## 7x57 Mauser
+URL: https://ammochart.net/cartridges/7x57-mauser
+Mauser's round for Spain; it impressed the U.S. Army in Cuba and later Africa's ivory hunters.
+Good for: 1800s, WWI era, Deer today, Elk today
+A typical factory load is a 173 gr round nose FMJ bullet at about 2,300 ft/s, with roughly 2,032 ft-lbs of energy at the muzzle.
+Typical load: 173 gr round nose FMJ; Muzzle speed: 2,300 ft/s; Muzzle energy: 2,032 ft-lbs; Typical BC (G1): ≈ 0.28 typical, varies by brand; Twist rate: 1:8.66; Point-blank range: 213 yd 6" vital zone; Hunting today: Yes: a classic deer and elk round.
+
+## 8mm Lebel
+URL: https://ammochart.net/cartridges/8mm-lebel
+The first military smokeless-powder cartridge; it made every black-powder rifle obsolete.
+Good for: 1800s, WWI era, Deer today
+A typical factory load is a 198 gr Balle D solid bullet at about 2,300 ft/s, with roughly 2,326 ft-lbs of energy at the muzzle.
+Typical load: 198 gr Balle D solid; Muzzle speed: 2,300 ft/s; Muzzle energy: 2,326 ft-lbs; Typical BC (G1): ≈ 0.55 typical, varies by brand; Twist rate: 1:9.45; Point-blank range: 225 yd 6" vital zone; Hunting today: Rarely: ammo is scarce; collector round.
+
+## 8mm Mauser (8x57 IS)
+URL: https://ammochart.net/cartridges/8mm-mauser-8x57-is
+German service round for both world wars.
+Good for: WWI era, WWII era, Deer today, Elk today
+A typical factory load is a 196 gr sS heavy ball bullet at about 2,500 ft/s, with roughly 2,720 ft-lbs of energy at the muzzle.
+Typical load: 196 gr sS heavy ball; Muzzle speed: 2,500 ft/s; Muzzle energy: 2,720 ft-lbs; Typical BC (G1): ≈ 0.56 typical, varies by brand; Twist rate: 1:9.45; Point-blank range: 245 yd 6" vital zone; Hunting today: Yes: deer, hogs, elk and moose; comparable to .30-06.
+
+## 9mm Luger
+URL: https://ammochart.net/cartridges/9mm-luger
+Georg Luger's military round, now the most popular handgun cartridge. Self-defense, police and competition with manageable recoil.
+Good for: Pistol, Self-defense, Target
+A typical factory load is a 124 gr JHP bullet at about 1,150 ft/s, with roughly 364 ft-lbs of energy at the muzzle.
+Typical load: 124 gr JHP · 4" barrel; Muzzle speed: 1,150 ft/s; Muzzle energy: 364 ft-lbs; Typical BC (G1): ≈ 0.15 typical, varies by brand; Twist rate: 1:10; Practical range: 25 yd; Point-blank range: 109 yd 6" vital zone; Recommended platform: Compact or full-size pistol Mild; micro-compacts are snappier
+
+## 9mm PCC
+URL: https://ammochart.net/cartridges/9mm-pcc
+Pistol-caliber carbine: cheap 9mm practice, steel matches and home defense.
+Good for: AR-15, Defense, Target/long range
+A typical factory load is a 124 gr JHP bullet at about 1,250 ft/s, with roughly 430 ft-lbs of energy at the muzzle.
+Typical load: 124 gr JHP · 16" barrel; Muzzle speed: 1,250 ft/s; Muzzle energy: 430 ft-lbs; Typical BC (G1): ≈ 0.15 typical, varies by brand; Twist rate: 1:10; Practical range: 100 yd
+
+## Comparisons
+
+- [10mm Auto vs .44 Magnum](https://ammochart.net/compare/10mm-auto-vs-44-magnum): With typical loads, the .44 Magnum is about 100 ft/s faster at the muzzle (1,250 vs 1,350 ft/s). The .44 Magnum carries about 56% more energy at the muzzle (971 vs 624 ft-lbs), which usually also means more recoil.
+- [10mm Auto vs .45 ACP](https://ammochart.net/compare/10mm-auto-vs-45-acp): With typical loads, the 10mm Auto is about 400 ft/s faster at the muzzle (1,250 vs 850 ft/s). The 10mm Auto carries about 69% more energy at the muzzle (624 vs 369 ft-lbs), which usually also means more recoil. On the same size target, the 10mm Auto has the longer point-blank range (116 yd), so you can hold dead-on a bit farther without adjusting.
+- [.17 HMR vs .22 Long Rifle](https://ammochart.net/compare/17-hmr-vs-22-long-rifle): With typical loads, the .17 HMR is about 1,320 ft/s faster at the muzzle (2,550 vs 1,235 ft/s). The .17 HMR carries about 81% more energy at the muzzle (245 vs 135 ft-lbs), which usually also means more recoil. On the same size target, the .17 HMR has the longer point-blank range (145 yd), so you can hold dead-on a bit farther without adjusting.
+- [.17 HMR vs .22 WMR](https://ammochart.net/compare/17-hmr-vs-22-wmr): With typical loads, the .17 HMR is about 640 ft/s faster at the muzzle (2,550 vs 1,910 ft/s). The .22 WMR carries about 32% more energy at the muzzle (324 vs 245 ft-lbs), which usually also means more recoil. On the same size target, the .17 HMR has the longer point-blank range (145 yd), so you can hold dead-on a bit farther without adjusting.
+- [.22-250 Remington vs .243 Winchester](https://ammochart.net/compare/22-250-remington-vs-243-winchester): With typical loads, the .22-250 Remington is about 720 ft/s faster at the muzzle (3,680 vs 2,960 ft/s). The .243 Winchester carries about 18% more energy at the muzzle (1,945 vs 1,654 ft-lbs), which usually also means more recoil. The .243 Winchester's typical bullet has the higher BC (0.36), so it holds speed better and drifts less in the wind at long range.
+- [.22 Long Rifle vs .22 WMR](https://ammochart.net/compare/22-long-rifle-vs-22-wmr): With typical loads, the .22 WMR is about 680 ft/s faster at the muzzle (1,235 vs 1,910 ft/s). The .22 WMR carries about 140% more energy at the muzzle (324 vs 135 ft-lbs), which usually also means more recoil. On the same size target, the .22 WMR has the longer point-blank range (110 yd), so you can hold dead-on a bit farther without adjusting.
+- [.223 Remington vs .22-250 Remington](https://ammochart.net/compare/223-remington-vs-22-250-remington): With typical loads, the .22-250 Remington is about 440 ft/s faster at the muzzle (3,240 vs 3,680 ft/s). The .22-250 Remington carries about 29% more energy at the muzzle (1,654 vs 1,282 ft-lbs), which usually also means more recoil. On the same size target, the .22-250 Remington has the longer point-blank range (284 yd), so you can hold dead-on a bit farther without adjusting.
+- [.223 Remington vs 5.56x45 NATO](https://ammochart.net/compare/223-remington-vs-5-56x45-nato): With typical loads, the .223 Remington is about 220 ft/s faster at the muzzle (3,240 vs 3,020 ft/s). Muzzle energy is nearly the same (1,282 vs 1,255 ft-lbs). The 5.56x45 NATO's typical bullet has the higher BC (0.30), so it holds speed better and drifts less in the wind at long range. On the same size target, the 5.56x45 NATO has the longer point-blank range (275 yd), so you can hold dead-on a bit farther without adjusting.
+- [.243 Winchester vs .308 Winchester](https://ammochart.net/compare/243-winchester-vs-308-winchester): With typical loads, the .243 Winchester is about 140 ft/s faster at the muzzle (2,960 vs 2,820 ft/s). The .308 Winchester carries about 36% more energy at the muzzle (2,648 vs 1,945 ft-lbs), which usually also means more recoil. The .243 Winchester's typical bullet has the higher BC (0.36), so it holds speed better and drifts less in the wind at long range. On the same size target, the .243 Winchester has the longer point-blank range (283 yd), so you can hold dead-on a bit farther without adjusting.
+- [.243 Winchester vs 6.5 Creedmoor](https://ammochart.net/compare/243-winchester-vs-6-5-creedmoor): With typical loads, the .243 Winchester is about 260 ft/s faster at the muzzle (2,960 vs 2,700 ft/s). The 6.5 Creedmoor carries about 19% more energy at the muzzle (2,315 vs 1,945 ft-lbs), which usually also means more recoil. The 6.5 Creedmoor's typical bullet has the higher BC (0.623), so it holds speed better and drifts less in the wind at long range.
+- [.25-06 Remington vs .270 Winchester](https://ammochart.net/compare/25-06-remington-vs-270-winchester): With typical loads, the .270 Winchester is about 70 ft/s faster at the muzzle (2,990 vs 3,060 ft/s). The .270 Winchester carries about 16% more energy at the muzzle (2,703 vs 2,322 ft-lbs), which usually also means more recoil.
+- [.270 Winchester vs .30-06 Springfield](https://ammochart.net/compare/270-winchester-vs-30-06-springfield): With typical loads, the .270 Winchester is about 260 ft/s faster at the muzzle (3,060 vs 2,800 ft/s). The .30-06 Springfield carries about 6% more energy at the muzzle (2,872 vs 2,703 ft-lbs), which usually also means more recoil. On the same size target, the .270 Winchester has the longer point-blank range (293 yd), so you can hold dead-on a bit farther without adjusting.
+- [.270 Winchester vs 6.5 Creedmoor](https://ammochart.net/compare/270-winchester-vs-6-5-creedmoor): With typical loads, the .270 Winchester is about 360 ft/s faster at the muzzle (3,060 vs 2,700 ft/s). The .270 Winchester carries about 17% more energy at the muzzle (2,703 vs 2,315 ft-lbs), which usually also means more recoil. The 6.5 Creedmoor's typical bullet has the higher BC (0.623), so it holds speed better and drifts less in the wind at long range. On the same size target, the .270 Winchester has the longer point-blank range (293 yd), so you can hold dead-on a bit farther without adjusting.
+- [.30-06 Springfield vs .300 Winchester Mag](https://ammochart.net/compare/30-06-springfield-vs-300-winchester-mag): With typical loads, the .300 Winchester Mag is about 160 ft/s faster at the muzzle (2,800 vs 2,960 ft/s). The .300 Winchester Mag carries about 22% more energy at the muzzle (3,502 vs 2,872 ft-lbs), which usually also means more recoil. On the same size target, the .300 Winchester Mag has the longer point-blank range (286 yd), so you can hold dead-on a bit farther without adjusting.
+- [.30-30 Winchester vs .308 Winchester](https://ammochart.net/compare/30-30-winchester-vs-308-winchester): With typical loads, the .308 Winchester is about 430 ft/s faster at the muzzle (2,390 vs 2,820 ft/s). The .308 Winchester carries about 39% more energy at the muzzle (2,648 vs 1,902 ft-lbs), which usually also means more recoil. The .308 Winchester's typical bullet has the higher BC (0.31), so it holds speed better and drifts less in the wind at long range. On the same size target, the .308 Winchester has the longer point-blank range (266 yd), so you can hold dead-on a bit farther without adjusting.
+- [.300 Blackout vs 5.56x45 NATO](https://ammochart.net/compare/300-blackout-vs-5-56x45-nato): With typical loads, the 5.56x45 NATO is about 920 ft/s faster at the muzzle (2,100 vs 3,020 ft/s). The 5.56x45 NATO carries about 7% more energy at the muzzle (1,255 vs 1,175 ft-lbs), which usually also means more recoil. On the same size target, the 5.56x45 NATO has the longer point-blank range (275 yd), so you can hold dead-on a bit farther without adjusting.
+- [.300 Norma Magnum vs .338 Lapua Magnum](https://ammochart.net/compare/300-norma-magnum-vs-338-lapua-magnum): With typical loads, the .300 Norma Magnum is about 230 ft/s faster at the muzzle (2,934 vs 2,700 ft/s). The .338 Lapua Magnum carries about 10% more energy at the muzzle (4,856 vs 4,397 ft-lbs), which usually also means more recoil.
+- [.300 PRC vs .300 Winchester Mag](https://ammochart.net/compare/300-prc-vs-300-winchester-mag): With typical loads, the .300 Winchester Mag is about 100 ft/s faster at the muzzle (2,860 vs 2,960 ft/s). The .300 PRC carries about 10% more energy at the muzzle (3,850 vs 3,502 ft-lbs), which usually also means more recoil. The .300 PRC's typical bullet has the higher BC (0.663), so it holds speed better and drifts less in the wind at long range.
+- [.300 Winchester Mag vs .338 Winchester Mag](https://ammochart.net/compare/300-winchester-mag-vs-338-winchester-mag): With typical loads, the .300 Winchester Mag is about 180 ft/s faster at the muzzle (2,960 vs 2,780 ft/s). The .338 Winchester Mag carries about 10% more energy at the muzzle (3,861 vs 3,502 ft-lbs), which usually also means more recoil. On the same size target, the .300 Winchester Mag has the longer point-blank range (286 yd), so you can hold dead-on a bit farther without adjusting.
+- [.303 British vs 7.62x54R](https://ammochart.net/compare/303-british-vs-7-62x54r): With typical loads, the 7.62x54R is about 360 ft/s faster at the muzzle (2,440 vs 2,800 ft/s). The 7.62x54R carries about 12% more energy at the muzzle (2,577 vs 2,300 ft-lbs), which usually also means more recoil. The .303 British's typical bullet has the higher BC (0.45), so it holds speed better and drifts less in the wind at long range. On the same size target, the 7.62x54R has the longer point-blank range (260 yd), so you can hold dead-on a bit farther without adjusting.
+- [.308 Winchester vs .30-06 Springfield](https://ammochart.net/compare/308-winchester-vs-30-06-springfield): With typical loads, the .308 Winchester and .30-06 Springfield leave the muzzle at about the same speed (2,820 vs 2,800 ft/s). The .30-06 Springfield carries about 8% more energy at the muzzle (2,872 vs 2,648 ft-lbs), which usually also means more recoil. The .30-06 Springfield's typical bullet has the higher BC (0.40), so it holds speed better and drifts less in the wind at long range.
+- [.308 Winchester vs 6.5 Creedmoor](https://ammochart.net/compare/308-winchester-vs-6-5-creedmoor): With typical loads, the .308 Winchester is about 120 ft/s faster at the muzzle (2,820 vs 2,700 ft/s). The .308 Winchester carries about 14% more energy at the muzzle (2,648 vs 2,315 ft-lbs), which usually also means more recoil. The 6.5 Creedmoor's typical bullet has the higher BC (0.623), so it holds speed better and drifts less in the wind at long range.
+- [.308 Winchester vs 7.62x51 NATO](https://ammochart.net/compare/308-winchester-vs-7-62x51-nato): With typical loads, the .308 Winchester is about 70 ft/s faster at the muzzle (2,820 vs 2,750 ft/s). The .308 Winchester carries about 7% more energy at the muzzle (2,648 vs 2,468 ft-lbs), which usually also means more recoil. The 7.62x51 NATO's typical bullet has the higher BC (0.40), so it holds speed better and drifts less in the wind at long range.
+- [.338 Lapua Magnum vs .50 BMG](https://ammochart.net/compare/338-lapua-magnum-vs-50-bmg): With typical loads, the .50 BMG is about 120 ft/s faster at the muzzle (2,700 vs 2,815 ft/s). The .50 BMG carries about 172% more energy at the muzzle (13,200 vs 4,856 ft-lbs), which usually also means more recoil. The .50 BMG's typical bullet has the higher BC (1.050), so it holds speed better and drifts less in the wind at long range.
+- [.350 Legend vs .450 Bushmaster](https://ammochart.net/compare/350-legend-vs-450-bushmaster): With typical loads, the .350 Legend is about 130 ft/s faster at the muzzle (2,325 vs 2,200 ft/s). The .450 Bushmaster carries about 49% more energy at the muzzle (2,687 vs 1,800 ft-lbs), which usually also means more recoil. On the same size target, the .350 Legend has the longer point-blank range (212 yd), so you can hold dead-on a bit farther without adjusting.
+- [.357 Magnum vs .44 Magnum](https://ammochart.net/compare/357-magnum-vs-44-magnum): With typical loads, the .44 Magnum is about 120 ft/s faster at the muzzle (1,235 vs 1,350 ft/s). The .44 Magnum carries about 81% more energy at the muzzle (971 vs 535 ft-lbs), which usually also means more recoil.
+- [.375 H&H Magnum vs .375 Ruger](https://ammochart.net/compare/375-h-and-h-magnum-vs-375-ruger): With typical loads, the .375 Ruger is about 130 ft/s faster at the muzzle (2,530 vs 2,660 ft/s). The .375 Ruger carries about 11% more energy at the muzzle (4,713 vs 4,263 ft-lbs), which usually also means more recoil. On the same size target, the .375 Ruger has the longer point-blank range (248 yd), so you can hold dead-on a bit farther without adjusting.
+- [.38 Special vs .357 Magnum](https://ammochart.net/compare/38-special-vs-357-magnum): With typical loads, the .357 Magnum is about 480 ft/s faster at the muzzle (755 vs 1,235 ft/s). The .357 Magnum carries about 167% more energy at the muzzle (535 vs 200 ft-lbs), which usually also means more recoil. On the same size target, the .357 Magnum has the longer point-blank range (115 yd), so you can hold dead-on a bit farther without adjusting.
+- [.380 ACP vs 9mm Luger](https://ammochart.net/compare/380-acp-vs-9mm-luger): With typical loads, the 9mm Luger is about 200 ft/s faster at the muzzle (950 vs 1,150 ft/s). The 9mm Luger carries about 102% more energy at the muzzle (364 vs 180 ft-lbs), which usually also means more recoil. The 9mm Luger's typical bullet has the higher BC (0.15), so it holds speed better and drifts less in the wind at long range. On the same size target, the 9mm Luger has the longer point-blank range (109 yd), so you can hold dead-on a bit farther without adjusting.
+- [.416 Rigby vs .458 Lott](https://ammochart.net/compare/416-rigby-vs-458-lott): With typical loads, the .416 Rigby is about 100 ft/s faster at the muzzle (2,400 vs 2,300 ft/s). The .458 Lott carries about 15% more energy at the muzzle (5,873 vs 5,115 ft-lbs), which usually also means more recoil. On the same size target, the .416 Rigby has the longer point-blank range (230 yd), so you can hold dead-on a bit farther without adjusting.
+- [.45-70 Government vs .450 Bushmaster](https://ammochart.net/compare/45-70-government-vs-450-bushmaster): With typical loads, the .450 Bushmaster is about 320 ft/s faster at the muzzle (1,880 vs 2,200 ft/s). The .450 Bushmaster carries about 14% more energy at the muzzle (2,687 vs 2,354 ft-lbs), which usually also means more recoil. On the same size target, the .450 Bushmaster has the longer point-blank range (200 yd), so you can hold dead-on a bit farther without adjusting.
+- [.454 Casull vs .460 S&W Magnum](https://ammochart.net/compare/454-casull-vs-460-s-and-w-magnum): With typical loads, the .460 S&W Magnum is about 550 ft/s faster at the muzzle (1,650 vs 2,200 ft/s). The .460 S&W Magnum carries about 19% more energy at the muzzle (2,149 vs 1,813 ft-lbs), which usually also means more recoil. On the same size target, the .460 S&W Magnum has the longer point-blank range (181 yd), so you can hold dead-on a bit farther without adjusting.
+- [6.5 Creedmoor vs 6.5 PRC](https://ammochart.net/compare/6-5-creedmoor-vs-6-5-prc): With typical loads, the 6.5 PRC is about 260 ft/s faster at the muzzle (2,700 vs 2,960 ft/s). The 6.5 PRC carries about 20% more energy at the muzzle (2,782 vs 2,315 ft-lbs), which usually also means more recoil. On the same size target, the 6.5 PRC has the longer point-blank range (300 yd), so you can hold dead-on a bit farther without adjusting.
+- [6.5 Grendel vs 6.5 Creedmoor](https://ammochart.net/compare/6-5-grendel-vs-6-5-creedmoor): With typical loads, the 6.5 Creedmoor is about 120 ft/s faster at the muzzle (2,580 vs 2,700 ft/s). The 6.5 Creedmoor carries about 27% more energy at the muzzle (2,315 vs 1,818 ft-lbs), which usually also means more recoil. The 6.5 Creedmoor's typical bullet has the higher BC (0.623), so it holds speed better and drifts less in the wind at long range.
+- [6.5 Grendel vs 6mm ARC](https://ammochart.net/compare/6-5-grendel-vs-6mm-arc): With typical loads, the 6mm ARC is about 220 ft/s faster at the muzzle (2,580 vs 2,800 ft/s). Muzzle energy is nearly the same (1,818 vs 1,793 ft-lbs).
+- [6.5 PRC vs 7mm PRC](https://ammochart.net/compare/6-5-prc-vs-7mm-prc): With typical loads, the 7mm PRC is about 40 ft/s faster at the muzzle (2,960 vs 3,000 ft/s). The 7mm PRC carries about 26% more energy at the muzzle (3,497 vs 2,782 ft-lbs), which usually also means more recoil. The 7mm PRC's typical bullet has the higher BC (0.689), so it holds speed better and drifts less in the wind at long range.
+- [6.5x55 Swedish vs 6.5 Creedmoor](https://ammochart.net/compare/6-5x55-swedish-vs-6-5-creedmoor): With typical loads, the 6.5 Creedmoor is about 100 ft/s faster at the muzzle (2,600 vs 2,700 ft/s). The 6.5 Creedmoor carries about 11% more energy at the muzzle (2,315 vs 2,086 ft-lbs), which usually also means more recoil. The 6.5 Creedmoor's typical bullet has the higher BC (0.623), so it holds speed better and drifts less in the wind at long range. On the same size target, the 6.5 Creedmoor has the longer point-blank range (275 yd), so you can hold dead-on a bit farther without adjusting.
+- [6mm Creedmoor vs 6.5 Creedmoor](https://ammochart.net/compare/6mm-creedmoor-vs-6-5-creedmoor): With typical loads, the 6mm Creedmoor is about 350 ft/s faster at the muzzle (3,050 vs 2,700 ft/s). The 6.5 Creedmoor carries about 9% more energy at the muzzle (2,315 vs 2,127 ft-lbs), which usually also means more recoil. The 6.5 Creedmoor's typical bullet has the higher BC (0.623), so it holds speed better and drifts less in the wind at long range. On the same size target, the 6mm Creedmoor has the longer point-blank range (303 yd), so you can hold dead-on a bit farther without adjusting.
+- [7.62x39 vs 5.56x45 NATO](https://ammochart.net/compare/7-62x39-vs-5-56x45-nato): With typical loads, the 5.56x45 NATO is about 670 ft/s faster at the muzzle (2,350 vs 3,020 ft/s). The 7.62x39 carries about 20% more energy at the muzzle (1,508 vs 1,255 ft-lbs), which usually also means more recoil. On the same size target, the 5.56x45 NATO has the longer point-blank range (275 yd), so you can hold dead-on a bit farther without adjusting.
+- [7mm-08 Remington vs .308 Winchester](https://ammochart.net/compare/7mm-08-remington-vs-308-winchester): With typical loads, the 7mm-08 Remington and .308 Winchester leave the muzzle at about the same speed (2,800 vs 2,820 ft/s). The .308 Winchester carries about 9% more energy at the muzzle (2,648 vs 2,437 ft-lbs), which usually also means more recoil. The 7mm-08 Remington's typical bullet has the higher BC (0.39), so it holds speed better and drifts less in the wind at long range.
+- [7mm PRC vs 7mm Remington Mag](https://ammochart.net/compare/7mm-prc-vs-7mm-remington-mag): With typical loads, the 7mm Remington Mag is about 110 ft/s faster at the muzzle (3,000 vs 3,110 ft/s). The 7mm PRC carries about 9% more energy at the muzzle (3,497 vs 3,221 ft-lbs), which usually also means more recoil. The 7mm PRC's typical bullet has the higher BC (0.689), so it holds speed better and drifts less in the wind at long range. On the same size target, the 7mm PRC has the longer point-blank range (306 yd), so you can hold dead-on a bit farther without adjusting.
+- [7mm Remington Mag vs .300 Winchester Mag](https://ammochart.net/compare/7mm-remington-mag-vs-300-winchester-mag): With typical loads, the 7mm Remington Mag is about 150 ft/s faster at the muzzle (3,110 vs 2,960 ft/s). The .300 Winchester Mag carries about 9% more energy at the muzzle (3,502 vs 3,221 ft-lbs), which usually also means more recoil.
+- [8mm Mauser (8x57 IS) vs .30-06 Springfield](https://ammochart.net/compare/8mm-mauser-8x57-is-vs-30-06-springfield): With typical loads, the .30-06 Springfield is about 300 ft/s faster at the muzzle (2,500 vs 2,800 ft/s). The .30-06 Springfield carries about 6% more energy at the muzzle (2,872 vs 2,720 ft-lbs), which usually also means more recoil. The 8mm Mauser (8x57 IS)'s typical bullet has the higher BC (0.56), so it holds speed better and drifts less in the wind at long range. On the same size target, the .30-06 Springfield has the longer point-blank range (273 yd), so you can hold dead-on a bit farther without adjusting.
+- [9mm Luger vs .40 S&W](https://ammochart.net/compare/9mm-luger-vs-40-s-and-w): With typical loads, the 9mm Luger is about 150 ft/s faster at the muzzle (1,150 vs 1,000 ft/s). The .40 S&W carries about 10% more energy at the muzzle (400 vs 364 ft-lbs), which usually also means more recoil. On the same size target, the 9mm Luger has the longer point-blank range (109 yd), so you can hold dead-on a bit farther without adjusting.
+- [9mm Luger vs .45 ACP](https://ammochart.net/compare/9mm-luger-vs-45-acp): With typical loads, the 9mm Luger is about 300 ft/s faster at the muzzle (1,150 vs 850 ft/s). Muzzle energy is nearly the same (364 vs 369 ft-lbs). On the same size target, the 9mm Luger has the longer point-blank range (109 yd), so you can hold dead-on a bit farther without adjusting.

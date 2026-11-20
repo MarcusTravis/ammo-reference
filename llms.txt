@@ -1,0 +1,43 @@
+# Ammo Reference Library (ammochart.net)
+
+> Free, ad-free field reference for hunters and shooters: 17 cartridge, caliber, rifle and optics charts (298 rows), 108 cartridge profiles, 45 head-to-head cartridge comparisons, a beginner's deer cartridge guide, tips and articles. Figures are typical values for a named factory load or product, checked against the maker's published data (or SAAMI and spec sheets) and dated on each chart. Real numbers vary by brand, lot and barrel length; always check the maker's data for your exact load.
+
+Made by Marcus Travis. Every data change is logged at https://ammochart.net/updates and in the public changelog: https://github.com/MarcusTravis/ammo-reference/blob/main/CHANGELOG.md
+
+## Start here
+- [Home: all charts](https://ammochart.net/): every chart, article and the common-questions section
+- [Best deer cartridges for beginners](https://ammochart.net/best-deer-cartridges): 26 common deer cartridges compared by typical load, speed, energy, ethical range and recoil, from the .300 Blackout Subsonic to the 7mm PRC.
+- [All 108 cartridges A–Z](https://ammochart.net/cartridges/): one profile page per cartridge with typical load, speed, energy, BC, twist, range and point-blank range
+- [Cartridge comparisons](https://ammochart.net/compare/): 45 popular matchups side by side, for example [.308 Winchester vs 6.5 Creedmoor](https://ammochart.net/compare/308-winchester-vs-6-5-creedmoor)
+
+## Charts
+- [Hunting Rifle Cartridge Chart](https://ammochart.net/hunting): What each common cartridge was built to hunt, typical muzzle velocity, a realistic ethical range for an average hunter, and maximum point-blank range on a deer-size target. (data last checked 2026-11-12)
+- [Precision Rifle Cartridge Chart](https://ammochart.net/precision): Match and long-range cartridges compared: drop, wind drift and speed at 500, 800 and 1,000 yards, supersonic range, barrel life, recoil and cost. (data last checked 2026-11-12)
+- [Wildcat Cartridge Chart](https://ammochart.net/wildcats): Popular wildcats, non-standardized cartridges made by reshaping a parent case: what each was built for, a typical handload, speed, energy, practical range, point-blank range and twist. (data last checked 2026-11-12)
+- [Military Surplus Cartridge Chart](https://ammochart.net/military-surplus): Historic and modern military rifle cartridges: when and where each served, the rifles that fired it, the issued load, speed, energy and how it's used for hunting today. (data last checked 2026-11-12)
+- [AR Caliber Guide](https://ammochart.net/ar-calibers): Popular AR-15 and AR-10 calibers: what each is good for, a typical load and barrel, speed, energy, practical range, and which parts you have to change from a standard rifle. (data last checked 2026-11-12)
+- [Rimfire Cartridge Chart](https://ammochart.net/rimfire): Common rimfire cartridges: what each is made for, a typical load, speed, energy, practical range and point-blank range in a scoped rifle. (data last checked 2026-11-12)
+- [Big Bore Cartridge Chart](https://ammochart.net/big-bore): Big-bore and dangerous-game cartridges for Africa, Alaska and big bears: what each was built for, a typical load, speed, energy, practical range, point-blank range, rifle type and twist. (data last checked 2026-11-12)
+- [Handgun Cartridge Chart](https://ammochart.net/handguns): Common pistol and revolver cartridges: what each was built for, a typical factory load and barrel length, speed, energy, practical range and twist. (data last checked 2026-11-12)
+- [Shotshell & Slug Chart](https://ammochart.net/shotshells): Common shotgun gauges and loads, plus slugs and pistol snake shot: what each is made for, payload and pellet count, speed, effective range and the choke to use. (data last checked 2026-11-12)
+- [Popular Rifle Models](https://ammochart.net/rifle-models): The most popular factory rifles: what each is known for, common calibers, street price range, popularity, accuracy reputation, weight, trigger and magazine, and the main pros and cons. (data last checked 2026-11-12)
+- [Popular Rifle Scopes](https://ammochart.net/scopes): The most popular riflescopes for hunting, long range and ARs: price range, popularity, glass and tracking ratings, focal plane and reticle, turrets, weight, warranty and the main pros and cons. (data last checked 2026-11-12)
+- [Thermal Scope Chart](https://ammochart.net/thermal-scopes): Popular thermal riflescopes for hogs and predators: price, image and durability ratings, sensor and heat sensitivity, lens and zoom, detection and hog ID range, battery life and weight. (data last checked 2026-11-12)
+- [Thermal Monocular Chart](https://ammochart.net/thermal-monoculars): Popular handheld thermal monoculars for scanning hogs and predators: price, image and durability ratings, sensor, lens and zoom, detection range, battery and weight. (data last checked 2026-11-12)
+- [Laser Rangefinder Chart](https://ammochart.net/rangefinders): Popular hunting rangefinders: price range, popularity, ranging and display ratings, magnification, reflective and deer range, angle and ballistic features, weight and pros and cons. (data last checked 2026-11-12)
+- [Hunting Binocular Chart](https://ammochart.net/binoculars): Popular hunting binoculars: price range, popularity, glass and build ratings, size and exit pupil, field of view, close focus, weight, warranty and pros and cons. (data last checked 2026-11-12)
+- [Muzzleloader Caliber Chart](https://ammochart.net/muzzleloaders): Traditional and inline muzzleloader calibers: what each was used for, a typical powder charge and projectile, speed, energy, effective range, point-blank range and twist. (data last checked 2026-11-12)
+- [Airgun Caliber Chart](https://ammochart.net/airguns): Airgun calibers from BBs to big-bore slugs: what each is good for, a typical pellet or slug, speed, energy, effective range and point-blank range. (data last checked 2026-11-12)
+
+## Articles and guides
+- [Match the Bullet to the Animal](https://ammochart.net/bullets): The right cartridge with the wrong bullet still makes a bad shot. What bullet to buy, and what to skip, for varmints, deer, elk and big game.
+- [Same Bullet, Different Name](https://ammochart.net/bullet-sizes): Cartridge names don't reliably tell you the bullet size. Here are common rounds grouped by the bullet they actually shoot, with the names that trip people up called out.
+- [What Is Headspace?](https://ammochart.net/headspace): Headspace is how far forward a cartridge sits in the chamber: the distance from the bolt face to whatever part of the chamber stops the case from sliding any farther.
+- [Modern Answers to the Classics](https://ammochart.net/modern-answers): Each classic cartridge next to the newer round built to replace or outdo it, and why newer cartridges are shorter and fatter.
+- [Revolvers: Shooting Down](https://ammochart.net/revolvers): Many magnum revolvers can safely fire their shorter, milder parent rounds for cheaper, softer practice. Find what else your revolver can shoot.
+- [Cartridge Tips & Tricks](https://ammochart.net/tips): The stuff long-time shooters picked up over years at the range and the gun counter, and that beginners usually learn the hard way.
+
+## Optional
+- [Full text summary of every cartridge profile](https://ammochart.net/llms-full.txt)
+- [Site updates](https://ammochart.net/updates)
+- [Sitemap](https://ammochart.net/sitemap.xml)
