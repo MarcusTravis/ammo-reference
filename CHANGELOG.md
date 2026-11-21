@@ -5,6 +5,12 @@ The plain-English summary for readers is the [Updates page](https://ammochart.ne
 
 Status key used in the audit tables: ✓ = matches source · ✎ = changed · ~ = generic row, inside the published range · ? = could not confirm (reason given).
 
+## 2026-11-21
+
+### Chart notes updated to match the Nov 12 audit (no data values changed)
+
+- Replaced the outdated "typical figures from my own knowledge, not looked up" note on ar-calibers, big-bore, handguns, military-surplus, precision, rifle-models, rimfire, scopes, shotshells and wildcats with wording that says the figures were checked against makers' published data (or SAAMI) in the November 2026 audit. Street prices (scopes, rifle models) and barrel life (precision) are still labeled estimates.
+
 ## 2026-11-20
 
 ### Search and AI-search improvements (no data values changed)
